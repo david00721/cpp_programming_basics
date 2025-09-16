@@ -38,9 +38,17 @@ values[2] = 99;    // harmadik elem átírása
 ```cpp
 int arr[5] = {3, 7, 2, 8, 5};
 
+// Hagyományos for ciklus
 for (int i = 0; i < 5; i++) {
     cout << arr[i] << " ";
 }
+cout << endl;
+
+// Range-based for ciklus (C++11-től)
+for (int x : arr) {
+    cout << x << " ";
+}
+cout << endl;
 ```
 
 ---

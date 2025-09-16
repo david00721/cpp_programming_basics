@@ -142,6 +142,12 @@ cout << (a && b) << endl; // 0
 **Növelés/Csökkentés:**  
 `++i` (pre-increment), `i++` (post-increment)
 
+| Művelet         | Leírás                                      | Példa                |
+|-----------------|---------------------------------------------|----------------------|
+| **Pre-increment**<br>(`++i`)  | Először növeli az értéket, majd visszaadja az újat.<br>Hatékonyabb, mert nem hoz létre ideiglenes objektumot. | `int i = 5; ++i; // i = 6` |
+| **Post-increment**<br>(`i++`) | Először visszaadja a régi értéket, majd növeli az értéket.<br>Létrehoz egy ideiglenes másolatot a régi értékről. | `int i = 5; i++; // i = 6` |
+
+
 ```cpp
 int i = 5;
 cout << ++i << endl; // 6

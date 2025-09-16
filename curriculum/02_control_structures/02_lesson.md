@@ -63,7 +63,6 @@ switch (grade) {
 ---
 
 ## 🔹 2. Ciklusok (Loops)
-
 ### For ciklus
 
 Akkor használjuk, ha előre tudjuk, hányszor ismétlünk.
@@ -77,6 +76,29 @@ for (int i = 0; i < 5; i++) {
 - `int i = 0;` → inicializálás
 - `i < 5;` → feltétel
 - `i++` → minden iteráció után végrehajtódik
+
+#### Tömb bejárása for ciklussal
+
+Ha egy tömb minden elemén végig akarunk menni:
+
+```cpp
+int arr[] = {10, 20, 30, 40, 50};
+int n = sizeof(arr) / sizeof(arr[0]);
+for (int i = 0; i < n; i++) {
+    cout << arr[i] << " ";
+}
+```
+
+#### Range-based for ciklus (C++11-től)
+
+Egyszerűbb szintaxis tömbök vagy konténerek bejárásához:
+
+```cpp
+int arr[] = {10, 20, 30, 40, 50};
+for (int x : arr) {
+    cout << x << " ";
+}
+```
 
 ### While ciklus
 
