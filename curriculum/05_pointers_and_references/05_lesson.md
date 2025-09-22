@@ -15,7 +15,6 @@
 - `&` → egy változó címét adja vissza.
 - `*` → pointeren keresztül az értéket érjük el (dereferálás).
 
-**Példa:**
 ```cpp
 int x = 42;
 cout << &x << endl;   // a változó címe
@@ -29,6 +28,9 @@ cout << ptr << endl;   // a cím
 cout << *ptr << endl;  // az x értéke (42)
 ```
 
+👉 **Feladat közösen:** Írj programot, ami kiírja egy változó címét és értékét!  
+👉 **Feladat önállóan:** Írj programot, ami pointer segítségével módosítja egy változó értékét!
+
 ---
 
 ### 2. Pointer és változó kapcsolata
@@ -40,6 +42,9 @@ int *p = &a;
 *p = 20;  // az 'a' értékét is módosítja
 cout << a; // 20
 ```
+
+👉 **Feladat közösen:** Írj programot, ami pointeren keresztül ad új értéket egy változónak!  
+👉 **Feladat önállóan:** Írj programot, ami két változó értékét pointer segítségével cseréli meg!
 
 ---
 
@@ -64,6 +69,9 @@ for (int i = 0; i < 3; i++) {
 }
 ```
 
+👉 **Feladat közösen:** Írj programot, ami pointer segítségével kiír egy tömb minden elemét!  
+👉 **Feladat önállóan:** Írj programot, ami pointer segítségével kiszámolja egy tömb elemeinek összegét!
+
 ---
 
 ### 4. Pointer aritmetika
@@ -78,6 +86,9 @@ cout << *p << endl;     // 10
 p++;
 cout << *p << endl;     // 20
 ```
+
+👉 **Feladat közösen:** Írj programot, ami pointer aritmetikával bejárja egy tömb elemeit!  
+👉 **Feladat önállóan:** Írj programot, ami pointer aritmetikával megkeresi a legnagyobb elemet egy tömbben!
 
 ---
 
@@ -104,11 +115,14 @@ int main() {
 }
 ```
 
+👉 **Feladat közösen:** Írj függvényt, ami pointer paraméterrel módosít egy változót!  
+👉 **Feladat önállóan:** Írj függvényt, ami pointer paraméterrel megszoroz egy változót 2-vel!
+
 ---
 
 ### 6. Referenciák (reference)
 
-- Referencia = alternatív név egy változóra.
+Referencia = alternatív név egy változóra.
 
 ```cpp
 int a = 10;
@@ -118,11 +132,14 @@ ref = 20;   // a is módosul
 cout << a;  // 20
 ```
 
+👉 **Feladat közösen:** Írj programot, ami referencia segítségével módosítja egy változó értékét!  
+👉 **Feladat önállóan:** Írj programot, ami referencia segítségével két szám összegét adja vissza egy függvényben!
+
 ---
 
 ### 7. Referencia paraméterek
 
-- Nagyon hasznos függvényeknél, ha az eredeti változót akarjuk módosítani.
+Nagyon hasznos függvényeknél, ha az eredeti változót akarjuk módosítani.
 
 ```cpp
 void swap(int &x, int &y) {
@@ -138,6 +155,9 @@ int main() {
 }
 ```
 
+👉 **Feladat közösen:** Írj függvényt, ami referencia segítségével kicserél két számot!  
+👉 **Feladat önállóan:** Írj függvényt, ami referencia segítségével megszoroz két számot!
+
 ---
 
 ### 8. Const pointer és referencia
@@ -150,13 +170,15 @@ const int *p1 = &a;   // értéket nem lehet módosítani
 int *const p2 = &a;   // pointer nem mutathat másra
 ```
 
-- Referencia is lehet const:
-
+Referencia is lehet const:
 ```cpp
 void print(const int &x) {
     cout << x;
 }
 ```
+
+👉 **Feladat közösen:** Írj függvényt, ami const referenciát kap, és kiírja a paramétert!  
+👉 **Feladat önállóan:** Írj programot, ami const pointert használ, és kiírja egy változó értékét!
 
 ---
 
@@ -169,6 +191,9 @@ int *p = nullptr;  // modern C++
 ```
 
 - Régebben: `NULL`.
+
+👉 **Feladat közösen:** Írj programot, ami null pointert inicializál, majd ellenőrzi, hogy érvényes-e!  
+👉 **Feladat önállóan:** Írj programot, ami csak akkor dereferál egy pointert, ha az nem null!
 
 ---
 
@@ -206,6 +231,9 @@ int length(const char *str) {
 }
 ```
 
+👉 **Feladat közösen:** Írj függvényt, ami pointer segítségével visszaadja egy tömb minimumát!  
+👉 **Feladat önállóan:** Írj függvényt, ami pointer segítségével megszámolja egy string hosszát!
+
 ---
 
 ### 11. Gyakorló feladatok
@@ -214,4 +242,7 @@ int length(const char *str) {
 - Írj függvényt, ami pointerrel kiszámolja egy tömb összegét!
 - Írj programot, ami pointer segítségével két változót megcserél!
 - Írj függvényt, ami referencia segítségével három szám közül a legnagyobbat visszaadja!
-- Írj programot, ami pointer segítségével megfordít egy karakterláncot (pl. `"hello"` → `"olleh")!
+- Írj programot, ami pointer segítségével megfordít egy karakterláncot (pl. "hello" → "olleh")!
+
+---
+
