@@ -14,12 +14,15 @@
 
 - **Statikus memória:** méretet fordítási időben kell tudni.
 
-    ```cpp
-    int arr[100];   // fix méret, nem változtatható futás közben
-    ```
+```cpp
+int arr[100];   // fix méret, nem változtatható futás közben
+```
 
 - **Dinamikus memória:** futásidőben foglalunk helyet a heap-en.  
-    Például: felhasználó által megadott méretű tömb.
+  Például: felhasználó által megadott méretű tömb.
+
+👉 **Feladat közösen:** Írj programot, ami bekér egy számot, és akkora tömböt próbál létrehozni statikusan!  
+👉 **Feladat önállóan:** Írj programot, ami bekér egy számot, és dinamikusan foglal akkora tömböt!
 
 ---
 
@@ -43,7 +46,8 @@ for (int i = 0; i < n; i++) cout << arr[i] << " ";
 delete[] arr;   // tömb felszabadítása
 ```
 
-> ⚠️ Ha elfelejtjük a `delete`-et → memóriaszivárgás (a memória foglalt marad a program végéig).
+👉 **Feladat közösen:** Írj programot, ami dinamikusan foglal egy egész számot, értéket ad neki, majd felszabadítja!  
+👉 **Feladat önállóan:** Írj programot, ami dinamikusan foglal egy tömböt, majd feltölti 1-től n-ig a számokkal!
 
 ---
 
@@ -56,6 +60,11 @@ cout << *x;  // 10
 delete x;
 ```
 
+👉 **Feladat közösen:** Írj programot, ami dinamikusan foglal egy int változót, majd kiírja az értékét!  
+👉 **Feladat önállóan:** Írj programot, ami dinamikusan foglal egy double változót, értéket ad neki, majd kiírja!
+
+---
+
 **Példa 2 – Dinamikus mátrix**
 ```cpp
 int rows = 3, cols = 4;
@@ -63,25 +72,28 @@ int rows = 3, cols = 4;
 // mátrix létrehozása
 int **matrix = new int*[rows];
 for (int i = 0; i < rows; i++)
-        matrix[i] = new int[cols];
+    matrix[i] = new int[cols];
 
 // kitöltés
 for (int i = 0; i < rows; i++)
-        for (int j = 0; j < cols; j++)
-                matrix[i][j] = i + j;
+    for (int j = 0; j < cols; j++)
+        matrix[i][j] = i + j;
 
 // kiírás
 for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++)
-                cout << matrix[i][j] << " ";
-        cout << endl;
+    for (int j = 0; j < cols; j++)
+        cout << matrix[i][j] << " ";
+    cout << endl;
 }
 
 // felszabadítás
 for (int i = 0; i < rows; i++)
-        delete[] matrix[i];
+    delete[] matrix[i];
 delete[] matrix;
 ```
+
+👉 **Feladat közösen:** Írj programot, ami dinamikusan létrehoz egy 2×2-es mátrixot, és kiírja!  
+👉 **Feladat önállóan:** Írj programot, ami dinamikusan létrehoz egy 3×3-as mátrixot, és kiszámolja a főátló összegét!
 
 ---
 
@@ -101,19 +113,24 @@ delete p;
 p = nullptr;
 ```
 
+👉 **Feladat közösen:** Írj programot, ami bemutatja a dangling pointer problémát!  
+👉 **Feladat önállóan:** Írj programot, ami helyesen kezel egy dangling pointert `nullptr` használatával!
+
 ---
 
 ### 5. Memória-szivárgás (Memory leak)
 
-Ha lefoglaljuk a memóriát, de nem szabadítjuk fel → szivárgás.  
-Ez nagy programokban súlyos probléma lehet.
+Ha lefoglaljuk a memóriát, de nem szabadítjuk fel → szivárgás.
 
 ```cpp
 for (int i = 0; i < 1000; i++) {
-        int *p = new int(i);
-        // delete p;  <-- ha kimarad, memória szivárog
+    int *p = new int(i);
+    // delete p;  <-- ha kimarad, memória szivárog
 }
 ```
+
+👉 **Feladat közösen:** Írj programot, ami memóriaszivárgást okoz!  
+👉 **Feladat önállóan:** Javítsd ki a programot `delete` használatával!
 
 ---
 
@@ -125,6 +142,16 @@ Modern C++-ban ritkán kell `new`/`delete`, helyette:
 - `std::shared_ptr` – több tulajdonos
 - `std::weak_ptr` – nem számít bele az élettartamba
 
+```cpp
+#include <memory>
+#include <iostream>
+using namespace std;
+
+int main() {
+    unique_ptr<int> p = make_unique<int>(42);
+    cout << *p << endl;
+}
+```
 _De ez már későbbi (OOP) tananyag._
 
 ---
@@ -145,6 +172,11 @@ cout << "Average: " << sum / n;
 delete[] arr;
 ```
 
+👉 **Feladat közösen:** Írj programot, ami dinamikus tömböt hoz létre, majd kiszámolja az átlagot!  
+👉 **Feladat önállóan:** Írj programot, ami dinamikus tömböt hoz létre, majd megkeresi a legnagyobb elemet!
+
+---
+
 **Példa 2 – Dinamikus string másolás**
 ```cpp
 char str[] = "Hello";
@@ -153,18 +185,23 @@ while (str[len] != '\0') len++;
 
 char *copy = new char[len + 1];
 for (int i = 0; i <= len; i++)
-        copy[i] = str[i];
+    copy[i] = str[i];
 
 cout << copy;
 delete[] copy;
 ```
+
+👉 **Feladat közösen:** Írj programot, ami dinamikusan lemásol egy stringet!  
+👉 **Feladat önállóan:** Írj programot, ami dinamikusan megfordít egy stringet!
 
 ---
 
 ### 8. Gyakorló feladatok
 
 - Készíts programot, ami lefoglal egy n hosszú tömböt, feltölti véletlenszámokkal, majd kiírja a legnagyobb értéket.
-- Írj függvényt, ami dinamikusan létrehoz egy n x n mátrixot, és visszaadja a főátló összegét.
+- Írj függvényt, ami dinamikusan létrehoz egy n × n mátrixot, és visszaadja a főátló összegét.
 - Készíts függvényt, ami két dinamikus tömböt összefűz egy új tömbbe.
 - Írj programot, ami dinamikusan lefoglalt karaktertömbben tárolja a felhasználó által beírt szót, majd visszafelé kiírja.
 - Szimulálj memória-szivárgást, majd javítsd ki a `delete` megfelelő használatával.
+
+---
