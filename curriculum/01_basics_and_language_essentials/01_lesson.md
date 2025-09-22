@@ -18,7 +18,7 @@ Egy legegyszerűbb program így néz ki:
 #include <iostream>   // be/kimenet kezeléséhez
 using namespace std;  // egyszerűbb írásmódhoz
 
-int main() 
+int main()
 {
     cout << "Hello, World!" << endl;
     return 0;  // 0 visszatérés: sikeres futás
@@ -34,9 +34,24 @@ int main()
 - `endl` – sortörés és buffer ürítés.
 - `return 0;` – a program sikeres futását jelzi az operációs rendszernek.
 
+👉 **Feladat közösen:** Írj programot, ami kiírja a neved és az életkorod!  
+👉 **Feladat önállóan:** Írj programot, ami két sort ír ki: az elsőben a kedvenc focicsapatod, a másodikban a kedvenc filmedet!
+
 ---
 
-## 2. Adattípusok
+## 2. Megjegyzések
+
+A kódba megjegyzéseket lehet írni, amelyek nem befolyásolják a program futását.
+
+```cpp
+// Ez egy egysoros megjegyzés
+/* Ez pedig
+   több soros megjegyzés */
+```
+
+---
+
+## 3. Adattípusok
 
 A C++ erősen típusos nyelv – minden változónak típusa van.
 
@@ -59,9 +74,12 @@ bool is_student = true;
 string name = "Alice";
 ```
 
+👉 **Feladat közösen:** Írj programot, amelyben tárolod a saját neved, életkorod és azt, hogy tanuló vagy-e, majd írd ki őket!  
+👉 **Feladat önállóan:** Írj programot, amelyben eltárolod egy könyv címét, szerzőjét és oldalszámát, majd jelenítsd meg!
+
 ---
 
-## 3. Változók és konstansok
+## 4. Változók és konstansok
 
 **Változó:**  
 Egy „doboz” a memóriában, ami egy értéket tárol.
@@ -84,9 +102,41 @@ Régebbi módszer (inkább C-ből maradt):
 #define MAX 100
 ```
 
+👉 **Feladat közösen:** Írj programot, ami eltárolja egy kör sugarát, majd kiírja a kör kerületét a konstans `PI` felhasználásával!  
+👉 **Feladat önállóan:** Írj programot, ami kiszámítja egy négyzet területét, és a számításnál konstansként használd az oldalhosszt!
+
 ---
 
-## 4. Be- és kimenet
+## 5. `auto` típus
+
+A fordító képes kitalálni a típust:
+
+```cpp
+auto x = 42;    // int
+auto y = 3.14;  // double
+```
+
+👉 **Feladat közösen:** Írj programot, amelyben `auto`-val létrehozol három különböző típusú változót, majd kiírod őket!  
+👉 **Feladat önállóan:** Írj programot, amely két `auto` típusú változót összead, és kiírja az eredményt!
+
+---
+
+## 6. Típuskonverzió (casting)
+
+Példa:
+
+```cpp
+int a = 5, b = 2;
+double result = (double)a / b; // 2.5
+double result2 = static_cast<double>(a) / b; // 2.5
+```
+
+👉 **Feladat közösen:** Írj programot, ami bekér két egész számot, majd lebegőpontos osztással kiszámítja a hányadosukat!  
+👉 **Feladat önállóan:** Írj programot, ami Celsius fokot Fahrenheitre vált át, lebegőpontos számítással!
+
+---
+
+## 7. Be- és kimenet
 
 **Kimenet:**
 
@@ -103,9 +153,12 @@ cin >> number;
 cout << "You entered: " << number << endl;
 ```
 
+👉 **Feladat közösen:** Írj programot, ami bekéri a neved és az életkorod, majd kiírja egy mondatban!  
+👉 **Feladat önállóan:** Írj programot, ami bekér egy számot, majd kiírja a négyzetét!
+
 ---
 
-## 5. Operátorok
+## 8. Operátorok
 
 **Aritmetikai:**  
 `+`, `-`, `*`, `/`, `%`
@@ -154,9 +207,12 @@ cout << ++i << endl; // 6
 cout << i++ << endl; // 6, de i most 7
 ```
 
+👉 **Feladat közösen:** Írj programot, ami bekér két számot, és kiírja a különbséget, szorzatot és hányadost!  
+👉 **Feladat önállóan:** Írj programot, ami bekér egy számot, és kiírja a szám maradékát, ha elosztod 3-mal!
+
 ---
 
-## 6. Fordítás és futtatás
+## 9. Fordítás és futtatás
 
 **Parancssorból (Linux/Mac/WSL):**
 
@@ -175,9 +231,12 @@ program.exe
 **IDE-ben** (pl. Visual Studio, CLion, Code::Blocks):  
 Elég a „Run” gomb.
 
+👉 **Feladat közösen:** Fordítsd le és futtasd az egyik eddigi programodat parancssorból!  
+👉 **Feladat önállóan:** Fordíts le és futtass egy másik programot IDE-ben!
+
 ---
 
-## 7. Gyakorlati példák
+## 10. Gyakorlati példák
 
 **Példa 1 – két szám összeadása**
 
@@ -212,7 +271,7 @@ int main() {
 
 ---
 
-## 8. Gyakorló feladatok
+## 11. Gyakorló feladatok
 
 - Írj programot, ami bekér egy számot, és kiírja a kétszeresét!
 - Írj programot, ami kiszámolja egy téglalap kerületét és területét!
