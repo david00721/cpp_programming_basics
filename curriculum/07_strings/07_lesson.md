@@ -11,7 +11,7 @@
 
 ## 1. C-string alapok
 
-Egy karaktertömb, amelynek végén kötelező a `'\0'` lezáró karakter.
+Egy karaktertömb, amelynek végén kötelező a `\0` lezáró karakter.
 
 ```cpp
 char str1[] = "Hello";    // automatikusan: {'H','e','l','l','o','\0'}
@@ -24,7 +24,10 @@ char str3[10] = "Hello";  // nagyobb méret (üres hely marad)
 cout << str1;  // Hello
 ```
 
-> ⚠️ Ha nincs `'\0'`, akkor a kiírás szemét adhat, mert nem tudja, hol ér véget.
+👉 **Feladat közösen:** Írj programot, ami beolvas egy szót C-stringként, majd kiírja!  
+👉 **Feladat önállóan:** Írj programot, ami létrehoz egy C-stringet, és kiírja az első és utolsó karakterét!
+
+> ⚠️ Ha nincs `\0`, akkor a kiírás szemét adatot adhat, mert nem tudja, hol ér véget.
 
 ---
 
@@ -54,6 +57,9 @@ int main() {
 - `strcpy(dest, src)` → másolás
 - `strcat(dest, src)` → összefűzés
 
+👉 **Feladat közösen:** Írj programot, ami két C-stringet összefűz `strcat` segítségével!  
+👉 **Feladat önállóan:** Írj programot, ami két C-stringet összehasonlít `strcmp`-pal, és kiírja, melyik van előbb az ABC-ben!
+
 ---
 
 ## 3. Dinamikus C-string
@@ -69,6 +75,9 @@ cout << "You typed: " << str << endl;
 
 delete[] str;
 ```
+
+👉 **Feladat közösen:** Írj programot, ami dinamikusan lefoglal egy C-stringet, majd beolvas egy szót és kiírja!  
+👉 **Feladat önállóan:** Írj programot, ami dinamikusan lefoglal egy C-stringet, majd visszafelé kiírja a tartalmát!
 
 ---
 
@@ -93,11 +102,19 @@ cout << s3;
 if (s1 == "Hello") cout << "Equal!";
 ```
 
+👉 **Feladat közösen:** Írj programot, ami két `std::string`-et összefűz és kiírja!  
+👉 **Feladat önállóan:** Írj programot, ami beolvas egy `std::string`-et, és kiírja a hosszát!
+
+---
+
 **Iterálás**
 ```cpp
 for (char c : s3)
     cout << c << " ";
 ```
+
+👉 **Feladat közösen:** Írj programot, ami végigiterál egy `std::string`-en, és kiírja a karaktereket szóközzel elválasztva!  
+👉 **Feladat önállóan:** Írj programot, ami megszámolja, hány magánhangzó van egy `std::string`-ben!
 
 ---
 
@@ -108,6 +125,9 @@ string s = "Hello";
 const char* cstr = s.c_str();  // csak olvasható
 cout << cstr;
 ```
+
+👉 **Feladat közösen:** Írj programot, ami konvertál egy `std::string`-et C-stringgé, majd kiírja!  
+👉 **Feladat önállóan:** Írj programot, ami `std::string`-et alakít C-stringgé, majd megszámolja a karakterek számát `strlen` segítségével!
 
 ---
 
@@ -122,6 +142,11 @@ for (int i = s.size()-1; i >= 0; i--)
     cout << s[i];
 ```
 
+👉 **Feladat közösen:** Írj programot, ami megfordít egy szót `std::string` használatával!  
+👉 **Feladat önállóan:** Írj programot, ami megfordít egy szót C-stringként!
+
+---
+
 **Példa 2 – Szó számlálás**
 ```cpp
 string text = "this is a simple test";
@@ -132,6 +157,9 @@ for (int i = 0; i < text.size(); i++)
 
 cout << "Words: " << count + 1;
 ```
+
+👉 **Feladat közösen:** Írj programot, ami megszámolja, hány szó van egy `std::string` mondatban!  
+👉 **Feladat önállóan:** Írj programot, ami megszámolja, hány szó van egy mondatban C-string használatával!
 
 ---
 
