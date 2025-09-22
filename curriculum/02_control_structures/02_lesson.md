@@ -19,6 +19,11 @@ if (feltétel) {
 }
 ```
 
+👉 **Feladat közösen:** Írj programot, ami bekér egy számot, és kiírja, hogy nagyobb-e 10-nél!  
+👉 **Feladat önállóan:** Írj programot, ami bekér egy számot, és kiírja, hogy kisebb-e 100-nál!
+
+---
+
 ### If-else szerkezet
 
 ```cpp
@@ -28,6 +33,11 @@ if (x > 0) {
     cout << "Not positive";
 }
 ```
+
+👉 **Feladat közösen:** Írj programot, ami bekér egy számot, és kiírja, hogy pozitív vagy nem!  
+👉 **Feladat önállóan:** Írj programot, ami bekér egy számot, és kiírja, hogy páros vagy páratlan!
+
+---
 
 ### If-else if-else lánc
 
@@ -41,9 +51,12 @@ if (x > 0) {
 }
 ```
 
-### Switch szerkezet
+👉 **Feladat közösen:** Írj programot, ami bekér egy számot, és kiírja, hogy pozitív, negatív vagy nulla!  
+👉 **Feladat önállóan:** Írj programot, ami bekér egy számot, és eldönti róla, hogy osztható-e 3-mal, 5-tel vagy mindkettővel!
 
-Akkor használjuk, ha egy változó több lehetséges értékét akarjuk vizsgálni.
+---
+
+### Switch szerkezet
 
 ```cpp
 switch (grade) {
@@ -56,16 +69,14 @@ switch (grade) {
 }
 ```
 
-> **Figyelem:**  
-> - A `break` megakadályozza, hogy a végrehajtás „átcsússzon” a következő ágba.  
-> - A `default` opcionális, de jó gyakorlat használni.
+👉 **Feladat közösen:** Írj programot, ami bekér egy jegyet (A–F), és szöveges értékelést ad rá!  
+👉 **Feladat önállóan:** Írj programot, ami bekér egy számot 1–7 között, és kiírja a hét megfelelő napját!
 
 ---
 
 ## 🔹 2. Ciklusok (Loops)
-### For ciklus
 
-Akkor használjuk, ha előre tudjuk, hányszor ismétlünk.
+### For ciklus
 
 ```cpp
 for (int i = 0; i < 5; i++) {
@@ -73,13 +84,12 @@ for (int i = 0; i < 5; i++) {
 }
 ```
 
-- `int i = 0;` → inicializálás
-- `i < 5;` → feltétel
-- `i++` → minden iteráció után végrehajtódik
+👉 **Feladat közösen:** Írj programot, ami kiírja az 1–10 közötti számokat!  
+👉 **Feladat önállóan:** Írj programot, ami kiírja az 1–20 közötti páros számokat!
+
+---
 
 #### Tömb bejárása for ciklussal
-
-Ha egy tömb minden elemén végig akarunk menni:
 
 ```cpp
 int arr[] = {10, 20, 30, 40, 50};
@@ -89,9 +99,12 @@ for (int i = 0; i < n; i++) {
 }
 ```
 
-#### Range-based for ciklus (C++11-től)
+👉 **Feladat közösen:** Írj programot, ami kiírja egy tömb minden elemét!  
+👉 **Feladat önállóan:** Írj programot, ami összeadja egy tömb elemeit!
 
-Egyszerűbb szintaxis tömbök vagy konténerek bejárásához:
+---
+
+#### Range-based for ciklus (C++11-től)
 
 ```cpp
 int arr[] = {10, 20, 30, 40, 50};
@@ -100,9 +113,12 @@ for (int x : arr) {
 }
 ```
 
-### While ciklus
+👉 **Feladat közösen:** Írj programot, ami kiírja a tömb elemeit range-based for ciklussal!  
+👉 **Feladat önállóan:** Írj programot, ami megszámolja, hány páros szám van a tömbben!
 
-Addig ismétel, amíg a feltétel igaz.
+---
+
+### While ciklus
 
 ```cpp
 int i = 0;
@@ -112,9 +128,12 @@ while (i < 5) {
 }
 ```
 
-### Do-while ciklus
+👉 **Feladat közösen:** Írj programot, ami while ciklussal kiírja az 1–10 közötti számokat!  
+👉 **Feladat önállóan:** Írj programot, ami while ciklussal összeadja az 1–n közötti számokat!
 
-Mindig lefut legalább egyszer, akkor is, ha a feltétel hamis.
+---
+
+### Do-while ciklus
 
 ```cpp
 int i = 0;
@@ -124,10 +143,12 @@ do {
 } while (i < 5);
 ```
 
-### Vezérlési utasítások
+👉 **Feladat közösen:** Írj programot, ami do-while ciklussal legalább egyszer kiír egy üzenetet!  
+👉 **Feladat önállóan:** Írj programot, ami do-while ciklussal addig kér be számot, amíg a felhasználó nullát nem ad meg!
 
-- `break` → kilép a ciklusból
-- `continue` → ugrik a következő iterációra
+---
+
+### Vezérlési utasítások
 
 ```cpp
 for (int i = 1; i <= 5; i++) {
@@ -136,11 +157,12 @@ for (int i = 1; i <= 5; i++) {
 }
 ```
 
+👉 **Feladat közösen:** Írj programot, ami 1–10 között kiír minden számot, kivéve az 5-öst!  
+👉 **Feladat önállóan:** Írj programot, ami 1–20 között kiírja a számokat, de ha 13-hoz ér, kilép a ciklusból!
+
 ---
 
 ## 🔹 3. Beágyazott ciklusok
-
-Ciklus egy másikon belül – például szorzótábla:
 
 ```cpp
 for (int i = 1; i <= 10; i++) {
@@ -150,6 +172,9 @@ for (int i = 1; i <= 10; i++) {
     cout << endl;
 }
 ```
+
+👉 **Feladat közösen:** Írj programot, ami beágyazott ciklussal kirajzol egy 5×5-ös négyzetet `*` karakterekből!  
+👉 **Feladat önállóan:** Írj programot, ami beágyazott ciklussal kirajzol egy derékszögű háromszöget `*` karakterekből!
 
 ---
 
@@ -226,6 +251,9 @@ do {
 } while (choice != 0);
 ```
 
+👉 **Feladat közösen:** Egészítsd ki a menüt egy új opcióval, ami kiírja a nevedet!  
+👉 **Feladat önállóan:** Egészítsd ki a menüt egy új opcióval, ami kiszámolja két szám összegét!
+
 ---
 
 ## 🔹 5. Gyakorló feladatok
@@ -233,5 +261,8 @@ do {
 - Írj programot, ami kiírja 1-től 100-ig az összes páros számot!
 - Írj programot, ami kiszámolja az első n természetes szám összegét (1+2+…+n)!
 - Kérj be egy számot, és döntsd el róla, hogy prímszám-e!
-- Írj programot, ami kirajzol egy 10×10-es négyzetet `*` karakterekből!
+- Írj programot, ami kirajzol egy 10×10-es négyzetet `*` karakterekből (csak a körvonalát)!
 - Írj egyszerű menüt, ami addig ismétlődik, amíg a felhasználó ki nem lép!
+
+---
+
