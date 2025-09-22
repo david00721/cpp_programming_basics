@@ -31,6 +31,9 @@ values[2] = 99;    // harmadik elem átírása
 
 > ⚠️ Ha túlindexelsz (pl. `values[5]`), az hibás működéshez vezethet.
 
+👉 **Feladat közösen:** Hozz létre egy 5 elemű tömböt, töltsd fel számokkal, majd írd ki az első és utolsó elemét!  
+👉 **Feladat önállóan:** Hozz létre egy 10 elemű tömböt, és írd ki a középső elemet!
+
 ---
 
 ## 2. Tömb bejárása ciklussal
@@ -51,6 +54,9 @@ for (int x : arr) {
 cout << endl;
 ```
 
+👉 **Feladat közösen:** Írj programot, ami kiírja egy tömb minden elemét for ciklussal!  
+👉 **Feladat önállóan:** Írj programot, ami kiszámolja egy tömb elemeinek összegét!
+
 ---
 
 ## 3. Tömb átadása függvénynek
@@ -69,6 +75,9 @@ int main() {
     printArray(nums, 3);
 }
 ```
+
+👉 **Feladat közösen:** Írj függvényt, ami kiírja egy tömb elemeit!  
+👉 **Feladat önállóan:** Írj függvényt, ami megszámolja, hány páros szám van egy tömbben!
 
 ---
 
@@ -103,6 +112,9 @@ for (int i = 0; i < n-1; i++) {
 }
 ```
 
+👉 **Feladat közösen:** Írj programot, ami megkeresi egy tömb legnagyobb elemét!  
+👉 **Feladat önállóan:** Írj programot, ami rendezi egy tömb elemeit növekvő sorrendbe!
+
 ---
 
 ## 5. Kétdimenziós tömbök (mátrixok)
@@ -123,6 +135,9 @@ for (int i = 0; i < 2; i++) {
 }
 ```
 
+👉 **Feladat közösen:** Írj programot, ami kiírja egy 2×3-as mátrix minden elemét!  
+👉 **Feladat önállóan:** Írj programot, ami kiszámolja egy 3×3-as mátrix főátlójának összegét!
+
 ---
 
 ## 6. Karaktertömbök (C-string)
@@ -131,7 +146,7 @@ for (int i = 0; i < 2; i++) {
 ```cpp
 char word[6] = "Hello";  // automatikusan '\0'-val zárul
 ```
-A `'\0'` (null karakter) jelzi a string végét.
+A `\0` (null karakter) jelzi a string végét.
 
 **Beolvasás:**
 ```cpp
@@ -145,6 +160,9 @@ Ha teljes sort akarunk:
 ```cpp
 cin.getline(name, 50);
 ```
+
+👉 **Feladat közösen:** Írj programot, ami beolvas egy szót, és kiírja azt!  
+👉 **Feladat önállóan:** Írj programot, ami beolvas egy mondatot `getline`-nel, majd kiírja a hosszát!
 
 ---
 
@@ -161,6 +179,9 @@ strcpy(s2, s1);            // másolás: s2 = "Hello"
 strcat(s1, " World");      // összefűzés: "Hello World"
 cout << strcmp("a", "b");  // összehasonlítás: -1
 ```
+
+👉 **Feladat közösen:** Írj programot, ami két szót összefűz `strcat` segítségével!  
+👉 **Feladat önállóan:** Írj programot, ami két szót összehasonlít `strcmp`-pal, és kiírja, melyik van előbb az ABC-ben!
 
 ---
 
@@ -207,6 +228,9 @@ if (isPal) cout << "Palindrome";
 else cout << "Not palindrome";
 ```
 
+👉 **Feladat közösen:** Írj programot, ami kiszámolja egy tömb átlagát!  
+👉 **Feladat önállóan:** Írj programot, ami ellenőrzi, hogy egy adott szó palindrom-e!
+
 ---
 
 ## 9. Gyakorló feladatok
@@ -216,3 +240,6 @@ else cout << "Not palindrome";
 - Írj programot, ami kiszámolja egy mátrix főátlójának összegét!
 - Írj programot, ami eldönti, hogy egy szó palindrom-e (pl. “radar”).
 - Írj programot, ami két szöveget összefűz egy harmadikba C-string használatával!
+
+---
+
