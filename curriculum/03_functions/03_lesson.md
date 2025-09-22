@@ -20,7 +20,6 @@
 
 ## 2. Függvény felépítése
 
-**Általános forma:**
 ```cpp
 visszatérési_típus függvényNév(paraméterek) {
     // utasítások
@@ -33,14 +32,14 @@ visszatérési_típus függvényNév(paraméterek) {
 int square(int x) {
     return x * x;
 }
-```
 
-**Használat:**
-```cpp
 int main() {
     cout << square(5) << endl; // 25
 }
 ```
+
+👉 **Feladat közösen:** Írj függvényt, ami visszaadja egy szám köbét!  
+👉 **Feladat önállóan:** Írj függvényt, ami visszaadja egy szám kétszeresét!
 
 ---
 
@@ -60,6 +59,9 @@ int add(int a, int b) { // definíció
 }
 ```
 
+👉 **Feladat közösen:** Írj függvényt, ami két szám különbségét adja vissza, és használd prototípussal!  
+👉 **Feladat önállóan:** Írj függvényt, ami két szám szorzatát adja vissza, prototípussal!
+
 ---
 
 ## 4. Paraméterátadás
@@ -70,12 +72,14 @@ int add(int a, int b) { // definíció
         x = 100;
     }
     ```
+
 - **Referencia szerint (by reference):** Az eredeti változó módosul.
     ```cpp
     void f(int &x) {
         x = 100;
     }
     ```
+
 - **Pointerrel:**
     ```cpp
     void f(int *x) {
@@ -83,11 +87,12 @@ int add(int a, int b) { // definíció
     }
     ```
 
+👉 **Feladat közösen:** Írj egy függvényt, ami érték szerint próbál módosítani egy változót, majd ellenőrizd, hogy változott-e!  
+👉 **Feladat önállóan:** Írj egy függvényt, ami referencia szerint kap egy változót, és ténylegesen módosítja az értékét!
+
 ---
 
 ## 5. Alapértelmezett paraméterek
-
-Ha nincs érték megadva, a megadott alapértéket használja.
 
 ```cpp
 int power(int base, int exp = 2) {
@@ -100,11 +105,12 @@ cout << power(5) << endl;    // 25
 cout << power(5, 3) << endl; // 125
 ```
 
+👉 **Feladat közösen:** Írj függvényt, ami egy számot hatványoz, és próbáld ki az alapértelmezett kitevőt!  
+👉 **Feladat önállóan:** Írj függvényt, ami egy számot megszoroz egy alapértelmezett értékkel (pl. 10-zel), ha nem adsz meg másikat!
+
 ---
 
 ## 6. Függvény túlterhelés (overloading)
-
-Ugyanaz a név, de eltérő paraméterlista.
 
 ```cpp
 int add(int a, int b) {
@@ -119,14 +125,14 @@ cout << add(3, 4) << endl;     // int verzió
 cout << add(2.5, 1.5) << endl; // double verzió
 ```
 
+👉 **Feladat közösen:** Írj két `multiply` függvényt: egyet int, egyet double típusra!  
+👉 **Feladat önállóan:** Írj két `maximum` függvényt: egyet int, egyet double típusra!
+
 ---
 
 ## 7. Rekurzió
 
-A függvény saját magát hívja.  
-**Fontos:** mindig legyen megállási feltétel!
-
-**Faktoriális:**
+### Faktoriális
 ```cpp
 int factorial(int n) {
     if (n == 0) return 1;   // bázis eset
@@ -134,7 +140,7 @@ int factorial(int n) {
 }
 ```
 
-**Fibonacci-sor:**
+### Fibonacci-sor
 ```cpp
 int fibonacci(int n) {
     if (n == 0) return 0;
@@ -143,7 +149,8 @@ int fibonacci(int n) {
 }
 ```
 
-> ⚠️ Rekurzió előnye: kód egyszerűbb. Hátránya: lassabb lehet, sok memória kell (stack).
+👉 **Feladat közösen:** Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
+👉 **Feladat önállóan:** Írj rekurzív függvényt, ami visszaadja a Fibonacci-sorozat n-edik elemét!
 
 ---
 
@@ -172,6 +179,9 @@ int digit_sum(int n) {
 }
 ```
 
+👉 **Feladat közösen:** Írj függvényt, ami visszaadja két szám legnagyobb közös osztóját!  
+👉 **Feladat önállóan:** Írj rekurzív függvényt, ami kiszámolja egy szám számjegyeinek szorzatát!
+
 ---
 
 ## 9. Gyakorló feladatok
@@ -181,3 +191,6 @@ int digit_sum(int n) {
 - Írj függvényt, ami eldönti, hogy egy szám prímszám-e!
 - Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
 - Írj függvényt, ami két szám LNKO-ját számolja ki (rekurzívan)!
+
+---
+
