@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// 01 Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
+// 11 - Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
 int factorial(int n)
 {
     if (n == 0)
@@ -11,7 +11,7 @@ int factorial(int n)
         return n * factorial(n - 1);
 }
 
-// 02 Írj rekurzív függvényt, ami visszaadja a Fibonacci-sorozat n-edik elemét!
+// 12 - Írj rekurzív függvényt, ami visszaadja a Fibonacci-sorozat n-edik elemét!
 int fibonacci(int n)
 {
     if (n == 0)
@@ -24,11 +24,11 @@ int fibonacci(int n)
 
 int main()
 {
-    // 01 Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
+    // 11 - Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
     cout << "5! = " << factorial(5) << endl;
     cout << "7! = " << factorial(7) << endl;
 
-    // 02 Írj rekurzív függvényt, ami visszaadja a Fibonacci-sorozat n-edik elemét!
+    // 12 - Írj rekurzív függvényt, ami visszaadja a Fibonacci-sorozat n-edik elemét!
     cout << "Fibonacci(5) = " << fibonacci(5) << endl;
     cout << "Fibonacci(7) = " << fibonacci(7) << endl;
 
