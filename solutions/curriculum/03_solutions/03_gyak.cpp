@@ -2,13 +2,13 @@
 
 using namespace std;
 
-// 01 Írj függvényt, ami visszaadja egy szám négyzetét!
+// Gyak 01 - Írj függvényt, ami visszaadja egy szám négyzetét!
 int square(int n)
 {
     return n * n;
 }
 
-// 02 Írj függvényt, ami visszaadja egy szám összes osztójának számát!
+// Gyak 02 - Írj függvényt, ami visszaadja egy szám összes osztójának számát!
 int countDivisors(int n)
 {
     int count = 0;
@@ -20,7 +20,7 @@ int countDivisors(int n)
     return count;
 }
 
-// 03 Írj függvényt, ami eldönti, hogy egy szám prímszám-e!
+// Gyak 03 - Írj függvényt, ami eldönti, hogy egy szám prímszám-e!
 bool isPrime(int n)
 {
     if (n <= 1)
@@ -33,7 +33,7 @@ bool isPrime(int n)
     return true;
 }
 
-// 04 Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
+// Gyak 04 - Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
 int factorial(int n)
 {
     if (n == 0)
@@ -42,7 +42,7 @@ int factorial(int n)
         return n * factorial(n - 1);
 }
 
-// 05 Írj függvényt, ami két szám LNKO-ját számolja ki (rekurzívan)!
+// Gyak 05 - Írj függvényt, ami két szám LNKO-ját számolja ki (rekurzívan)!
 int gcd(int a, int b)
 {
     if (b == 0)
