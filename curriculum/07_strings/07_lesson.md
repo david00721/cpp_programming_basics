@@ -24,8 +24,8 @@ char str3[10] = "Hello";  // nagyobb méret (üres hely marad)
 cout << str1;  // Hello
 ```
 
-👉 **Feladat közösen:** Írj programot, ami beolvas egy szót C-stringként, majd kiírja!  
-👉 **Feladat önállóan:** Írj programot, ami létrehoz egy C-stringet, és kiírja az első és utolsó karakterét!
+👉 **01 - Feladat közösen:** Írj programot, ami beolvas egy szót C-stringként, majd kiírja!  
+👉 **02 - Feladat önállóan:** Írj programot, ami létrehoz egy C-stringet, és kiírja az első és utolsó karakterét!
 
 > ⚠️ Ha nincs `\0`, akkor a kiírás szemét adatot adhat, mert nem tudja, hol ér véget.
 
@@ -57,8 +57,8 @@ int main() {
 - `strcpy(dest, src)` → másolás
 - `strcat(dest, src)` → összefűzés
 
-👉 **Feladat közösen:** Írj programot, ami két C-stringet összefűz `strcat` segítségével!  
-👉 **Feladat önállóan:** Írj programot, ami két C-stringet összehasonlít `strcmp`-pal, és kiírja, melyik van előbb az ABC-ben!
+👉 **03 - Feladat közösen:** Írj programot, ami két C-stringet összefűz `strcat` segítségével!  
+👉 **04 - Feladat önállóan:** Írj programot, ami két C-stringet összehasonlít `strcmp`-pal, és kiírja, melyik van előbb az ABC-ben!
 
 ---
 
@@ -76,8 +76,8 @@ cout << "You typed: " << str << endl;
 delete[] str;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami dinamikusan lefoglal egy C-stringet, majd beolvas egy szót és kiírja!  
-👉 **Feladat önállóan:** Írj programot, ami dinamikusan lefoglal egy C-stringet, majd visszafelé kiírja a tartalmát!
+👉 **05 - Feladat közösen:** Írj programot, ami dinamikusan lefoglal egy C-stringet, majd beolvas egy szót és kiírja!  
+👉 **06 - Feladat önállóan:** Írj programot, ami dinamikusan lefoglal egy C-stringet, majd visszafelé kiírja a tartalmát!
 
 ---
 
@@ -102,8 +102,8 @@ cout << s3;
 if (s1 == "Hello") cout << "Equal!";
 ```
 
-👉 **Feladat közösen:** Írj programot, ami két `std::string`-et összefűz és kiírja!  
-👉 **Feladat önállóan:** Írj programot, ami beolvas egy `std::string`-et, és kiírja a hosszát!
+👉 **07 - Feladat közösen:** Írj programot, ami két `std::string`-et összefűz és kiírja!  
+👉 **08 - Feladat önállóan:** Írj programot, ami beolvas egy `std::string`-et, és kiírja a hosszát!
 
 ---
 
@@ -113,8 +113,8 @@ for (char c : s3)
     cout << c << " ";
 ```
 
-👉 **Feladat közösen:** Írj programot, ami végigiterál egy `std::string`-en, és kiírja a karaktereket szóközzel elválasztva!  
-👉 **Feladat önállóan:** Írj programot, ami megszámolja, hány magánhangzó van egy `std::string`-ben!
+👉 **09 - Feladat közösen:** Írj programot, ami végigiterál egy `std::string`-en, és kiírja a karaktereket szóközzel elválasztva!  
+👉 **10 - Feladat önállóan:** Írj programot, ami megszámolja, hány magánhangzó van egy `std::string`-ben!
 
 ---
 
@@ -126,8 +126,8 @@ const char* cstr = s.c_str();  // csak olvasható
 cout << cstr;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami konvertál egy `std::string`-et C-stringgé, majd kiírja!  
-👉 **Feladat önállóan:** Írj programot, ami `std::string`-et alakít C-stringgé, majd megszámolja a karakterek számát `strlen` segítségével!
+👉 **11 - Feladat közösen:** Írj programot, ami konvertál egy `std::string`-et C-stringgé, majd kiírja!  
+👉 **12 - Feladat önállóan:** Írj programot, ami `std::string`-et alakít C-stringgé, majd megszámolja a karakterek számát `strlen` segítségével!
 
 ---
 
@@ -142,8 +142,8 @@ for (int i = s.size()-1; i >= 0; i--)
     cout << s[i];
 ```
 
-👉 **Feladat közösen:** Írj programot, ami megfordít egy szót `std::string` használatával!  
-👉 **Feladat önállóan:** Írj programot, ami megfordít egy szót C-stringként!
+👉 **13 - Feladat közösen:** Írj programot, ami megfordít egy szót `std::string` használatával!  
+👉 **14 - Feladat önállóan:** Írj programot, ami megfordít egy szót C-stringként!
 
 ---
 
@@ -158,8 +158,8 @@ for (int i = 0; i < text.size(); i++)
 cout << "Words: " << count + 1;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami megszámolja, hány szó van egy `std::string` mondatban!  
-👉 **Feladat önállóan:** Írj programot, ami megszámolja, hány szó van egy mondatban C-string használatával!
+👉 **15 - Feladat közösen:** Írj programot, ami megszámolja, hány szó van egy `std::string` mondatban!  
+👉 **16 - Feladat önállóan:** Írj programot, ami megszámolja, hány szó van egy mondatban C-string használatával!
 
 ---
 

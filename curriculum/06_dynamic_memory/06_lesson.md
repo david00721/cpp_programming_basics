@@ -21,8 +21,8 @@ int arr[100];   // fix méret, nem változtatható futás közben
 - **Dinamikus memória:** futásidőben foglalunk helyet a heap-en.  
   Például: felhasználó által megadott méretű tömb.
 
-👉 **Feladat közösen:** Írj programot, ami bekér egy számot, és akkora tömböt próbál létrehozni statikusan!  
-👉 **Feladat önállóan:** Írj programot, ami bekér egy számot, és dinamikusan foglal akkora tömböt!
+👉 **01 - Feladat közösen:** Írj programot, ami bekér egy számot, és akkora tömböt próbál létrehozni statikusan!  
+👉 **02 - Feladat önállóan:** Írj programot, ami bekér egy számot, és dinamikusan foglal akkora tömböt!
 
 ---
 
@@ -46,8 +46,8 @@ for (int i = 0; i < n; i++) cout << arr[i] << " ";
 delete[] arr;   // tömb felszabadítása
 ```
 
-👉 **Feladat közösen:** Írj programot, ami dinamikusan foglal egy egész számot, értéket ad neki, majd felszabadítja!  
-👉 **Feladat önállóan:** Írj programot, ami dinamikusan foglal egy tömböt, majd feltölti 1-től n-ig a számokkal!
+👉 **03 - Feladat közösen:** Írj programot, ami dinamikusan foglal egy egész számot, értéket ad neki, majd felszabadítja!  
+👉 **04 - Feladat önállóan:** Írj programot, ami dinamikusan foglal egy tömböt, majd feltölti 1-től n-ig a számokkal!
 
 ---
 
@@ -60,8 +60,8 @@ cout << *x;  // 10
 delete x;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami dinamikusan foglal egy int változót, majd kiírja az értékét!  
-👉 **Feladat önállóan:** Írj programot, ami dinamikusan foglal egy double változót, értéket ad neki, majd kiírja!
+👉 **05 - Feladat közösen:** Írj programot, ami dinamikusan foglal egy int változót, majd kiírja az értékét!  
+👉 **06 - Feladat önállóan:** Írj programot, ami dinamikusan foglal egy double változót, értéket ad neki, majd kiírja!
 
 ---
 
@@ -92,8 +92,8 @@ for (int i = 0; i < rows; i++)
 delete[] matrix;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami dinamikusan létrehoz egy 2×2-es mátrixot, és kiírja!  
-👉 **Feladat önállóan:** Írj programot, ami dinamikusan létrehoz egy 3×3-as mátrixot, és kiszámolja a főátló összegét!
+👉 **07 - Feladat közösen:** Írj programot, ami dinamikusan létrehoz egy 2×2-es mátrixot, és kiírja!  
+👉 **08 - Feladat önállóan:** Írj programot, ami dinamikusan létrehoz egy 3×3-as mátrixot, és kiszámolja a főátló összegét!
 
 ---
 
@@ -113,8 +113,8 @@ delete p;
 p = nullptr;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami bemutatja a dangling pointer problémát!  
-👉 **Feladat önállóan:** Írj programot, ami helyesen kezel egy dangling pointert `nullptr` használatával!
+👉 **09 - Feladat közösen:** Írj programot, ami bemutatja a dangling pointer problémát!  
+👉 **10 - Feladat önállóan:** Írj programot, ami helyesen kezel egy dangling pointert `nullptr` használatával!
 
 ---
 
@@ -129,8 +129,8 @@ for (int i = 0; i < 1000; i++) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami memóriaszivárgást okoz!  
-👉 **Feladat önállóan:** Javítsd ki a programot `delete` használatával!
+👉 **11 - Feladat közösen:** Írj programot, ami memóriaszivárgást okoz!  
+👉 **12 - Feladat önállóan:** Javítsd ki a programot `delete` használatával!
 
 ---
 
@@ -172,8 +172,8 @@ cout << "Average: " << sum / n;
 delete[] arr;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami dinamikus tömböt hoz létre, majd kiszámolja az átlagot!  
-👉 **Feladat önállóan:** Írj programot, ami dinamikus tömböt hoz létre, majd megkeresi a legnagyobb elemet!
+👉 **13 - Feladat közösen:** Írj programot, ami dinamikus tömböt hoz létre, majd kiszámolja az átlagot!  
+👉 **14 - Feladat önállóan:** Írj programot, ami dinamikus tömböt hoz létre, majd megkeresi a legnagyobb elemet!
 
 ---
 
@@ -191,8 +191,8 @@ cout << copy;
 delete[] copy;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami dinamikusan lemásol egy stringet!  
-👉 **Feladat önállóan:** Írj programot, ami dinamikusan megfordít egy stringet!
+👉 **15 - Feladat közösen:** Írj programot, ami dinamikusan lemásol egy stringet!  
+👉 **16 - Feladat önállóan:** Írj programot, ami dinamikusan megfordít egy stringet!
 
 ---
 
