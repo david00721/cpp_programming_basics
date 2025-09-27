@@ -28,8 +28,8 @@ cout << ptr << endl;   // a cím
 cout << *ptr << endl;  // az x értéke (42)
 ```
 
-👉 **Feladat közösen:** Írj programot, ami kiírja egy változó címét és értékét!  
-👉 **Feladat önállóan:** Írj programot, ami pointer segítségével módosítja egy változó értékét!
+👉 **01 - Feladat közösen:** Írj programot, ami kiírja egy változó címét és értékét!  
+👉 **02 - Feladat önállóan:** Írj programot, ami pointer segítségével módosítja egy változó értékét!
 
 ---
 
@@ -43,8 +43,8 @@ int *p = &a;
 cout << a; // 20
 ```
 
-👉 **Feladat közösen:** Írj programot, ami pointeren keresztül ad új értéket egy változónak!  
-👉 **Feladat önállóan:** Írj programot, ami két változó értékét pointer segítségével cseréli meg!
+👉 **03 - Feladat közösen:** Írj programot, ami pointeren keresztül ad új értéket egy változónak!  
+👉 **04 - Feladat önállóan:** Írj programot, ami két változó értékét pointer segítségével cseréli meg!
 
 ---
 
@@ -69,8 +69,8 @@ for (int i = 0; i < 3; i++) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami pointer segítségével kiír egy tömb minden elemét!  
-👉 **Feladat önállóan:** Írj programot, ami pointer segítségével kiszámolja egy tömb elemeinek összegét!
+👉 **05 - Feladat közösen:** Írj programot, ami pointer segítségével kiír egy tömb minden elemét!  
+👉 **06 - Feladat önállóan:** Írj programot, ami pointer segítségével kiszámolja egy tömb elemeinek összegét!
 
 ---
 
@@ -87,8 +87,8 @@ p++;
 cout << *p << endl;     // 20
 ```
 
-👉 **Feladat közösen:** Írj programot, ami pointer aritmetikával bejárja egy tömb elemeit!  
-👉 **Feladat önállóan:** Írj programot, ami pointer aritmetikával megkeresi a legnagyobb elemet egy tömbben!
+👉 **07 - Feladat közösen:** Írj programot, ami pointer aritmetikával bejárja egy tömb elemeit!  
+👉 **08 - Feladat önállóan:** Írj programot, ami pointer aritmetikával megkeresi a legnagyobb elemet egy tömbben!
 
 ---
 
@@ -115,8 +115,8 @@ int main() {
 }
 ```
 
-👉 **Feladat közösen:** Írj függvényt, ami pointer paraméterrel módosít egy változót!  
-👉 **Feladat önállóan:** Írj függvényt, ami pointer paraméterrel megszoroz egy változót 2-vel!
+👉 **09 - Feladat közösen:** Írj függvényt, ami pointer paraméterrel módosít egy változót!  
+👉 **10 - Feladat önállóan:** Írj függvényt, ami pointer paraméterrel megszoroz egy változót 2-vel!
 
 ---
 
@@ -132,8 +132,8 @@ ref = 20;   // a is módosul
 cout << a;  // 20
 ```
 
-👉 **Feladat közösen:** Írj programot, ami referencia segítségével módosítja egy változó értékét!  
-👉 **Feladat önállóan:** Írj programot, ami referencia segítségével két szám összegét adja vissza egy függvényben!
+👉 **11 - Feladat közösen:** Írj programot, ami referencia segítségével módosítja egy változó értékét!  
+👉 **12 - Feladat önállóan:** Írj programot, ami referencia segítségével két szám összegét adja vissza egy függvényben!
 
 ---
 
@@ -155,8 +155,8 @@ int main() {
 }
 ```
 
-👉 **Feladat közösen:** Írj függvényt, ami referencia segítségével kicserél két számot!  
-👉 **Feladat önállóan:** Írj függvényt, ami referencia segítségével megszoroz két számot!
+👉 **13 - Feladat közösen:** Írj függvényt, ami referencia segítségével kicserél két számot!  
+👉 **14 - Feladat önállóan:** Írj függvényt, ami referencia segítségével megszoroz két számot!
 
 ---
 
@@ -177,8 +177,8 @@ void print(const int &x) {
 }
 ```
 
-👉 **Feladat közösen:** Írj függvényt, ami const referenciát kap, és kiírja a paramétert!  
-👉 **Feladat önállóan:** Írj programot, ami const pointert használ, és kiírja egy változó értékét!
+👉 **15 - Feladat közösen:** Írj függvényt, ami const referenciát kap, és kiírja a paramétert!  
+👉 **16 - Feladat önállóan:** Írj programot, ami const pointert használ, és kiírja egy változó értékét!
 
 ---
 
@@ -192,8 +192,8 @@ int *p = nullptr;  // modern C++
 
 - Régebben: `NULL`.
 
-👉 **Feladat közösen:** Írj programot, ami null pointert inicializál, majd ellenőrzi, hogy érvényes-e!  
-👉 **Feladat önállóan:** Írj programot, ami csak akkor dereferál egy pointert, ha az nem null!
+👉 **17 - Feladat közösen:** Írj programot, ami null pointert inicializál, majd ellenőrzi, hogy érvényes-e!  
+👉 **18 - Feladat önállóan:** Írj programot, ami csak akkor dereferál egy pointert, ha az nem null!
 
 ---
 
@@ -231,8 +231,8 @@ int length(const char *str) {
 }
 ```
 
-👉 **Feladat közösen:** Írj függvényt, ami pointer segítségével visszaadja egy tömb minimumát!  
-👉 **Feladat önállóan:** Írj függvényt, ami pointer segítségével megszámolja egy string hosszát!
+👉 **19 - Feladat közösen:** Írj függvényt, ami pointer segítségével visszaadja egy tömb minimumát!  
+👉 **20 - Feladat önállóan:** Írj függvényt, ami pointer segítségével megszámolja egy string hosszát!
 
 ---
 

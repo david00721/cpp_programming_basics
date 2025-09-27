@@ -23,8 +23,8 @@ A C++ fájlkezelés a `<fstream>` könyvtárban van:
 using namespace std;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami megnyit egy fájlt írásra, és kiír egy sort bele!  
-👉 **Feladat önállóan:** Írj programot, ami megnyit egy fájlt olvasásra, és kiírja az első szót!
+👉 **01 - Feladat közösen:** Írj programot, ami megnyit egy fájlt írásra, és kiír egy sort bele!  
+👉 **02 - Feladat önállóan:** Írj programot, ami megnyit egy fájlt olvasásra, és kiírja az első szót!
 
 ---
 
@@ -45,8 +45,8 @@ fout.close();
 - Ha a fájl nem létezik, létrejön.
 - Ha létezik, alapból felülírja.
 
-👉 **Feladat közösen:** Írj programot, ami fájlba írja a neved és életkorod!  
-👉 **Feladat önállóan:** Írj programot, ami fájlba írja az első 10 négyzetszámot!
+👉 **03 - Feladat közösen:** Írj programot, ami fájlba írja a neved és életkorod!  
+👉 **04 - Feladat önállóan:** Írj programot, ami fájlba írja az első 10 négyzetszámot!
 
 ---
 
@@ -69,8 +69,8 @@ fin.close();
 - `fin >> var` → szóalapú olvasás
 - `getline(fin, line)` → teljes sor beolvasása
 
-👉 **Feladat közösen:** Írj programot, ami soronként kiírja egy fájl tartalmát!  
-👉 **Feladat önállóan:** Írj programot, ami megszámolja, hány szó van egy fájlban!
+👉 **05 - Feladat közösen:** Írj programot, ami soronként kiírja egy fájl tartalmát!  
+👉 **06 - Feladat önállóan:** Írj programot, ami megszámolja, hány szó van egy fájlban!
 
 ---
 
@@ -84,8 +84,8 @@ fout.close();
 
 - `ios::app` → mindig a fájl végére ír.
 
-👉 **Feladat közösen:** Írj programot, ami hozzáfűz egy sort egy meglévő fájlhoz!  
-👉 **Feladat önállóan:** Írj programot, ami a felhasználótól bekért szövegeket addig írja a fájl végére, amíg az üres sort nem ad meg!
+👉 **07 - Feladat közösen:** Írj programot, ami hozzáfűz egy sort egy meglévő fájlhoz!  
+👉 **08 - Feladat önállóan:** Írj programot, ami a felhasználótól bekért szövegeket addig írja a fájl végére, amíg az üres sort nem ad meg!
 
 ---
 
@@ -117,8 +117,8 @@ int main() {
 
 - Bináris fájlban nyers memóriát írunk és olvasunk.
 
-👉 **Feladat közösen:** Írj programot, ami bináris fájlba ment egy diák nevét és életkorát, majd visszaolvassa!  
-👉 **Feladat önállóan:** Írj programot, ami bináris fájlba ment több diákot (tömbben), majd visszaolvassa!
+👉 **09 - Feladat közösen:** Írj programot, ami bináris fájlba ment egy diák nevét és életkorát, majd visszaolvassa!  
+👉 **10 - Feladat önállóan:** Írj programot, ami bináris fájlba ment több diákot (tömbben), majd visszaolvassa!
 
 ---
 
@@ -131,8 +131,8 @@ fin.clear();    // hibajelző törlése
 fin.seekg(0);   // vissza a fájl elejére
 ```
 
-👉 **Feladat közösen:** Írj programot, ami beolvassa egy fájl első sorát, majd seekg segítségével újraolvassa!  
-👉 **Feladat önállóan:** Írj programot, ami hibakezelést végez: ha nem létezik a fájl, jelezze a felhasználónak!
+👉 **11 - Feladat közösen:** Írj programot, ami beolvassa egy fájl első sorát, majd seekg segítségével újraolvassa!  
+👉 **12 - Feladat önállóan:** Írj programot, ami hibakezelést végez: ha nem létezik a fájl, jelezze a felhasználónak!
 
 ---
 
@@ -151,8 +151,8 @@ while (getline(fin, line))
 cout << "Lines: " << count;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami megszámolja egy fájl sorait!  
-👉 **Feladat önállóan:** Írj programot, ami megszámolja egy fájl karaktereit!
+👉 **13 - Feladat közösen:** Írj programot, ami megszámolja egy fájl sorait!  
+👉 **14 - Feladat önállóan:** Írj programot, ami megszámolja egy fájl karaktereit!
 
 ---
 
@@ -168,8 +168,8 @@ while (fin >> x)
 cout << "Sum = " << sum;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami kiírja egy fájlban lévő számok összegét!  
-👉 **Feladat önállóan:** Írj programot, ami kiszámolja egy fájlban lévő számok átlagát!
+👉 **15 - Feladat közösen:** Írj programot, ami kiírja egy fájlban lévő számok összegét!  
+👉 **16 - Feladat önállóan:** Írj programot, ami kiszámolja egy fájlban lévő számok átlagát!
 
 ---
 
