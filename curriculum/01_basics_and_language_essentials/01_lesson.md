@@ -34,8 +34,8 @@ int main()
 - `endl` – sortörés és buffer ürítés.
 - `return 0;` – a program sikeres futását jelzi az operációs rendszernek.
 
-👉 **Feladat közösen:** Írj programot, ami kiírja a neved és az életkorod!  
-👉 **Feladat önállóan:** Írj programot, ami két sort ír ki: az elsőben a kedvenc focicsapatod, a másodikban a kedvenc filmedet!
+👉 **01 - Feladat közösen:** Írj programot, ami kiírja a neved és az életkorod!  
+👉 **02 - Feladat önállóan:** Írj programot, ami két sort ír ki: az elsőben a kedvenc focicsapatod, a másodikban a kedvenc filmedet!
 
 ---
 
@@ -74,8 +74,8 @@ bool is_student = true;
 string name = "Alice";
 ```
 
-👉 **Feladat közösen:** Írj programot, amelyben tárolod a saját neved, életkorod és azt, hogy tanuló vagy-e, majd írd ki őket!  
-👉 **Feladat önállóan:** Írj programot, amelyben eltárolod egy könyv címét, szerzőjét és oldalszámát, majd jelenítsd meg!
+👉 **03 - Feladat közösen:** Írj programot, amelyben tárolod a saját neved, életkorod és azt, hogy tanuló vagy-e, majd írd ki őket!  
+👉 **04 - Feladat önállóan:** Írj programot, amelyben eltárolod egy könyv címét, szerzőjét és oldalszámát, majd jelenítsd meg!
 
 ---
 
@@ -102,8 +102,8 @@ Régebbi módszer (inkább C-ből maradt):
 #define MAX 100
 ```
 
-👉 **Feladat közösen:** Írj programot, ami eltárolja egy kör sugarát, majd kiírja a kör kerületét a konstans `PI` felhasználásával!  
-👉 **Feladat önállóan:** Írj programot, ami kiszámítja egy négyzet területét, és a számításnál konstansként használd az oldalhosszt!
+👉 **05 - Feladat közösen:** Írj programot, ami eltárolja egy kör sugarát, majd kiírja a kör kerületét a konstans `PI` felhasználásával!  
+👉 **06 - Feladat önállóan:** Írj programot, ami kiszámítja egy négyzet területét, és a számításnál konstansként használd az oldalhosszt!
 
 ---
 
@@ -116,8 +116,8 @@ auto x = 42;    // int
 auto y = 3.14;  // double
 ```
 
-👉 **Feladat közösen:** Írj programot, amelyben `auto`-val létrehozol három különböző típusú változót, majd kiírod őket!  
-👉 **Feladat önállóan:** Írj programot, amely két `auto` típusú változót összead, és kiírja az eredményt!
+👉 **07 - Feladat közösen:** Írj programot, amelyben `auto`-val létrehozol három különböző típusú változót, majd kiírod őket!  
+👉 **08 - Feladat önállóan:** Írj programot, amely két `auto` típusú változót összead, és kiírja az eredményt!
 
 ---
 
@@ -131,8 +131,8 @@ double result = (double)a / b; // 2.5
 double result2 = static_cast<double>(a) / b; // 2.5
 ```
 
-👉 **Feladat közösen:** Írj programot, ami bekér két egész számot, majd lebegőpontos osztással kiszámítja a hányadosukat!  
-👉 **Feladat önállóan:** Írj programot, ami Celsius fokot Fahrenheitre vált át, lebegőpontos számítással!
+👉 **09 - Feladat közösen:** Írj programot, ami bekér két egész számot, majd lebegőpontos osztással kiszámítja a hányadosukat!  
+👉 **10 - Feladat önállóan:** Írj programot, ami Celsius fokot Fahrenheitre vált át, lebegőpontos számítással!
 
 ---
 
@@ -153,8 +153,8 @@ cin >> number;
 cout << "You entered: " << number << endl;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami bekéri a neved és az életkorod, majd kiírja egy mondatban!  
-👉 **Feladat önállóan:** Írj programot, ami bekér egy számot, majd kiírja a négyzetét!
+👉 **11 - Feladat közösen:** Írj programot, ami bekéri a neved és az életkorod, majd kiírja egy mondatban!  
+👉 **12 - Feladat önállóan:** Írj programot, ami bekér egy számot, majd kiírja a négyzetét!
 
 ---
 
@@ -207,8 +207,8 @@ cout << ++i << endl; // 6
 cout << i++ << endl; // 6, de i most 7
 ```
 
-👉 **Feladat közösen:** Írj programot, ami bekér két számot, és kiírja a különbséget, szorzatot és hányadost!  
-👉 **Feladat önállóan:** Írj programot, ami bekér egy számot, és kiírja a szám maradékát, ha elosztod 3-mal!
+👉 **13 - Feladat közösen:** Írj programot, ami bekér két számot, és kiírja a különbséget, szorzatot és hányadost!  
+👉 **14 - Feladat önállóan:** Írj programot, ami bekér egy számot, és kiírja a szám maradékát, ha elosztod 3-mal!
 
 ---
 
@@ -231,8 +231,8 @@ program.exe
 **IDE-ben** (pl. Visual Studio, CLion, Code::Blocks):  
 Elég a „Run” gomb.
 
-👉 **Feladat közösen:** Fordítsd le és futtasd az egyik eddigi programodat parancssorból!  
-👉 **Feladat önállóan:** Fordíts le és futtass egy másik programot IDE-ben!
+👉 **15 - Feladat közösen:** Fordítsd le és futtasd az egyik eddigi programodat parancssorból!  
+👉 **16 - Feladat önállóan:** Fordíts le és futtass egy másik programot IDE-ben!
 
 ---
 

@@ -38,8 +38,8 @@ int main() {
 }
 ```
 
-👉 **Feladat közösen:** Írj függvényt, ami visszaadja egy szám köbét!  
-👉 **Feladat önállóan:** Írj függvényt, ami visszaadja egy szám kétszeresét!
+👉 **01 - Feladat közösen:** Írj függvényt, ami visszaadja egy szám köbét!  
+👉 **02 - Feladat önállóan:** Írj függvényt, ami visszaadja egy szám kétszeresét!
 
 ---
 
@@ -59,8 +59,8 @@ int add(int a, int b) { // definíció
 }
 ```
 
-👉 **Feladat közösen:** Írj függvényt, ami két szám különbségét adja vissza, és használd prototípussal!  
-👉 **Feladat önállóan:** Írj függvényt, ami két szám szorzatát adja vissza, prototípussal!
+👉 **03 - Feladat közösen:** Írj függvényt, ami két szám különbségét adja vissza, és használd prototípussal!  
+👉 **04 - Feladat önállóan:** Írj függvényt, ami két szám szorzatát adja vissza, prototípussal!
 
 ---
 
@@ -87,8 +87,8 @@ int add(int a, int b) { // definíció
     }
     ```
 
-👉 **Feladat közösen:** Írj egy függvényt, ami érték szerint próbál módosítani egy változót, majd ellenőrizd, hogy változott-e!  
-👉 **Feladat önállóan:** Írj egy függvényt, ami referencia szerint kap egy változót, és ténylegesen módosítja az értékét!
+👉 **05 - Feladat közösen:** Írj egy függvényt, ami érték szerint próbál módosítani egy változót, majd ellenőrizd, hogy változott-e!  
+👉 **06 - Feladat önállóan:** Írj egy függvényt, ami referencia szerint kap egy változót, és ténylegesen módosítja az értékét!
 
 ---
 
@@ -105,8 +105,8 @@ cout << power(5) << endl;    // 25
 cout << power(5, 3) << endl; // 125
 ```
 
-👉 **Feladat közösen:** Írj függvényt, ami egy számot hatványoz, és próbáld ki az alapértelmezett kitevőt!  
-👉 **Feladat önállóan:** Írj függvényt, ami egy számot megszoroz egy alapértelmezett értékkel (pl. 10-zel), ha nem adsz meg másikat!
+👉 **07 - Feladat közösen:** Írj függvényt, ami egy számot hatványoz, és próbáld ki az alapértelmezett kitevőt!  
+👉 **08 - Feladat önállóan:** Írj függvényt, ami egy számot megszoroz egy alapértelmezett értékkel (pl. 10-zel), ha nem adsz meg másikat!
 
 ---
 
@@ -125,8 +125,8 @@ cout << add(3, 4) << endl;     // int verzió
 cout << add(2.5, 1.5) << endl; // double verzió
 ```
 
-👉 **Feladat közösen:** Írj két `multiply` függvényt: egyet int, egyet double típusra!  
-👉 **Feladat önállóan:** Írj két `maximum` függvényt: egyet int, egyet double típusra!
+👉 **09 - Feladat közösen:** Írj két `multiply` függvényt: egyet int, egyet double típusra!  
+👉 **10 - Feladat önállóan:** Írj két `maximum` függvényt: egyet int, egyet double típusra!
 
 ---
 
@@ -149,8 +149,8 @@ int fibonacci(int n) {
 }
 ```
 
-👉 **Feladat közösen:** Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
-👉 **Feladat önállóan:** Írj rekurzív függvényt, ami visszaadja a Fibonacci-sorozat n-edik elemét!
+👉 **11 - Feladat közösen:** Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
+👉 **12 - Feladat önállóan:** Írj rekurzív függvényt, ami visszaadja a Fibonacci-sorozat n-edik elemét!
 
 ---
 
@@ -179,8 +179,8 @@ int digit_sum(int n) {
 }
 ```
 
-👉 **Feladat közösen:** Írj függvényt, ami visszaadja két szám legnagyobb közös osztóját!  
-👉 **Feladat önállóan:** Írj rekurzív függvényt, ami kiszámolja egy szám számjegyeinek szorzatát!
+👉 **13 - Feladat közösen:** Írj függvényt, ami visszaadja két szám legnagyobb közös osztóját!  
+👉 **14 - Feladat önállóan:** Írj rekurzív függvényt, ami kiszámolja egy szám számjegyeinek szorzatát!
 
 ---
 

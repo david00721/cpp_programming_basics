@@ -19,8 +19,8 @@ if (feltétel) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami bekér egy számot, és kiírja, hogy nagyobb-e 10-nél!  
-👉 **Feladat önállóan:** Írj programot, ami bekér egy számot, és kiírja, hogy kisebb-e 100-nál!
+👉 **01 - Feladat közösen:** Írj programot, ami bekér egy számot, és kiírja, hogy nagyobb-e 10-nél!  
+👉 **02 - Feladat önállóan:** Írj programot, ami bekér egy számot, és kiírja, hogy kisebb-e 100-nál!
 
 ---
 
@@ -34,8 +34,8 @@ if (x > 0) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami bekér egy számot, és kiírja, hogy pozitív vagy nem!  
-👉 **Feladat önállóan:** Írj programot, ami bekér egy számot, és kiírja, hogy páros vagy páratlan!
+👉 **03 - Feladat közösen:** Írj programot, ami bekér egy számot, és kiírja, hogy pozitív vagy nem!  
+👉 **04 - Feladat önállóan:** Írj programot, ami bekér egy számot, és kiírja, hogy páros vagy páratlan!
 
 ---
 
@@ -51,8 +51,8 @@ if (x > 0) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami bekér egy számot, és kiírja, hogy pozitív, negatív vagy nulla!  
-👉 **Feladat önállóan:** Írj programot, ami bekér egy számot, és eldönti róla, hogy osztható-e 3-mal, 5-tel vagy mindkettővel!
+👉 **05 - Feladat közösen:** Írj programot, ami bekér egy számot, és kiírja, hogy pozitív, negatív vagy nulla!  
+👉 **06 - Feladat önállóan:** Írj programot, ami bekér egy számot, és eldönti róla, hogy osztható-e 3-mal, 5-tel vagy mindkettővel!
 
 ---
 
@@ -69,8 +69,8 @@ switch (grade) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami bekér egy jegyet (A–F), és szöveges értékelést ad rá!  
-👉 **Feladat önállóan:** Írj programot, ami bekér egy számot 1–7 között, és kiírja a hét megfelelő napját!
+👉 **07 - Feladat közösen:** Írj programot, ami bekér egy jegyet (A–F), és szöveges értékelést ad rá!  
+👉 **08 - Feladat önállóan:** Írj programot, ami bekér egy számot 1–7 között, és kiírja a hét megfelelő napját!
 
 ---
 
@@ -84,8 +84,8 @@ for (int i = 0; i < 5; i++) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami kiírja az 1–10 közötti számokat!  
-👉 **Feladat önállóan:** Írj programot, ami kiírja az 1–20 közötti páros számokat!
+👉 **09 - Feladat közösen:** Írj programot, ami kiírja az 1–10 közötti számokat!  
+👉 **10 - Feladat önállóan:** Írj programot, ami kiírja az 1–20 közötti páros számokat!
 
 ---
 
@@ -99,8 +99,8 @@ for (int i = 0; i < n; i++) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami kiírja egy tömb minden elemét!  
-👉 **Feladat önállóan:** Írj programot, ami összeadja egy tömb elemeit!
+👉 **11 - Feladat közösen:** Írj programot, ami kiírja egy tömb minden elemét!  
+👉 **12 - Feladat önállóan:** Írj programot, ami összeadja egy tömb elemeit!
 
 ---
 
@@ -113,8 +113,8 @@ for (int x : arr) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami kiírja a tömb elemeit range-based for ciklussal!  
-👉 **Feladat önállóan:** Írj programot, ami megszámolja, hány páros szám van a tömbben!
+👉 **13 - Feladat közösen:** Írj programot, ami kiírja a tömb elemeit range-based for ciklussal!  
+👉 **14 - Feladat önállóan:** Írj programot, ami megszámolja, hány páros szám van a tömbben!
 
 ---
 
@@ -128,8 +128,8 @@ while (i < 5) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami while ciklussal kiírja az 1–10 közötti számokat!  
-👉 **Feladat önállóan:** Írj programot, ami while ciklussal összeadja az 1–n közötti számokat!
+👉 **15 - Feladat közösen:** Írj programot, ami while ciklussal kiírja az 1–10 közötti számokat!  
+👉 **16 - Feladat önállóan:** Írj programot, ami while ciklussal összeadja az 1–n közötti számokat!
 
 ---
 
@@ -143,8 +143,8 @@ do {
 } while (i < 5);
 ```
 
-👉 **Feladat közösen:** Írj programot, ami do-while ciklussal legalább egyszer kiír egy üzenetet!  
-👉 **Feladat önállóan:** Írj programot, ami do-while ciklussal addig kér be számot, amíg a felhasználó nullát nem ad meg!
+👉 **17 - Feladat közösen:** Írj programot, ami do-while ciklussal legalább egyszer kiír egy üzenetet!  
+👉 **18 - Feladat önállóan:** Írj programot, ami do-while ciklussal addig kér be számot, amíg a felhasználó nullát nem ad meg!
 
 ---
 
@@ -157,8 +157,8 @@ for (int i = 1; i <= 5; i++) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami 1–10 között kiír minden számot, kivéve az 5-öst!  
-👉 **Feladat önállóan:** Írj programot, ami 1–20 között kiírja a számokat, de ha 13-hoz ér, kilép a ciklusból!
+👉 **19 - Feladat közösen:** Írj programot, ami 1–10 között kiír minden számot, kivéve az 5-öst!  
+👉 **20 - Feladat önállóan:** Írj programot, ami 1–20 között kiírja a számokat, de ha 13-hoz ér, kilép a ciklusból!
 
 ---
 
@@ -173,8 +173,8 @@ for (int i = 1; i <= 10; i++) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami beágyazott ciklussal kirajzol egy 5×5-ös négyzetet `*` karakterekből!  
-👉 **Feladat önállóan:** Írj programot, ami beágyazott ciklussal kirajzol egy derékszögű háromszöget `*` karakterekből!
+👉 **21 - Feladat közösen:** Írj programot, ami beágyazott ciklussal kirajzol egy 5×5-ös négyzetet `*` karakterekből!  
+👉 **22 - Feladat önállóan:** Írj programot, ami beágyazott ciklussal kirajzol egy derékszögű háromszöget `*` karakterekből!
 
 ---
 
@@ -251,8 +251,8 @@ do {
 } while (choice != 0);
 ```
 
-👉 **Feladat közösen:** Egészítsd ki a menüt egy új opcióval, ami kiírja a nevedet!  
-👉 **Feladat önállóan:** Egészítsd ki a menüt egy új opcióval, ami kiszámolja két szám összegét!
+👉 **23 - Feladat közösen:** Egészítsd ki a menüt egy új opcióval, ami kiírja a nevedet!  
+👉 **24 - Feladat önállóan:** Egészítsd ki a menüt egy új opcióval, ami kiszámolja két szám összegét!
 
 ---
 

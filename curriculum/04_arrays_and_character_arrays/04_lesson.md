@@ -31,8 +31,8 @@ values[2] = 99;    // harmadik elem átírása
 
 > ⚠️ Ha túlindexelsz (pl. `values[5]`), az hibás működéshez vezethet.
 
-👉 **Feladat közösen:** Hozz létre egy 5 elemű tömböt, töltsd fel számokkal, majd írd ki az első és utolsó elemét!  
-👉 **Feladat önállóan:** Hozz létre egy 10 elemű tömböt, és írd ki a középső elemet!
+👉 **01 - Feladat közösen:** Hozz létre egy 5 elemű tömböt, töltsd fel számokkal, majd írd ki az első és utolsó elemét!  
+👉 **02 - Feladat önállóan:** Hozz létre egy 10 elemű tömböt, és írd ki a középső elemet!
 
 ---
 
@@ -54,8 +54,8 @@ for (int x : arr) {
 cout << endl;
 ```
 
-👉 **Feladat közösen:** Írj programot, ami kiírja egy tömb minden elemét for ciklussal!  
-👉 **Feladat önállóan:** Írj programot, ami kiszámolja egy tömb elemeinek összegét!
+👉 **03 - Feladat közösen:** Írj programot, ami kiírja egy tömb minden elemét for ciklussal!  
+👉 **04 - Feladat önállóan:** Írj programot, ami kiszámolja egy tömb elemeinek összegét!
 
 ---
 
@@ -76,8 +76,8 @@ int main() {
 }
 ```
 
-👉 **Feladat közösen:** Írj függvényt, ami kiírja egy tömb elemeit!  
-👉 **Feladat önállóan:** Írj függvényt, ami megszámolja, hány páros szám van egy tömbben!
+👉 **05 - Feladat közösen:** Írj függvényt, ami kiírja egy tömb elemeit!  
+👉 **06 - Feladat önállóan:** Írj függvényt, ami megszámolja, hány páros szám van egy tömbben!
 
 ---
 
@@ -112,8 +112,8 @@ for (int i = 0; i < n-1; i++) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami megkeresi egy tömb legnagyobb elemét!  
-👉 **Feladat önállóan:** Írj programot, ami rendezi egy tömb elemeit növekvő sorrendbe!
+👉 **07 - Feladat közösen:** Írj programot, ami megkeresi egy tömb legnagyobb elemét!  
+👉 **08 - Feladat önállóan:** Írj programot, ami rendezi egy tömb elemeit növekvő sorrendbe!
 
 ---
 
@@ -135,8 +135,8 @@ for (int i = 0; i < 2; i++) {
 }
 ```
 
-👉 **Feladat közösen:** Írj programot, ami kiírja egy 2×3-as mátrix minden elemét!  
-👉 **Feladat önállóan:** Írj programot, ami kiszámolja egy 3×3-as mátrix főátlójának összegét!
+👉 **09 - Feladat közösen:** Írj programot, ami kiírja egy 2×3-as mátrix minden elemét!  
+👉 **10 - Feladat önállóan:** Írj programot, ami kiszámolja egy 3×3-as mátrix főátlójának összegét!
 
 ---
 
@@ -161,8 +161,8 @@ Ha teljes sort akarunk:
 cin.getline(name, 50);
 ```
 
-👉 **Feladat közösen:** Írj programot, ami beolvas egy szót, és kiírja azt!  
-👉 **Feladat önállóan:** Írj programot, ami beolvas egy mondatot `getline`-nel, majd kiírja a hosszát!
+👉 **11 - Feladat közösen:** Írj programot, ami beolvas egy szót, és kiírja azt!  
+👉 **12 - Feladat önállóan:** Írj programot, ami beolvas egy mondatot `getline`-nel, majd kiírja a hosszát!
 
 ---
 
@@ -180,8 +180,8 @@ strcat(s1, " World");      // összefűzés: "Hello World"
 cout << strcmp("a", "b");  // összehasonlítás: -1
 ```
 
-👉 **Feladat közösen:** Írj programot, ami két szót összefűz `strcat` segítségével!  
-👉 **Feladat önállóan:** Írj programot, ami két szót összehasonlít `strcmp`-pal, és kiírja, melyik van előbb az ABC-ben!
+👉 **13 - Feladat közösen:** Írj programot, ami két szót összefűz `strcat` segítségével!  
+👉 **14 - Feladat önállóan:** Írj programot, ami két szót összehasonlít `strcmp`-pal, és kiírja, melyik van előbb az ABC-ben!
 
 ---
 
@@ -227,9 +227,6 @@ for (int i = 0; i < len/2; i++) {
 if (isPal) cout << "Palindrome";
 else cout << "Not palindrome";
 ```
-
-👉 **Feladat közösen:** Írj programot, ami kiszámolja egy tömb átlagát!  
-👉 **Feladat önállóan:** Írj programot, ami ellenőrzi, hogy egy adott szó palindrom-e!
 
 ---
 
