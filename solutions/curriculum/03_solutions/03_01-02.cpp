@@ -8,10 +8,12 @@ int cube(int x)
     return x * x * x;
 }
 
-// 02 - Írj függvényt, ami visszaadja egy szám kétszeresét!
-int doubleValue(int x)
+// 02 - Írj függvényt, ami egy szám abszolút értékét adja vissza!
+int absoluteValue(int x)
 {
-    return 2 * x;
+    if (x < 0)
+        return -x;
+    return x;
 }
 
 int main()
@@ -22,8 +24,10 @@ int main()
     cin >> num;
     cout << "A szam kobja: " << cube(num) << endl;
 
-    // 02 - Írj függvényt, ami visszaadja egy szám kétszeresét!
-    cout << "A szam ketszerese: " << doubleValue(num) << endl;
+    // 02 - Írj függvényt, ami egy szám abszolút értékét adja vissza!
+    cout << "Adj meg egy szamot: ";
+    cin >> num;
+    cout << "A szam abszolut erteke: " << absoluteValue(num) << endl;
 
     return 0;
 }
