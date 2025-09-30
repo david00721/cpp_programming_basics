@@ -25,7 +25,7 @@ bool isPrime(int n)
 {
     if (n <= 1)
         return false;
-    for (int i = 2; i * i <= n; i++)
+    for (int i = 2; i * i <= n; i++)  // i < sqrt(n)
     {
         if (n % i == 0)
             return false;
@@ -33,31 +33,39 @@ bool isPrime(int n)
     return true;
 }
 
-// Gyak 04 - Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
-int factorial(int n)
+// Gyak 04 - Írj rekurzív függvényt, ami eldönti, hogy egy szám palindróm-e!
+bool isPalindrome(int n, int rev = 0)
 {
     if (n == 0)
-        return 1;
-    else
-        return n * factorial(n - 1);
+        return rev;
+    return isPalindrome(n / 10, rev * 10 + n % 10);
 }
 
-// Gyak 05 - Írj függvényt, ami két szám LNKO-ját számolja ki (rekurzívan)!
-int gcd(int a, int b)
+// Gyak 05 - Írj függvényt, ami visszaadja az n-edik háromszögszámot (1+2+…+n)!
+int triangularNumber(int n)
 {
-    if (b == 0)
-        return a;
-    else
-        return gcd(b, a % b);
+    return n * (n + 1) / 2;
+
+    // Másképp
+    // if (n == 1)
+    //     return 1;
+    // return n + triangularNumber(n - 1);
+
+    // Vagy ciklussal
+    // int sum = 0;
+    // for (int i = 1; i <= n; i++)
+    //     sum += i;
+    // return sum;
 }
+
 
 int main()
 {
     cout << "Square of 5: " << square(5) << endl;
     cout << "Divisors of 12: " << countDivisors(12) << endl;
     cout << "Is 7 prime? " << (isPrime(7) ? "Yes" : "No") << endl;
-    cout << "Factorial of 5: " << factorial(5) << endl;
-    cout << "GCD of 12 and 15: " << gcd(12, 15) << endl;
+    cout << "Is 121 palindrome? " << (isPalindrome(121) ? "Yes" : "No") << endl;
+    cout << "5th triangular number: " << triangularNumber(5) << endl;
 
     return 0;
 }
