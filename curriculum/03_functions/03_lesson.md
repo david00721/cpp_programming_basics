@@ -39,7 +39,7 @@ int main() {
 ```
 
 👉 **01 - Feladat közösen:** Írj függvényt, ami visszaadja egy szám köbét!  
-👉 **02 - Feladat önállóan:** Írj függvényt, ami visszaadja egy szám kétszeresét!
+👉 **02 - Feladat önállóan:** Írj függvényt, ami egy szám abszolút értékét adja vissza!
 
 ---
 
@@ -149,8 +149,8 @@ int fibonacci(int n) {
 }
 ```
 
-👉 **11 - Feladat közösen:** Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
-👉 **12 - Feladat önállóan:** Írj rekurzív függvényt, ami visszaadja a Fibonacci-sorozat n-edik elemét!
+👉 **11 - Feladat közösen:** Írj rekurzív függvényt, ami visszaadja egy szám számjegyeinek fordítottját! (pl. 123 → 321)
+👉 **12 - Feladat önállóan:** Írj rekurzív függvényt, ami visszaadja a^b értékét (ahol a alap, b kitevő, egész szám, b >= 0)!
 
 ---
 
@@ -163,19 +163,19 @@ int maximum(int a, int b) {
 }
 ```
 
-**Példa 2 – LNKO (legnagyobb közös osztó) – rekurzívan (Euklideszi algoritmus)**
+**Példa 2 – Számjegyek száma rekurzívan**
 ```cpp
-int gcd(int a, int b) {
-    if (b == 0) return a;
-    return gcd(b, a % b);
+int digit_count(int n) {
+    if (n < 10) return 1;
+    return 1 + digit_count(n / 10);
 }
 ```
 
-**Példa 3 – Számjegyek összege (rekurzió)**
+**Példa 3 – Számjegyek maximuma rekurzívan**
 ```cpp
-int digit_sum(int n) {
-    if (n == 0) return 0;
-    return (n % 10) + digit_sum(n / 10);
+int digit_max(int n) {
+    if (n < 10) return n;
+    return max(n % 10, digit_max(n / 10));
 }
 ```
 
@@ -189,8 +189,8 @@ int digit_sum(int n) {
 - Írj függvényt, ami visszaadja egy szám négyzetét!
 - Írj függvényt, ami visszaadja egy szám összes osztójának számát!
 - Írj függvényt, ami eldönti, hogy egy szám prímszám-e!
-- Írj rekurzív függvényt, ami visszaadja egy szám faktoriálisát!
-- Írj függvényt, ami két szám LNKO-ját számolja ki (rekurzívan)!
+- Írj rekurzív függvényt, ami eldönti, hogy egy szám palindróm-e!
+- Írj függvényt, ami visszaadja az n-edik háromszögszámot (1+2+…+n)!
 
 ---
 
