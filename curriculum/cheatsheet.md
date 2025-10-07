@@ -185,9 +185,7 @@ void writeFile(const std::string& filename) {
 }
 ```
 
-## Véletlen Szám Generálása
-
-### Egész véletlen szám generálása adott tartományban
+## Egész véletlen szám generálása adott tartományban
 
 A rand() függvény használata [min, max] tartományban.
 
@@ -219,6 +217,20 @@ void findMinMax(const int arr[], int n, int& minVal, int& maxVal) {
 }
 ```
 
+## Számjegyek megszámlálása
+
+Egy szám számjegyeinek megszámolása
+```cpp
+int numberOfDigits(int x){
+    if (x == 0) return 1;
+    int digits = 0;
+    while (x > 0){
+        x /= 10;
+        digits++;
+    }
+    return digits;
+}
+```
 
 ## String műveletek
 

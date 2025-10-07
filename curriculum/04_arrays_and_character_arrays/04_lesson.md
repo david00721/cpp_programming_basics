@@ -32,7 +32,7 @@ values[2] = 99;    // harmadik elem átírása
 > ⚠️ Ha túlindexelsz (pl. `values[5]`), az hibás működéshez vezethet.
 
 👉 **01 - Feladat közösen:** Hozz létre egy 5 elemű tömböt, töltsd fel számokkal, majd írd ki az első és utolsó elemét!  
-👉 **02 - Feladat önállóan:** Hozz létre egy 10 elemű tömböt, és írd ki a középső elemet!
+👉 **02 - Feladat önállóan:** Hozz létre egy 10 elemű tömböt, és számold ki az elemek átlagát!
 
 ---
 
@@ -40,6 +40,9 @@ values[2] = 99;    // harmadik elem átírása
 
 ```cpp
 int arr[5] = {3, 7, 2, 8, 5};
+
+const int n = sizeof(arr) / sizeof(arr[0]); // tömb méretének meghatározása, pl ha int 4 byte -> sizeof(arr) = 4 * 5, sizeof(arr[0]) -> 4
+// ekvivalens: const int n = 5;
 
 // Hagyományos for ciklus
 for (int i = 0; i < 5; i++) {
@@ -55,13 +58,13 @@ cout << endl;
 ```
 
 👉 **03 - Feladat közösen:** Írj programot, ami kiírja egy tömb minden elemét for ciklussal!  
-👉 **04 - Feladat önállóan:** Írj programot, ami kiszámolja egy tömb elemeinek összegét!
+👉 **04 - Feladat önállóan:** Írj programot, ami megszámolja, hány páratlan szám van a tömbben!
 
 ---
 
 ## 3. Tömb átadása függvénynek
 
-Egy tömböt referenciaként kap meg a függvény, nem készül másolat.
+Egy tömböt nem másolatként, hanem hivatkozásként (referenciaként) kap meg a függvény — vagyis a függvény ugyanazt a memóriaterületet használja, mint a hívó kód. Ha tehát a függvény módosítja a tömb elemeit, azok a függvényen kívül is megváltoznak.
 
 ```cpp
 void printArray(int arr[], int size) {
@@ -72,14 +75,63 @@ void printArray(int arr[], int size) {
 
 int main() {
     int nums[3] = {1, 2, 3};
-    printArray(nums, 3);
+    const int n = sizeof(nums) / sizeof(nums[0]);
+    printArray(nums, n);
 }
 ```
 
 👉 **05 - Feladat közösen:** Írj függvényt, ami kiírja egy tömb elemeit!  
-👉 **06 - Feladat önállóan:** Írj függvényt, ami megszámolja, hány páros szám van egy tömbben!
+👉 **06 - Feladat önállóan:** Írj függvényt, ami visszaadja a tömb elemeinek átlagát (double típussal)!
 
 ---
+
+### Fontos megjegyzés
+
+Amikor egy tömböt adunk át függvénynek, a C++ nem másolja le a tömböt, hanem csak átadja az első elem címét a függvénynek.
+
+Ezért:
+- A függvény ugyanazt az adatot látja, mint a hívó kód.
+- A függvény nem tudja automatikusan, hány elem van a tömbben – ezért kell a size paraméter is.
+- Ha a függvény módosít egy elemet, az a hívóban is megváltozik.
+
+```cpp
+void changeFirst(int arr[], const int size) {
+    arr[0] = 999; // az első elem átírása
+}
+
+int main() {
+    int numbers[5] = {23, 38, 56, 69, 74};
+    const int n = sizeof(numbers) / sizeof(numbers[0]);
+    changeFirst(numbers, n);
+    cout << numbers[0]; // → 999
+}
+```
+![1D tömb a memóriában](1DDynamicArray.png)
+
+### Mikor kell megadni a méretet paraméterként?
+
+Egydimenziós tömbnél (int arr[])
+- A függvény nem tudja, hány elem van a tömbben, ezért a méretet mindig külön paraméterként kell átadni:
+
+```cpp
+void printArray(int arr[], int size);
+```
+
+Kétdimenziós tömbnél (int arr[][oszlopok])
+- A függvénynek legalább az oszlopok számát ismernie kell, hogy tudja, hol kezdődik a következő sor.
+
+```cpp
+void printMatrix(int arr[][3], int sorok) {
+    for (int i = 0; i < sorok; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+```
+
+Itt a 3 az oszlopok száma, amit fordítási időben kell ismerni.
 
 ## 4. Egydimenziós tömb műveletek
 
@@ -113,7 +165,7 @@ for (int i = 0; i < n-1; i++) {
 ```
 
 👉 **07 - Feladat közösen:** Írj programot, ami megkeresi egy tömb legnagyobb elemét!  
-👉 **08 - Feladat önállóan:** Írj programot, ami rendezi egy tömb elemeit növekvő sorrendbe!
+👉 **08 - Feladat önállóan:** Írj programot, ami megszámolja, hányszor fordul elő egy adott szám a tömbben!
 
 ---
 
@@ -136,7 +188,7 @@ for (int i = 0; i < 2; i++) {
 ```
 
 👉 **09 - Feladat közösen:** Írj programot, ami kiírja egy 2×3-as mátrix minden elemét!  
-👉 **10 - Feladat önállóan:** Írj programot, ami kiszámolja egy 3×3-as mátrix főátlójának összegét!
+👉 **10 - Feladat önállóan:** Írj programot, ami kiszámolja egy 3×3-as mátrix mellékátlójának (jobbról-balra) összegét!
 
 ---
 
@@ -161,8 +213,8 @@ Ha teljes sort akarunk:
 cin.getline(name, 50);
 ```
 
-👉 **11 - Feladat közösen:** Írj programot, ami beolvas egy szót, és kiírja azt!  
-👉 **12 - Feladat önállóan:** Írj programot, ami beolvas egy mondatot `getline`-nel, majd kiírja a hosszát!
+👉 **11 - Feladat közösen:** Írj programot, ami beolvas egy szót, és kiírja azt visszafelé!
+👉 **12 - Feladat önállóan:** Írj programot, ami beolvas egy mondatot getline-nel, majd megszámolja, hány szó van benne!
 
 ---
 
@@ -181,7 +233,7 @@ cout << strcmp("a", "b");  // összehasonlítás: -1
 ```
 
 👉 **13 - Feladat közösen:** Írj programot, ami két szót összefűz `strcat` segítségével!  
-👉 **14 - Feladat önállóan:** Írj programot, ami két szót összehasonlít `strcmp`-pal, és kiírja, melyik van előbb az ABC-ben!
+👉 **14 - Feladat önállóan:** Írj programot, ami megvizsgálja, hogy két szó egyezik-e (strcmp), és ha nem, kiírja, melyik hosszabb!
 
 ---
 
@@ -190,11 +242,14 @@ cout << strcmp("a", "b");  // összehasonlítás: -1
 **Példa 1 – Tömb átlag**
 ```cpp
 int arr[5] = {4, 7, 2, 9, 5};
+const int n = sizeof(arr) / sizeof(arr[0]);
 int sum = 0;
 
-for (int i = 0; i < 5; i++) sum += arr[i];
+for (int i = 0; i < n; i++) {
+    sum += arr[i];
+}
 
-cout << "Average = " << (double)sum / 5;
+cout << "Average = " << static_cast<double>(sum) / 5;
 ```
 
 **Példa 2 – Mátrix transzponálása**
@@ -233,10 +288,11 @@ else cout << "Not palindrome";
 ## 9. Gyakorló feladatok
 
 - Írj programot, ami beolvas 10 számot, és kiírja a legnagyobbat és legkisebbet!
-- Írj programot, ami rendezi egy tömb elemeit növekvő sorrendbe!
-- Írj programot, ami kiszámolja egy mátrix főátlójának összegét!
+- Írj programot, ami visszaadja, hány elem nagyobb az átlagosnál!
+- Írj programot, ami kiszámolja egy mátrix főátlójának és mellékátlójának különbségét!
 - Írj programot, ami eldönti, hogy egy szó palindrom-e (pl. “radar”).
 - Írj programot, ami két szöveget összefűz egy harmadikba C-string használatával!
+- Extra kihívás: Írj programot, ami megszámolja, hány magánhangzó van egy beolvasott mondatban!
 
 ---
 
