@@ -10,19 +10,17 @@ void kiir_tomb(const int tomb[], size_t meret)
     }
 }
 
-// 06 - Írj függvényt, ami megszámolja, hány páros szám van egy tömbben!
-int paros_szamok_szama(const int tomb[], size_t meret)
+// 06 - Írj függvényt, ami visszaadja a tömb elemeinek átlagát (double típussal)!
+double atlag(const int tomb[], size_t meret)
 {
-    int db = 0;
+    double sum = 0.0;
     for (size_t i = 0; i < meret; ++i) {
-        if (tomb[i] % 2 == 0) {
-            ++db;
-        }
+        sum += tomb[i];
     }
-    return db;
+    return sum / meret;
 }
 
-// 07 - Írj egy függvényt, ami megkeresi egy tömb legnagyobb elemét!  
+// 07 - Írj programot, ami megkeresi egy tömb legnagyobb elemét!
 int legnagyobb_elem(const int tomb[], size_t meret)
 {
     int max = tomb[0];
@@ -34,24 +32,16 @@ int legnagyobb_elem(const int tomb[], size_t meret)
     return max;
 }
 
-// Swap függvény a két érték helycseréjéhez
-void swap(int& a, int& b)
+// 08 - Írj programot, ami megszámolja, hányszor fordul elő egy adott szám a tömbben!
+int fordul_e(const int tomb[], size_t meret, int szam)
 {
-    int temp = a;
-    a = b;
-    b = temp;
-}
-
-// 08 - Írj egy függvényt, ami rendezi egy tömb elemeit növekvő sorrendbe!
-void rendezes_novekvo(int tomb[], size_t meret)
-{
-    for (size_t i = 0; i < meret - 1; ++i) {
-        for (size_t j = i + 1; j < meret; ++j) {
-            if (tomb[i] > tomb[j]) {
-                swap(tomb[i], tomb[j]);
-            }
+    int count = 0;
+    for (size_t i = 0; i < meret; ++i) {
+        if (tomb[i] == szam) {
+            count++;
         }
     }
+    return count;
 }
 
 // 09 - Írj függvényt, ami kiírja egy 2×3-as mátrix minden elemét!  
@@ -64,33 +54,43 @@ void kiir_matrix(const int matrix[2][3])
     }
 }
 
-// 10 - Írj függvényt, ami kiszámolja egy 3×3-as mátrix főátlójának összegét!
-int foatlo_osszeg(const int matrix[3][3])
+// 10 - Írj programot, ami kiszámolja egy 3×3-as mátrix mellékátlójának (jobbról-balra) összegét!
+int mellekatlo_osszeg(const int matrix[3][3])
 {
-    int osszeg = 0;
+    int összeg = 0;
     for (size_t i = 0; i < 3; ++i) {
-        osszeg += matrix[i][i];
+        összeg += matrix[i][2 - i];
     }
-    return osszeg;
+    return összeg;
 }
 
 int main()
 {
+    // 05 - Írj függvényt, ami kiírja egy tömb elemeit!
     int tomb[5] = {10, 20, 30, 40, 50};
     kiir_tomb(tomb, sizeof(tomb) / sizeof(tomb[0]));
 
-    cout << "A paros szamok szama: " << paros_szamok_szama(tomb, sizeof(tomb) / sizeof(tomb[0])) << endl;
+    // 06 - Írj függvényt, ami visszaadja a tömb elemeinek átlagát (double típussal)!
+    double atlag_ertek = atlag(tomb, sizeof(tomb) / sizeof(tomb[0]));
+    cout << "A tomb elemeinek atlaga: " << atlag_ertek << endl;
 
-    int tomb2[6] = {3, 1, 4, 1, 5, 9};
-    cout << "A tomb legnagyobb eleme: " << legnagyobb_elem(tomb2, sizeof(tomb2) / sizeof(tomb2[0])) << endl;
-    rendezes_novekvo(tomb2, sizeof(tomb2) / sizeof(tomb2[0]));
-    cout << "A tomb rendezve: " << endl;
-    kiir_tomb(tomb2, sizeof(tomb2) / sizeof(tomb2[0]));
+    // 07 - Írj programot, ami megkeresi egy tömb legnagyobb elemét!
+    int max_elem = legnagyobb_elem(tomb, sizeof(tomb) / sizeof(tomb[0]));
+    cout << "A tomb legnagyobb eleme: " << max_elem << endl;
 
-    int matrix2x3[2][3] = {{1, 2, 3}, {4, 5, 6}};
-    kiir_matrix(matrix2x3);
+    // 08 - Írj programot, ami megszámolja, hányszor fordul elő egy adott szám a tömbben!
+    int szam = 20;
+    int elofordulasok = fordul_e(tomb, sizeof(tomb) / sizeof(tomb[0]), szam);
+    cout << "A " << szam << " szam " << elofordulasok << " alkalommal fordul elo a tombben." << endl;
+
+    // 09 - Írj függvényt, ami kiírja egy 2×3-as mátrix minden elemét!  
+    int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    kiir_matrix(matrix);
+
+    // 10 - Írj programot, ami kiszámolja egy 3×3-as mátrix mellékátlójának (jobbról-balra) összegét!
     int matrix3x3[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    cout << "A 3x3-as matrix foatlajanak osszege: " << foatlo_osszeg(matrix3x3) << endl;
+    int mellekatlo_osszeg_ertek = mellekatlo_osszeg(matrix3x3);
+    cout << "A matrix mellekatlojanak osszege: " << mellekatlo_osszeg_ertek << endl;
 
     return 0;
 }

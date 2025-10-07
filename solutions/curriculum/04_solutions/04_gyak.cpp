@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include <limits>
 
 using namespace std;
 
@@ -28,13 +29,6 @@ void beolvas_tiz_szamot()
     cout << "Legkisebb: " << legkisebb << endl;
 }
 
-// Segedfuggveny swap
-void csere(int &a, int &b)
-{
-    int temp = a;
-    a = b;
-    b = temp;
-}
 
 // Segedfuggveny a tomb kiirasahoz
 void printArray(int arr[], int size)
@@ -46,32 +40,53 @@ void printArray(int arr[], int size)
     cout << endl;
 }
 
-// Gyak 02 - Írj programot, ami rendezi egy tömb elemeit növekvő sorrendbe!
-void rendezes_novekvo(int szamok[], int meret)
+// Gyak 02 - Írj programot, ami visszaadja, hány elem nagyobb az átlagosnál!
+int nagyobb_atlagosnal(int szamok[], int meret)
 {
-    // Bubble sort algoritmus
-    for (int i = 0; i < meret - 1; i++)
+    double atlag = 0.0;
+    for (int i = 0; i < meret; i++)
     {
-        for (int j = 0; j < meret - i - 1; j++)
+        atlag += szamok[i];
+    }
+    atlag /= meret;
+
+    int count = 0;
+    for (int i = 0; i < meret; i++)
+    {
+        if (szamok[i] > atlag)
         {
-            if (szamok[j] > szamok[j + 1])
-            {
-                csere(szamok[j], szamok[j + 1]);
-            }
+            count++;
         }
     }
+    return count;
 }
 
-// Gyak 03 - Írj programot, ami kiszámolja egy mátrix főátlójának összegét!
+// Gyak 03 - Írj programot, ami kiszámolja egy mátrix főátlójának és mellékátlójának különbségét!
 int fo_atlo_osszeg(int matrix[3][3])
 {
-    int osszeg = 0;
-
+    int fo_atlo = 0;
     for (int i = 0; i < 3; i++)
     {
-        osszeg += matrix[i][i];
+        fo_atlo += matrix[i][i];
     }
-    return osszeg;
+    return fo_atlo;
+}
+
+int mellek_atlo_osszeg(int matrix[3][3])
+{
+    int mellek_atlo = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        mellek_atlo += matrix[i][2 - i];
+    }
+    return mellek_atlo;
+}
+
+int fo_atlo_mellek_atlo_kulonbseg(int matrix[3][3])
+{
+    int fo_atlo = fo_atlo_osszeg(matrix);
+    int mellek_atlo = mellek_atlo_osszeg(matrix);
+    return abs(fo_atlo - mellek_atlo);
 }
 
 // Gyak 04 - Írj programot, ami eldönti, hogy egy szó palindrom-e (pl. “radar”).
@@ -105,28 +120,44 @@ void osszefuz_cstring()
     cout << "Az osszefuzott szoveg: " << eredmeny << endl;
 }
 
+// Extra kihívás: Írj programot, ami megszámolja, hány magánhangzó van egy beolvasott mondatban!
+void megszamol_maganhangzok()
+{
+    char mondat[256];
+    cout << "Kerlek, adj meg egy mondatot: ";
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.getline(mondat, 256);
+
+    int maganhangzok = 0;
+    for (int i = 0; mondat[i] != '\0'; i++) {
+        char c = tolower(mondat[i]);
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            maganhangzok++;
+        }
+    }
+
+    cout << "Maganhangzok szama: " << maganhangzok << endl;
+}
+
 int main()
 {
     // Gyak 01
     beolvas_tiz_szamot();
 
     // Gyak 02
-    int szamok[] = {5, 2, 9, 1, 5, 6};
+    int szamok[] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
     int meret = sizeof(szamok) / sizeof(szamok[0]);
-    rendezes_novekvo(szamok, meret);
-    cout << "Rendezett tomb: ";
-    printArray(szamok, meret);
+    int db_nagyobb = nagyobb_atlagosnal(szamok, meret);
+    cout << "Hany elem nagyobb az atlagosnal: " << db_nagyobb << endl;
 
     // Gyak 03
-    int matrix[3][3] = {
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9}};
-    cout << "A matrix foatlajanak osszege: " << fo_atlo_osszeg(matrix) << endl;
-    
+    int matrix[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int kulonbseg = fo_atlo_mellek_atlo_kulonbseg(matrix);
+    cout << "A foatlo es mellekatlo kulonbsege: " << kulonbseg << endl;
+
     // Gyak 04
-    string szo;
-    cout << "Adj meg egy szot: ";
+    char szo[100];
+    cout << "Kerlek, adj meg egy szot: ";
     cin >> szo;
     if (palindrom_e(szo))
         cout << szo << " palindrom." << endl;
@@ -135,6 +166,9 @@ int main()
 
     // Gyak 05
     osszefuz_cstring();
-    
+
+    // Extra kihívás
+    megszamol_maganhangzok();
+
     return 0;
 }
