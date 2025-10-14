@@ -7,15 +7,14 @@ Kérd be a felhasználótól egy 3x3-as egész mátrix elemeit, majd írd ki a m
 ## 2. feladat - Mátrix fő és mellék átlóinak összege
 
 Használd a korábbi mátrixot, és számold ki a főátló és a mellékátló elemeinek összegét.
-Tipp: egy függvény, visszatérési értéke egy 2 elemű tömb, melynek első eleme a főátló összege, második eleme a mellékátló összege.
 
 ## 3. feladat - Soronkénti és oszloponkénti összeg
 
-Számold ki minden sor és minden oszlop összegét, majd írd ki őket külön-külön.
+Számold ki minden sor és minden oszlop összegét.
 
 ## 4. feladat - Mátrix transzponálása
 
-Készíts egy függvényt, amely a egy bemeneti mátrixot transzponál (sorok és oszlopok megcserélése). Legyen 2 függvény, az egyiknek legyen visszatérési értéke, a másik végezze "helyben" a műveletet.
+Készíts egy függvényt, amely a egy bemeneti mátrixot transzponál (sorok és oszlopok megcserélése). Legyen 2 függvény, az egyik végezze helyben a transzponálást, a másik kapjon egy kimeneti mátrixot paraméterként.
 
 ## 5. feladat - Két mátrix szorzása
 
