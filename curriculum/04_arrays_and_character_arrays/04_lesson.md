@@ -187,6 +187,32 @@ for (int i = 0; i < 2; i++) {
 }
 ```
 
+### Mátrix átadása függvénynek
+
+Kétdimenziós tömböt (mátrixot) úgy adunk át függvénynek, hogy legalább az oszlopok számát megadjuk a paraméterlistában:
+
+```cpp
+void printMatrix(int matrix[3][3]) {
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << matrix[i][j] << "\t";
+        }
+        cout << endl;
+    }
+}
+
+void printMatrix(int matrix[][3], int sorok) {
+    for (int i = 0; i < sorok; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << matrix[i][j] << "\t";
+        }
+        cout << endl;
+    }
+}
+```
+
+Itt a `3` az oszlopok száma, amit fordítási időben ismernie kell a fordítónak. A sorok számát külön paraméterként adjuk át.
+
 👉 **09 - Feladat közösen:** Írj programot, ami kiírja egy 2×3-as mátrix minden elemét!  
 👉 **10 - Feladat önállóan:** Írj programot, ami kiszámolja egy 3×3-as mátrix mellékátlójának (jobbról-balra) összegét!
 
