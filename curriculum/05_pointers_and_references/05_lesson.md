@@ -29,7 +29,7 @@ cout << *ptr << endl;  // az x értéke (42)
 ```
 
 👉 **01 - Feladat közösen:** Írj programot, ami kiírja egy változó címét és értékét!  
-👉 **02 - Feladat önállóan:** Írj programot, ami pointer segítségével módosítja egy változó értékét!
+👉 **02 - Feladat önállóan:** Írj programot, ami pointer segítségével növeli egy változó értékét 5-tel!
 
 ---
 
@@ -44,7 +44,7 @@ cout << a; // 20
 ```
 
 👉 **03 - Feladat közösen:** Írj programot, ami pointeren keresztül ad új értéket egy változónak!  
-👉 **04 - Feladat önállóan:** Írj programot, ami két változó értékét pointer segítségével cseréli meg!
+👉 **04 - Feladat önállóan:** Írj programot, ami pointer segítségével három változó közül a legnagyobb értéket adja vissza!
 
 ---
 
@@ -70,7 +70,7 @@ for (int i = 0; i < 3; i++) {
 ```
 
 👉 **05 - Feladat közösen:** Írj programot, ami pointer segítségével kiír egy tömb minden elemét!  
-👉 **06 - Feladat önállóan:** Írj programot, ami pointer segítségével kiszámolja egy tömb elemeinek összegét!
+👉 **06 - Feladat önállóan:** Írj programot, ami pointer segítségével megszámolja, hány páros elem van egy tömbben!
 
 ---
 
@@ -88,7 +88,7 @@ cout << *p << endl;     // 20
 ```
 
 👉 **07 - Feladat közösen:** Írj programot, ami pointer aritmetikával bejárja egy tömb elemeit!  
-👉 **08 - Feladat önállóan:** Írj programot, ami pointer aritmetikával megkeresi a legnagyobb elemet egy tömbben!
+👉 **08 - Feladat önállóan:** Írj programot, ami pointer aritmetikával megkeresi a legkisebb elemet egy tömbben!
 
 ---
 
@@ -116,7 +116,7 @@ int main() {
 ```
 
 👉 **09 - Feladat közösen:** Írj függvényt, ami pointer paraméterrel módosít egy változót!  
-👉 **10 - Feladat önállóan:** Írj függvényt, ami pointer paraméterrel megszoroz egy változót 2-vel!
+👉 **10 - Feladat önállóan:** Írj függvényt, ami pointer paraméterrel négyzetre emeli a változó értékét!
 
 ---
 
@@ -133,8 +133,7 @@ cout << a;  // 20
 ```
 
 👉 **11 - Feladat közösen:** Írj programot, ami referencia segítségével módosítja egy változó értékét!  
-👉 **12 - Feladat önállóan:** Írj programot, ami referencia segítségével két szám összegét adja vissza egy függvényben!
-
+👉 **12 - Feladat önállóan:** Írj függvényt, ami referencia segítségével kiszámolja két szám különbségét, és visszaadja az eredményt!
 ---
 
 ### 7. Referencia paraméterek
@@ -156,7 +155,7 @@ int main() {
 ```
 
 👉 **13 - Feladat közösen:** Írj függvényt, ami referencia segítségével kicserél két számot!  
-👉 **14 - Feladat önállóan:** Írj függvényt, ami referencia segítségével megszoroz két számot!
+👉 **14 - Feladat önállóan:** Írj függvényt, ami referencia segítségével három szám közül a legnagyobbat állítja be egy változóban!
 
 ---
 
@@ -178,7 +177,7 @@ void print(const int &x) {
 ```
 
 👉 **15 - Feladat közösen:** Írj függvényt, ami const referenciát kap, és kiírja a paramétert!  
-👉 **16 - Feladat önállóan:** Írj programot, ami const pointert használ, és kiírja egy változó értékét!
+👉 **16 - Feladat önállóan:** Írj programot, ami const pointert használ, és kiírja egy tömb első és utolsó elemét!
 
 ---
 
@@ -193,7 +192,7 @@ int *p = nullptr;  // modern C++
 - Régebben: `NULL`.
 
 👉 **17 - Feladat közösen:** Írj programot, ami null pointert inicializál, majd ellenőrzi, hogy érvényes-e!  
-👉 **18 - Feladat önállóan:** Írj programot, ami csak akkor dereferál egy pointert, ha az nem null!
+👉 **18 - Feladat önállóan:** Írj programot, ami csak akkor dereferál egy pointert, ha nem null és az értéke pozitív!
 
 ---
 
@@ -232,17 +231,16 @@ int length(const char *str) {
 ```
 
 👉 **19 - Feladat közösen:** Írj függvényt, ami pointer segítségével visszaadja egy tömb minimumát!  
-👉 **20 - Feladat önállóan:** Írj függvényt, ami pointer segítségével megszámolja egy string hosszát!
+👉 **20 - Feladat önállóan:** Írj függvényt, ami pointer segítségével megszámolja, hány magánhangzó van egy C-stílusú stringben!
 
 ---
 
 ### 11. Gyakorló feladatok
 
-- Írj programot, ami pointerrel kiírja egy tömb összes elemét!
-- Írj függvényt, ami pointerrel kiszámolja egy tömb összegét!
-- Írj programot, ami pointer segítségével két változót megcserél!
-- Írj függvényt, ami referencia segítségével három szám közül a legnagyobbat visszaadja!
-- Írj programot, ami pointer segítségével megfordít egy karakterláncot (pl. "hello" → "olleh")!
-
+- Írj programot, ami pointer segítségével megfordít egy egész számokat tartalmazó tömböt!
+- Írj függvényt, ami pointerrel megkeresi a legnagyobb és legkisebb elem különbségét egy tömbben!
+- Írj programot, ami referencia segítségével összead két számot, és az eredményt egy harmadik változóba írja!
+- Írj függvényt, ami pointerrel összehasonlít két stringet, és visszaadja, hogy azonosak-e!
+- Írj programot, ami referencia segítségével két számot oszt el egymással, és ha a nevező 0, hibaüzenetet ír ki!
 ---
 
