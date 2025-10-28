@@ -237,10 +237,10 @@ int length(const char *str) {
 
 ### 11. Gyakorló feladatok
 
-- Írj programot, ami pointer segítségével megfordít egy egész számokat tartalmazó tömböt!
+- Írj függvényt, ami pointer segítségével megfordít egy egész számokat tartalmazó tömböt!
 - Írj függvényt, ami pointerrel megkeresi a legnagyobb és legkisebb elem különbségét egy tömbben!
-- Írj programot, ami referencia segítségével összead két számot, és az eredményt egy harmadik változóba írja!
+- Írj függvényt, ami referencia segítségével összead két számot, és az eredményt egy harmadik változóba írja!
 - Írj függvényt, ami pointerrel összehasonlít két stringet, és visszaadja, hogy azonosak-e!
-- Írj programot, ami referencia segítségével két számot oszt el egymással, és ha a nevező 0, hibaüzenetet ír ki!
+- Írj függvényt, ami referencia segítségével két számot oszt el egymással, és ha a nevező 0, hibaüzenetet ír ki!
 ---
 
