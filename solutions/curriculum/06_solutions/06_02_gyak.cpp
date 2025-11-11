@@ -36,6 +36,15 @@ int* legnagyobb_elem_helye(int** matrix, const int* rows, const int* cols) {
     return maxPos;
 }
 
+void print(int** matrix, const int rows, const int cols) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            std::cout << matrix[i][j] << " ";
+        }
+        std::cout << std::endl;
+    }
+}
+
 int main() {
     int rows = 3;
     int cols = 4;
@@ -48,6 +57,8 @@ int main() {
             myMatrix[i][j] = rand() % 100;  // Véletlen szám generálása
         }
     }
+    std::cout << "A matrix elemei:" << std::endl;
+    print(myMatrix, rows, cols);
 
     int* maxPos = legnagyobb_elem_helye(myMatrix, &rows, &cols);
     std::cout << "A legnagyobb elem helye: (" << maxPos[0] << ", " << maxPos[1] << ")" << std::endl;
