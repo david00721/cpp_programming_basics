@@ -12,17 +12,22 @@
 
 ### 1. Miért van szükség dinamikus memóriára?
 
-- **Statikus memória:** méretet fordítási időben kell tudni.
+Statikus tömböknél a méret fix még fordítási időben:
 
 ```cpp
 int arr[100];   // fix méret, nem változtatható futás közben
 ```
 
-- **Dinamikus memória:** futásidőben foglalunk helyet a heap-en.  
-  Például: felhasználó által megadott méretű tömb.
+Ez problémás, ha a program futás közben deríti ki, mekkora tömböt akar használni.
 
-👉 **01 - Feladat közösen:** Írj programot, ami bekér egy számot, és akkora tömböt próbál létrehozni statikusan!  
-👉 **02 - Feladat önállóan:** Írj programot, ami bekér egy számot, és dinamikusan foglal akkora tömböt!
+Dinamikus memória (heap):
+- futásidőben foglalsz
+- annyi helyet kérsz, amennyit szeretnél
+- szabadítanod is kell
+
+👉 **01 - Feladat közösen:** Írj programot, ami bekéri egy lista kívánt hosszát, majd kiírja, hogy statikusan miért nem tudná ezt lefoglalni.
+
+👉 **02 - Feladat közösen:**
 
 ---
 
@@ -40,14 +45,19 @@ delete p;    // memória felszabadítása
 ```cpp
 int n;
 cin >> n;
-int *arr = new int[n];   // n méretű tömb foglalása
-for (int i = 0; i < n; i++) arr[i] = i * 2;
-for (int i = 0; i < n; i++) cout << arr[i] << " ";
-delete[] arr;   // tömb felszabadítása
+
+// Lefoglalás
+int *arr = new int[n];
+
+// ...
+
+// Felszabadítás
+delete[] arr;
 ```
 
-👉 **03 - Feladat közösen:** Írj programot, ami dinamikusan foglal egy egész számot, értéket ad neki, majd felszabadítja!  
-👉 **04 - Feladat önállóan:** Írj programot, ami dinamikusan foglal egy tömböt, majd feltölti 1-től n-ig a számokkal!
+👉 **03 - Feladat közösen:** Foglalj dinamikusan egy char típusú változót, olvass be bele egy betűt, majd írd ki.
+
+👉 **04 - Feladat önállóan:** Foglalj dinamikusan egy long long tömböt n mérettel, töltsd fel négyzetszámokkal (0², 1², 2²...), majd írd ki őket.
 
 ---
 
@@ -60,12 +70,15 @@ cout << *x;  // 10
 delete x;
 ```
 
-👉 **05 - Feladat közösen:** Írj programot, ami dinamikusan foglal egy int változót, majd kiírja az értékét!  
-👉 **06 - Feladat önállóan:** Írj programot, ami dinamikusan foglal egy double változót, értéket ad neki, majd kiírja!
+👉 **05 - Feladat közösen:** Foglalj dinamikusan egy float változót, adj neki kezdőértéket foglaláskor, majd írd ki.
+
+👉 **06 - Feladat önállóan:** Foglalj dinamikusan egy bool tömböt, töltsd fel igaz/hamis értékek mintázatával (pl. igaz, hamis, igaz, hamis...), majd jelenítsd meg.
 
 ---
 
 **Példa 2 – Dinamikus mátrix**
+
+Tömb tömbje típusú foglalás:
 ```cpp
 int rows = 3, cols = 4;
 
@@ -74,26 +87,15 @@ int **matrix = new int*[rows];
 for (int i = 0; i < rows; i++)
     matrix[i] = new int[cols];
 
-// kitöltés
-for (int i = 0; i < rows; i++)
-    for (int j = 0; j < cols; j++)
-        matrix[i][j] = i + j;
-
-// kiírás
-for (int i = 0; i < rows; i++) {
-    for (int j = 0; j < cols; j++)
-        cout << matrix[i][j] << " ";
-    cout << endl;
-}
-
 // felszabadítás
 for (int i = 0; i < rows; i++)
     delete[] matrix[i];
 delete[] matrix;
 ```
 
-👉 **07 - Feladat közösen:** Írj programot, ami dinamikusan létrehoz egy 2×2-es mátrixot, és kiírja!  
-👉 **08 - Feladat önállóan:** Írj programot, ami dinamikusan létrehoz egy 3×3-as mátrixot, és kiszámolja a főátló összegét!
+👉 **07 - Feladat közösen:** Hozz létre dinamikusan egy 2×3-as mátrixot, töltsd fel sorindex + oszlopindex összegével, majd jelenítsd meg.
+
+👉 **08 - Feladat önállóan:** Készíts dinamikusan egy 4×4-es mátrixot, töltsd fel növekvő számokkal 1-től kezdve, majd számold ki az alsó háromszög elemösszegét.
 
 ---
 
@@ -113,8 +115,9 @@ delete p;
 p = nullptr;
 ```
 
-👉 **09 - Feladat közösen:** Írj programot, ami bemutatja a dangling pointer problémát!  
-👉 **10 - Feladat önállóan:** Írj programot, ami helyesen kezel egy dangling pointert `nullptr` használatával!
+👉 **09 - Feladat közösen:** Írj programot, ami bemutatja, hogy egy pointer felszabadítás után nem használható, és a nullptr beállítás megoldja a problémát.
+
+👉 **10 - Feladat önállóan:** Foglalj egy double tömböt, szabadítsd fel, majd állítsd minden pointert nullptr-re, és jelezd a felhasználónak, hogy a memória felszabadult.
 
 ---
 
@@ -129,7 +132,8 @@ for (int i = 0; i < 1000; i++) {
 }
 ```
 
-👉 **11 - Feladat közösen:** Írj programot, ami memóriaszivárgást okoz!  
+👉 **11 - Feladat közösen:** Írj programot, ami memóriaszivárgást okoz!
+
 👉 **12 - Feladat önállóan:** Javítsd ki a programot `delete` használatával!
 
 ---
@@ -198,10 +202,9 @@ delete[] copy;
 
 ### 8. Gyakorló feladatok
 
-- Készíts programot, ami lefoglal egy n hosszú tömböt, feltölti véletlenszámokkal, majd kiírja a legnagyobb értéket.
-- Írj függvényt, ami dinamikusan létrehoz egy n × n mátrixot, és visszaadja a főátló összegét.
-- Készíts függvényt, ami két dinamikus tömböt összefűz egy új tömbbe.
-- Írj programot, ami dinamikusan lefoglalt karaktertömbben tárolja a felhasználó által beírt szót, majd visszafelé kiírja.
-- Szimulálj memória-szivárgást, majd javítsd ki a `delete` megfelelő használatával.
+- Kérj be egy n számot, foglalj dinamikus tömböt, töltsd fel véletlen páros számokkal, majd számold ki az összegüket.
+- Függvény: Foglaljon le rows × cols méretű mátrixot és adja vissza a legnagyobb elem helyét.
+- Függvény: Fűzz össze két dinamikusan foglalt integer tömböt egy harmadikba.
+- Foglalj dinamikusan egy karaktertömböt, kérj be egy szót, majd alakítsd át nagybetűssé.
 
 ---
