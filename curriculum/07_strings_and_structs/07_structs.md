@@ -102,7 +102,7 @@ int main() {
 
 👉 **05 - Feladat közösen:** Készíts programot, amely egy 3 elemű Student tömböt hoz létre, beolvassa a diákok nevét és életkorát, majd kiírja őket.
 
-👉 **06 - Feladat önállóan:** Készíts programot, amely tömböt használ. Olvass be tetszőleges számú diákot (addig, amíg a név nem "end"), majd írd ki, hány diák van, és ki a legidősebb!
+👉 **06 - Feladat önállóan:**
 
 ## 4. Dinamikus struct és pointerek
 
