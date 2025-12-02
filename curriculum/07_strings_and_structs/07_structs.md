@@ -102,7 +102,7 @@ int main() {
 
 👉 **05 - Feladat közösen:** Készíts programot, amely egy 3 elemű Student tömböt hoz létre, beolvassa a diákok nevét és életkorát, majd kiírja őket.
 
-👉 **06 - Feladat önállóan:** Készíts programot, amely tömböt használ. Olvass be tetszőleges számú diákot (addig, amíg a név nem "end"), majd írd ki, hány diák van, és ki a legidősebb!
+👉 **06 - Feladat önállóan:**
 
 ## 4. Dinamikus struct és pointerek
 
@@ -211,11 +211,41 @@ struct Node {
 
 Elem beszúrása a lista elejére:
 
-TODO: fill code
+```cpp
+void push_front(Node* &head, int x) {
+    Node* newNode = new Node;  // új csomópont
+    newNode->value = x;
+    newNode->next = head;      // régi head lesz a következő
+    head = newNode;            // head mutasson az új csomópontra
+}
+```
 
 Lista bejárása:
 
-TODO: fill code
+```cpp
+void print_list(Node* head) {
+    Node* current = head;
+    while (current != nullptr) {
+        cout << current->value << " ";
+        current = current->next;
+    }
+    cout << endl;
+}
+```
+
+Példa teljes program:
+
+```cpp
+int main() {
+    Node* head = nullptr;    // üres lista
+
+    push_front(head, 10);
+    push_front(head, 5);
+    push_front(head, 7);     // lista: 7 -> 5 -> 10
+
+    print_list(head);
+}
+```
 
 👉 **09 - Feladat közösen:** Valósíts meg egy egyszerű láncolt listát egész számokkal, ahol:
 - push_front beszúr az elejére,
@@ -228,10 +258,38 @@ Teszteld a main-ben 3–4 beszúrással!
 
 ### 7.1. Keresés
 
-TODO: fill code 
+```cpp
+Node* find(Node* head, int x) {
+    Node* current = head;
+    while (current != nullptr) {
+        if (current->value == x)
+            return current;
+        current = current->next;
+    }
+    return nullptr;  // nincs meg
+}
+```
+
 ### 7.2. Beszúrás a végére
 
-TODO: fill code
+```cpp
+void push_back(Node* &head, int x) {
+    Node* newNode = new Node;
+    newNode->value = x;
+    newNode->next = nullptr;
+
+    if (head == nullptr) {
+        head = newNode;   // üres lista
+        return;
+    }
+
+    Node* current = head;
+    while (current->next != nullptr) {
+        current = current->next;
+    }
+    current->next = newNode;
+}
+```
 
 ### 7.3. Elem törlése érték alapján (első előfordulás)
 
@@ -265,7 +323,7 @@ TODO: fill code
 
 - Készíts Product structot name (string), price (int), quantity (int) mezőkkel. Tárolj egy tömbben 5 terméket, és írd ki a teljes raktárértéket (összesen mennyi pénzt ér a készlet).
 
-- Valósíts meg egy Book structot (title, author, year). Tárolj vector<Book>-ban könyveket, és írj függvényt, ami egy adott szerző összes könyvét kiírja.
+- Valósíts meg egy Book structot (title, author, year). Tárolj tömbben könyveket, és írj függvényt, ami egy adott szerző összes könyvét kiírja.
 
 - Írj függvényt, amely kap egy Node* head láncolt listát, és visszaadja a legnagyobb értéket benne.
 
