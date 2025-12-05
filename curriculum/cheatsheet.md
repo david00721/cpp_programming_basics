@@ -373,3 +373,225 @@ int binarySearch(const int arr[], int n, int key) {
     return -1;
 }
 ```
+
+## String leggyakoribb függvények
+
+### `s.size()` / `s.length()`
+
+**Visszaadja a string hosszát.**
+
+``` cpp
+#include <iostream>
+#include <string>
+int main() {
+    std::string s = "Hello";
+    std::cout << s.size();
+}
+```
+
+Kimenet:
+
+    5
+
+### `s.empty()`
+
+**Megmondja, hogy üres-e a string.**
+
+``` cpp
+std::string s = "";
+std::cout << s.empty();
+```
+
+Kimenet:
+
+    1
+
+### `s.at(index)`
+
+**Biztonságos indexelés bounds-checkkel.**
+
+``` cpp
+std::string s = "Hello";
+std::cout << s.at(1);
+```
+
+Kimenet:
+
+    e
+
+### `s.append(str)` vagy `s += str`
+
+**Hozzáfűz egy másik stringet.**
+
+``` cpp
+std::string s = "Hello";
+s.append(" World");
+std::cout << s;
+```
+
+Kimenet:
+
+    Hello World
+
+### `s.insert(pos, str)`
+
+**String beszúrása adott pozícióban.**
+
+``` cpp
+std::string s = "Helo";
+s.insert(2, "l");
+std::cout << s;
+```
+
+Kimenet:
+
+    Hello
+
+### `s.erase(pos, count)`
+
+**Töröl `count` karaktert a `pos` pozíciótól.**
+
+``` cpp
+std::string s = "Hello!!!";
+s.erase(5, 3);
+std::cout << s;
+```
+
+Kimenet:
+
+    Hello
+
+### `s.replace(pos, count, str)`
+
+**Kicserél egy részstringet egy másikra.**
+
+``` cpp
+std::string s = "H3llo";
+s.replace(1, 1, "e");
+std::cout << s;
+```
+
+Kimenet:
+
+    Hello
+
+### `s.find(str)`
+
+**Megadja az első előfordulás indexét, vagy `npos`.**
+
+``` cpp
+std::string s = "Hello World";
+std::cout << s.find("World");
+```
+
+Kimenet:
+
+    6
+
+### `s.rfind(str)`
+
+**Megadja az utolsó előfordulás indexét.**
+
+``` cpp
+std::string s = "test_test";
+std::cout << s.rfind("test");
+```
+
+Kimenet:
+
+    5
+
+### `s.substr(pos, count)`
+
+**Kivág egy részstringet.**
+
+``` cpp
+std::string s = "Hello World";
+std::cout << s.substr(6, 5);
+```
+
+Kimenet:
+
+    World
+
+### `std::stoi(s)`
+
+**String → int konverzió.**
+
+``` cpp
+std::string s = "123";
+std::cout << std::stoi(s) + 1;
+```
+
+Kimenet:
+
+    124
+
+### `std::to_string(num)`
+
+**Szám → string konverzió.**
+
+``` cpp
+int x = 42;
+std::cout << std::to_string(x);
+```
+
+Kimenet:
+
+    42
+
+### `std::getline(cin, s)`
+
+**Egész sort beolvas szóközökkel együtt.**
+
+``` cpp
+// input: Hello World
+std::string s;
+std::getline(std::cin, s);
+std::cout << s;
+```
+
+Kimenet:
+
+    Hello World
+
+### `s.compare(str)`
+
+**Lexikografikus összehasonlítás (-, 0, +).**
+
+``` cpp
+std::string a = "apple";
+std::string b = "banana";
+std::cout << a.compare(b);  // <0
+```
+
+Kimenet:
+
+    -1
+
+### `s.push_back(c)` / `s.pop_back()`
+
+**Egy karakter hozzáadása vagy eltávolítása a végéről.**
+
+``` cpp
+std::string s = "Hell";
+s.push_back('o');
+std::cout << s;
+```
+
+Kimenet:
+
+    Hello
+
+### Iterálás stringen (`for` loop)
+
+**Karakterenkénti bejárás.**
+
+``` cpp
+std::string s = "Hi";
+for(char c : s) std::cout << c << "-";
+```
+
+Kimenet:
+
+    H-i-
