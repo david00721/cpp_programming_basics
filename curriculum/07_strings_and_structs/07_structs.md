@@ -293,11 +293,45 @@ void push_back(Node* &head, int x) {
 
 ### 7.3. Elem törlése érték alapján (első előfordulás)
 
-TODO: fill code
+```cpp
+bool erase(Node* &head, int x) {
+    if (head == nullptr) return false;
+
+    // ha az első elem a törlendő
+    if (head->value == x) {
+        Node* toDelete = head;
+        head = head->next;
+        delete toDelete;
+        return true;
+    }
+
+    Node* current = head;
+    while (current->next != nullptr && current->next->value != x) {
+        current = current->next;
+    }
+
+    if (current->next == nullptr) {
+        return false;  // nincs ilyen elem
+    }
+
+    Node* toDelete = current->next;
+    current->next = toDelete->next;
+    delete toDelete;
+    return true;
+}
+```
 
 ### 7.4. Lista felszabadítása
 
-TODO: fill code
+```cpp
+void clear_list(Node* &head) {
+    while (head != nullptr) {
+        Node* next = head->next;
+        delete head;
+        head = next;
+    }
+}
+```
 
 👉 **11 - Feladat közösen:** Egészítsd ki a láncolt listás programot push_back és clear_list függvényekkel. A main-ben:
 - szúrj be pár elemet elejére és végére is,
@@ -313,7 +347,65 @@ TODO: fill code
 
 **Feladat:** olvass be egész számokat, amíg 0-t nem kapsz. A pozitív számokat tedd láncolt listába (beszúrás a végére), majd írd ki őket, végül szabadítsd fel a listát.
 
-TODO: fill code
+```cpp
+#include <iostream>
+using namespace std;
+
+struct Node {
+    int value;
+    Node* next;
+};
+
+void push_back(Node* &head, int x) {
+    Node* newNode = new Node;
+    newNode->value = x;
+    newNode->next = nullptr;
+
+    if (head == nullptr) {
+        head = newNode;
+        return;
+    }
+
+    Node* current = head;
+    while (current->next != nullptr) {
+        current = current->next;
+    }
+    current->next = newNode;
+}
+
+void print_list(Node* head) {
+    Node* current = head;
+    while (current != nullptr) {
+        cout << current->value << " ";
+        current = current->next;
+    }
+    cout << endl;
+}
+
+void clear_list(Node* &head) {
+    while (head != nullptr) {
+        Node* next = head->next;
+        delete head;
+        head = next;
+    }
+}
+
+int main() {
+    Node* head = nullptr;
+
+    int x;
+    while (cin >> x && x != 0) {
+        if (x > 0) {
+            push_back(head, x);
+        }
+    }
+
+    cout << "Pozitív számok: ";
+    print_list(head);
+
+    clear_list(head);
+}
+```
 
 👉 **13 - Feladat közösen:** Módosítsd a fenti programot úgy, hogy csak páros pozitív számokat tároljon a listában!
 
