@@ -65,6 +65,11 @@ for(int i=0; i<9; i++) {
 std::cout << std::endl;
 ```
 
+Kimenet:
+```text
+0 1 2 3 4 5 6 7 8 9
+```
+
 ### Megoldási sablon
 ```cpp
 int szamtani(int a0, int d, bool uj);
@@ -113,6 +118,12 @@ stackedBarChart(data, 3, 2);
 deleteMtx(data, 3);
 ```
 
+```text
+X>>>>>
+XXX>>>
+XXXXX>>>
+```
+
 ### Megoldási sablon
 ```cpp
 void stackedBarChart(int** data, int rows, int cols);
@@ -128,6 +139,10 @@ Definiálja a `double* gp(double a1, double q, int n)` függvényt, mely visszat
 Példa:
 ```cpp
 printAndClear(gp(3, 3, 5), 5);
+```
+
+Kimenet:
+```text
 3 9 27 81 243
 ```
 
@@ -145,21 +160,25 @@ Készítse el azt a `void rightAlign(const std::string& fileName)` függvényt, 
 
 Példa:
 ```cpp
-Test    Result
 rightAlign("file1.txt");
-     A
-    AA
-   AAA
-  AAAA
- AAAAA
-AAAAAA
-
+```
 File tartalma: 
+```text
 A
 AA
 AAA
 AAAA
 AAAAA
+AAAAAA
+```
+
+Kimenet:
+```text
+     A
+    AA
+   AAA
+  AAAA
+ AAAAA
 AAAAAA
 ```
 
@@ -177,8 +196,11 @@ Definiálja azt a `void draw(const std::string& commands)` függvényt, ami egy 
 
 Példa:
 ```cpp
-Test    Result
 draw("DDDDDDDDDRRRRRRRRRUUUUUUUUULLLLLLLL");
+```
+
+Kimenet:
+```text
 **********
 *        *
 *        *
@@ -209,11 +231,17 @@ Egy lehetséges ötlet a megoldáshoz: ha a sokszög minden csúcsából húz eg
 
 Ha ismert egy háromszög három oldalának hossza, akkor területe meghatározható a Hérón-képlettel, ahol `s` a félkerület, `a`, `b` és `c` a háromszög oldalhosszai.
 
+*Hérón-képlet: T = s ( s − a ) ( s − b ) ( s − c )*
+
 **Példa**
 
 ```cpp
 std::cout << std::setprecision(2) << getArea(4, 2) << std::endl;
-// elvárt eredmény: 4
+```
+
+Elvárt eredmény:
+```text
+4
 ```
 
 ### Megoldási sablon
@@ -251,14 +279,15 @@ append(codeWords, "10", "Xiaomi");
 append(codeWords, "11", "Apple");
 decode(codeWords, "01011100");
 clear(codeWords);
+```
 
-// elvárt kimenet:
-//
-// Samsung
-// Xiaomi
-// Apple
-// Xiaomi
-// Samsung
+Elvárt kimenet:
+```text
+Samsung
+Xiaomi
+Apple
+Xiaomi
+Samsung
 ```
 
 ### Megoldási sablon
@@ -285,12 +314,13 @@ int mtx[][2] = {
 };
 int n = sizeof(mtx)/sizeof(mtx[0]);
 printGantt(mtx, n);
+```
 
-// elvárt kimenet:
-//
-// ****
-//  *****
-//    *******
+Elvárt kimenet:
+```text
+****
+ *****
+   *******
 ```
 
 ### Megoldási sablon
@@ -328,12 +358,13 @@ Product p[] = {
 };
 int n = sizeof(p)/sizeof(*p);
 total(p, n);
+```
 
-// elvárt kimenet:
-//
-// alma 7
-// barack 3
-// citrom 1
+Elvárt kimenet:
+```text
+alma 7
+barack 3
+citrom 1
 ```
 
 ### Megoldási sablon
@@ -354,15 +385,16 @@ Definiálja a `void center(const std::string& fileName)` függvényt, ami megker
 
 ```cpp
 center("file1.txt");
+```
 
-// elvárt eredmény (pl. ilyen egyenletlen):
-//
-//   A
-//   AA
-//  AAA
-//  AAAA
-// AAAAA
-// AAAAAA
+Elvárt eredmény (pl. ilyen egyenletlen):
+```text
+  A
+  AA
+ AAA
+ AAAA
+AAAAA
+AAAAAA
 ```
 
 ### Megoldási sablon
@@ -393,8 +425,11 @@ struct Number {
 
 ```cpp
 printForwardReverseFree(arithmeticProgression(1, 2, 3));
-// elvárt kimenet:
-// 1 3 5 3 1
+```
+
+Elvárt kimenet:
+```text
+1 3 5 3 1
 ```
 
 ### Megoldási sablon
@@ -424,17 +459,18 @@ struct ListItem {
 
 ```cpp
 printAndDelete(splitter("This is the beginning of a beautiful friendship.", ' '));
+```
 
-// elvárt kimenet:
-//
-// >This<
-// >is<
-// >the<
-// >beginning<
-// >of<
-// >a<
-// >beautiful<
-// >friendship.<
+Elvárt kimenet:
+```text
+This
+is
+the
+beginning
+of
+a
+beautiful
+friendship.
 ```
 
 ### Megoldási sablon
@@ -663,16 +699,18 @@ std::string raceResult(int* bR);
 Készítsen C++ függvényt, amely ellenőrzi egy szövegről, hogy palindróma-e!
 Vagyis: a szöveg fordítottja megegyezik-e az eredeti szöveggel!
 
-A függvény fejlécét segítségképpen megadtuk előre.  
 TIPP: használjon `unsigned int`-et!
 
 **For example:**
 
 ```cpp
 std::cout << ispalindrome("gorog") << '\n';
-// elvárt eredmény: 1
 ```
 
+Elvárt eredmény:
+```text
+1
+```
 ### Megoldási sablon
 
 ```cpp
@@ -711,11 +749,12 @@ for (int i = 0; i < 2; i++) {
     std::cout << res[i] << '\n';
 }
 delete[] res;
+```
 
-// elvárt eredmény:
-//
-// 0
-// 11.1803
+Elvárt eredmény:
+```text
+0
+11.1803
 ```
 
 ### Megoldási sablon
@@ -754,11 +793,12 @@ list = beszurElejere(list, 5.0, 500);
 list = beszurElejere(list, 5.0, 500);
 std::cout << totalArea(list) << '\n';
 std::cout << averageArea(list) << '\n';
+```
 
-// elvárt eredmény:
-//
-// 20
-// 100
+Elvárt eredmény:
+```text
+20
+100
 ```
 
 ### Megoldási sablon (a struktúra + műveletek prototípusai)
@@ -788,6 +828,29 @@ double compare(struct point *a, struct point *b, int l)
 függvényt, ahol `a` és `b` egy-egy `l` elemű tömb.  
 A függvény határozza meg az `a` és `b` tömbben szereplő pontsor hasonlóságát, ahol a hasonlóságot az ugyanaz indexen szereplő pontok távolságának **átlaga** adja meg.  
 Feltételezheti, hogy `a` és `b` legalább 1 elemű és a két tömb elemszáma megegyezik.
+
+**Példa:**
+```cpp
+point a[3] = {
+    {0.0, 0.0},
+    {1.0, 1.0},
+    {2.0, 2.0}
+};
+
+point b[3] = {
+    {0.0, 1.0},
+    {1.0, 2.0},
+    {2.0, 3.0}
+};
+
+double avgDist = compare(a, b, 3);
+cout << avgDist << endl;
+```
+
+Kimenet:
+```text
+1
+```
 
 ### Megoldási sablon
 
@@ -823,6 +886,46 @@ Feltételezheti, hogy az `img` mérete és az `(x, y)` pozíció olyanok, hogy a
 Azaz `img` mérete legalább akkora, mint a kernel mérete és `(x, y)` nem lesz olyan pozíció, hogy a kivágandó szelet „lelógna” az `img` tömbről.  
 Továbbá a kernel mérete (`k_w` és `k_h`) mindkét dimenzió mentén **páratlan**, azaz egyértelműen meghatározható `img` azon szelete, melynek `(x, y)` a középpontja.
 
+**Példa:**
+```cpp
+double kern_arr[3][3] = {
+    {1, 0, -1},
+    {1, 0, -1},
+    {1, 0, -1}
+};
+
+double img_arr[5][5] = {
+    {1, 1, 2, 2, 3},
+    {1, 1, 2, 2, 3},
+    {4, 4, 5, 5, 6},
+    {4, 4, 5, 5, 6},
+    {7, 7, 8, 8, 9}
+};
+
+// Tegyük fel, hogy kernelt és img-t megfelelően double**-ré alakítottuk.
+// A konvolúció középpontja: (2, 2) → az img közepe
+
+double result = conv(kernel, img, 3, 3, 2, 2);
+cout << result << endl;
+```
+
+A kiválasztott szelet az img-ben (középen):
+```text
+1 2 2
+4 5 5
+4 5 5
+```
+
+Szorzatösszeg:
+```text
+1*1 + 2*0 + 2*(-1) + 4*1 + 5*0 + 5*(-1) + 4*1 + 5*0 + 5*(-1) = (1 + 0 - 2) + (4 + 0 - 5) + (4 + 0 - 5) = -1 + -1 + -1 = -3
+```
+
+Kimenet:
+```text
+-3
+```
+
 ### Megoldási sablon
 
 ```cpp
@@ -846,6 +949,22 @@ függvényt, ahol `mtx` egy kétdimenziós tömb, `w` az `mtx` első dimenziój�
 
 A kimeneti tömb az `mtx` értékeit tartalmazza, azzal a különbséggel, hogy a tömb **szélein** (első sor, utolsó sor, első oszlop, utolsó oszlop) található elemeket az óramutató járásával megegyező irányba eggyel arrébb mozgatja.  
 Feltételezheti, hogy `w` és `h` értéke egyaránt legalább 2.
+
+**Példa:**
+```text
+1   2   3
+4   5   6
+7   8   9
+10  11  12
+```
+
+Kimenet:
+```text
+4   1   2
+7   5   3
+10  8   6
+11 12   9
+```
 
 ### Megoldási sablon
 
@@ -883,6 +1002,17 @@ sigmoid(x) = 1 / (1 + e^{-x})
 ```
 
 Létezik egy `E` nevű szimbolikus állandó, amelynek értékét használja fel az Euler-féle szám alkalmazásához.
+
+**Példa:**
+```cpp
+data = [-2.0, -1.0, 0.0, 1.0, 2.0]
+data_size = 5
+```
+
+Kimenet:
+```text
+[-0.238406, -0.268941, 0, 0.731059, 1.761594]
+```
 
 ### Megoldási sablon
 
