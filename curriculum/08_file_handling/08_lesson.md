@@ -31,12 +31,16 @@ using namespace std;
 ## 2. Írás fájlba
 
 ```cpp
+// Nyitás és hibakezelés
 ofstream fout("example.txt");   // megnyitás írásra
 if (!fout) {
     cout << "Error opening file!";
     return 1;
 }
+```
 
+```cpp
+// Írás
 fout << "Hello File!" << endl;
 fout << 123 << endl;
 fout.close();
@@ -53,15 +57,28 @@ fout.close();
 ## 3. Olvasás fájlból
 
 ```cpp
+// Nyitás és hibakezelés
 ifstream fin("example.txt");
 if (!fin) {
     cout << "Error opening file!";
     return 1;
 }
+```
 
+```cpp
+// Szavankénti olvasás
 string word;
 while (fin >> word) {  // szavanként olvas
     cout << word << endl;
+}
+fin.close();
+```
+
+```cpp
+// Soronkénti olvasás
+string line;
+while (getline(fin, line)) { // soronként olvas
+    cout << line << endl;
 }
 fin.close();
 ```
@@ -77,7 +94,7 @@ fin.close();
 ## 4. Hozzáfűzés (append mód)
 
 ```cpp
-ofstream fout("example.txt", ios::app);
+ofstream fout("example.txt", ios::app); // input-output stream :: append
 fout << "New line appended!" << endl;
 fout.close();
 ```
@@ -102,7 +119,7 @@ int main() {
 
     // Írás bináris fájlba
     ofstream fout("student.bin", ios::binary);
-    fout.write((char*)&s1, sizeof(s1));
+    fout.write((char*)&s1, sizeof(s1)); // a s1 struktúra címét char pointerré alakítjuk, hogy a write byte-sorozatként kezelje, megadjuk, hogy hány byte-ot írjon ki (a struktúra teljes mérete)
     fout.close();
 
     // Olvasás bináris fájlból
@@ -129,6 +146,82 @@ fin.eof();      // true ha elérte a fájl végét
 fin.fail();     // true ha olvasási hiba történt
 fin.clear();    // hibajelző törlése
 fin.seekg(0);   // vissza a fájl elejére
+```
+
+```cpp
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() {
+    ifstream fin("example.txt");
+
+    char c;
+    while (fin.get(c)) {
+        cout << c;
+    }
+
+    if (fin.eof()) {
+        cout << "\nElértük a fájl végét.\n";
+    }
+}
+```
+
+```cpp
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() {
+    ifstream fin("numbers.txt");
+
+    int x;
+    fin >> x;   // Tegyük fel, hogy a fájlban egy betű van → olvasási hiba
+
+    if (fin.fail()) {
+        cout << "Hibás olvasás történt!\n";
+    }
+}
+```
+
+```cpp
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() {
+    ifstream fin("example.txt");
+
+    string word;
+    while (fin >> word) { }  // Olvasás a végéig → EOF
+
+    if (fin.eof()) {
+        cout << "Vége a fájlnak.\n";
+    }
+
+    fin.clear();  // hibabitek törlése → újra használható a stream
+    cout << "clear() után az EOF állapot: " << fin.eof() << endl;
+}
+```
+
+```cpp
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main() {
+    ifstream fin("example.txt");
+
+    string word;
+    fin >> word;   // első szó
+    cout << "Elso olvasas: " << word << endl;
+
+    fin.clear();   // kell az EOF/reset miatt
+    fin.seekg(0);  // vissza a fájl elejére
+
+    fin >> word;   // újra az első szó
+    cout << "Második olvasás: " << word << endl;
+}
 ```
 
 👉 **11 - Feladat közösen:** Írj programot, ami beolvassa egy fájl első sorát, majd seekg segítségével újraolvassa!  

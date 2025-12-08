@@ -595,3 +595,13 @@ for(char c : s) std::cout << c << "-";
 Kimenet:
 
     H-i-
+
+### String ürítése (clear())
+
+**Tartalom teljes törlése.**
+
+```cpp
+std::string s = "Hello";
+s.clear();            // s most üres string
+std::cout << "Hossz: " << s.size();   // 0
+```
