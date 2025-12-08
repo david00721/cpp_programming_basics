@@ -3,7 +3,17 @@
 using namespace std;
 
 // Prototype - implement this function
-double* gp(double a1, double q, int n);
+double* gp(double a1, double q, int n)
+{
+    if (n <= 0) return nullptr;
+
+    double* arr = new double[n];
+    arr[0] = a1;
+    for (int i = 1; i < n; i++) {
+        arr[i] = arr[i - 1] * q;
+    }
+    return arr;
+}
 
 // Segédfüggvény: tömb kiírása és felszabadítása
 void printAndClear(double* arr, int n) {

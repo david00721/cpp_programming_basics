@@ -39,7 +39,25 @@ void printForwardReverseFree(Number* head) {
 }
 
 // Prototype - implement this function
-Number* arithmeticProgression(double a1, double d, int n);
+Number* arithmeticProgression(double a1, double d, int n)
+{
+    if (n <= 0) return nullptr;
+
+    Number* head = new Number{a1, nullptr, nullptr};
+    Number* current = head;
+
+    for (int i = 1; i < n; i++) {
+        double value = a1 + i * d;
+        Number* node = new Number{value, nullptr, nullptr};
+
+        current->next = node;   // összeláncolás előre
+        node->prev = current;   // összeláncolás vissza
+
+        current = node;         // lépünk tovább
+    }
+
+    return head;
+}
 
 int main() {
     printForwardReverseFree(arithmeticProgression(1, 2, 3));

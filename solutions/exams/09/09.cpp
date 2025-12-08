@@ -5,7 +5,20 @@
 using namespace std;
 
 // Prototype - implement this function
-double getArea(int n, double l);
+double getArea(int n, double l)
+{
+    double radius = l / (2 * sin(M_PI / n));
+
+    double a = radius;
+    double b = radius;
+    double c = l;
+
+    double s = (a + b + c) / 2.0; // semi-perimeter
+    double triangleArea = sqrt(s * (s - a) * (s - b) * (s - c));
+
+    // Total area is n times the area of one triangle
+    return n * triangleArea;
+}
 
 int main() {
     cout << fixed << setprecision(2);

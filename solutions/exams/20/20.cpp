@@ -10,7 +10,18 @@ struct Coord {
 };
 
 // Prototype - implement this function
-double* calcEuclid(const Coord* coords, int n);
+double* calcEuclid(const Coord* coords, int n)
+{
+    double* distances = new double[n];
+
+    for (int i = 0; i < n; ++i) {
+        distances[i] = sqrt(coords[i].x * coords[i].x +
+                            coords[i].y * coords[i].y +
+                            coords[i].z * coords[i].z);
+    }
+
+    return distances;
+}
 
 int main() {
     Coord coords[2];

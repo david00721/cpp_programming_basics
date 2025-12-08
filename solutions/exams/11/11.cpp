@@ -3,7 +3,20 @@
 using namespace std;
 
 // Prototype - implement this function
-void printGantt(int mtx[][2], int n);
+void printGantt(int mtx[][2], int n)
+{
+    for (int i = 0; i < n; i++) {
+        int start = mtx[i][0];
+        int end = mtx[i][1];
+        for (int j = 0; j < start; j++) {
+            cout << ' ';
+        }
+        for (int j = start; j <= end; j++) {
+            cout << '*';
+        }
+        cout << endl;
+    }
+}
 
 int main() {
     int mtx[][2] = {

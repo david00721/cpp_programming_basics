@@ -37,7 +37,29 @@ void clear(prefixPair*& head) {
 }
 
 // Prototype - implement this function
-void decode(const prefixPair* codeWords, const string& message);
+void decode(const prefixPair *codeWords, const std::string &message)
+{
+    std::string currentCode;
+
+    for (int i = 0; i < message.size(); ++i)
+    {
+        char c = message[i];
+        currentCode.push_back(c);
+
+        const prefixPair *currentNode = codeWords;
+        while (currentNode != nullptr)
+        {
+            if (currentNode->codeWord == currentCode)
+            {
+                
+                std::cout << currentNode->text << '\n';
+                currentCode.clear(); 
+                break;               
+            }
+            currentNode = currentNode->next;
+        }
+    }
+}
 
 int main() {
     prefixPair* codeWords = nullptr;

@@ -9,7 +9,32 @@ struct Product {
 };
 
 // Prototype - implement this function
-void total(const Product* p, int n);
+void total(const Product* p, int n)
+{
+    for (int i = 0; i < n; ++i) {
+        const string& currentName = p[i].name;
+        int sum = 0;
+
+        bool alreadyProcessed = false;
+        for (int j = 0; j < i; ++j) {
+            if (p[j].name == currentName) {
+                alreadyProcessed = true;
+                break;
+            }
+        }
+        if (alreadyProcessed) {
+            continue;
+        }
+
+        for (int k = 0; k < n; ++k) {
+            if (p[k].name == currentName) {
+                sum += p[k].pcs;
+            }
+        }
+
+        cout << currentName << " " << sum << endl;
+    }
+}
 
 int main() {
     Product p[] = {

@@ -3,7 +3,35 @@
 using namespace std;
 
 // Prototype - implement this function
-double** shift(double** mtx, int w, int h);
+double** shift(double** mtx, int w, int h)
+{
+    double** result = new double*[w];
+    for (int i = 0; i < w; i++) {
+        result[i] = new double[h];
+        for (int j = 0; j < h; j++) {
+            result[i][j] = mtx[i][j]; // Alapértelmezett érték
+        }
+    }
+
+    // Felső sor
+    for (int j = 0; j < h - 1; j++) {
+        result[0][j + 1] = mtx[0][j];
+    }
+    // Jobb oszlop
+    for (int i = 0; i < w - 1; i++) {
+        result[i + 1][h - 1] = mtx[i][h - 1];
+    }
+    // Alsó sor
+    for (int j = h - 1; j > 0; j--) {
+        result[w - 1][j - 1] = mtx[w - 1][j];
+    }
+    // Bal oszlop
+    for (int i = w - 1; i > 0; i--) {
+        result[i - 1][0] = mtx[i][0];
+    }
+
+    return result;
+}
 
 // Segédfüggvény: 2D tömb létrehozása 1D tömbből
 double** createMtx(double* src, int w, int h) {

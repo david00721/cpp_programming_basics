@@ -9,13 +9,51 @@ struct IngatlanLista {
 };
 
 // Prototype - implement this function
-IngatlanLista* beszurElejere(IngatlanLista* head, double terulet, int ertek);
+IngatlanLista* beszurElejere(IngatlanLista* head, double terulet, int ertek)
+{
+    IngatlanLista* uj = new IngatlanLista;
+    uj->terulet = terulet;
+    uj->ertek = ertek;
+    uj->next = head;
+    return uj;
+}
 
 // Prototype - implement this function
-double totalArea(const IngatlanLista* head);
+double totalArea(const IngatlanLista* head)
+{
+    double osszTerulet = 0.0;
+    const IngatlanLista* current = head;
+
+    while (current) {
+        osszTerulet += current->terulet;
+        current = current->next;
+    }
+
+    return osszTerulet;
+}
 
 // Prototype - implement this function
-double averageArea(const IngatlanLista* head);
+double averageArea(const IngatlanLista* head)
+{
+    double areaSum = 0.0;
+    long long valueSum = 0;
+
+    const IngatlanLista *p = head;
+    while (p != nullptr)
+    {
+        areaSum += p->terulet;
+        valueSum += p->ertek;
+        p = p->next;
+    }
+
+    if (areaSum == 0.0)
+    {
+        // nincs terület, ne osszunk nullával
+        return 0.0;
+    }
+
+    return static_cast<double>(valueSum) / areaSum;
+}
 
 int main() {
     IngatlanLista* list = nullptr;
