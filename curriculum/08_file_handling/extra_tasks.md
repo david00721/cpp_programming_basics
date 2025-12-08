@@ -97,6 +97,28 @@ Ezek **összegzése legyen a visszatérési érték**!
 
 A 2. paraméterben a függvény pedig adja vissza annak a márkának a nevét, amelyik az adatállomány **utolsó sorában** található.
 
+**Példa:**
+```text
+5
+Adidas blue yellow gray
+Nike red green white
+Puma black white gray
+Asics green yellow blue
+Reebok red blue green
+```
+
+Kimenet:
+```text
+Green shoes brands: 3
+Last brand in file: Reebok
+```
+
+### Megoldási sablon
+
+```cpp
+int colorSearch(std::string fbe, std::string* brand);
+```
+
 ## 4. Feladat – fullNameSort (teljes név szerinti rendezés, fájlból-fájlba)
 
 **Feladat**  
@@ -147,10 +169,23 @@ Az adat-file szerző-sorait tárolja el egy dinamikus tömbbe (visszatérési é
 
 Ezek után alakítsa át ezen tömb tartalmát úgy, hogy a szerzők a **teljes nevükre nézve ABC sorrendbe** legyenek rendezve.
 
-### Megoldási sablon
+**Példa:**
+```text
+5
+Adams, Douglas Noel
+Asimov, Isaac
+Zahn, Timothy
+Tolkien, John Ronald Reuel
+Rowling, Joanne Kathleen
+```
 
-```cpp
-std::string* fullNameSort(std::string fbe, std::string fki);
+Kimenet:
+```text
+Adams, Douglas Noel
+Asimov, Isaac
+Rowling, Joanne Kathleen
+Tolkien, John Ronald Reuel
+Zahn, Timothy
 ```
 
 ## 5. Feladat – duration (időkülönbség percekben, CSV-ből)
