@@ -1,48 +1,4 @@
 Feladat
-Hozzon létre point névvel egy struktúrát, mely egy síkbeli pontot jelképez. 
-Legyen két double típusú tagja: x és y. Valósítson meg double compare(struct point *a, struct point *b, int l) függvényt, ahol a és b egy-egy l elemű tömb. 
-A függvény határozza meg az a és b tömbben szereplő pontsor hasonlóságát, ahol a hasonlóságot az ugyanaz indexen szereplő pontok távolságának átlaga adja meg. 
-Feltételezheti, hogy a és b legalább 1 elemű és a két tömb elemszáma megegyezik.
-
-Feladat
-Valósítson meg double conv(double **kernel, double **img, int k_w, int k_h, int x, int y) függvényt, ahol kernel és img egy-egy két dimenziós tömb, 
-k_w a kernel első dimenziójának a mérete, k_h a kernel második dimenziójának a mérete, 
-x egy index az img tömb első dimenziójához és y egy index az img tömb második dimenziójához. 
-A conv függvény számítson szorzatösszeget a kernel tömb és az img tömb egy szelete között. 
-Az img tömbnek vegyük azt a szeletét, amelynek középpontja az (x, y) pozíción van és mérete megegyezik a kernel méretével. 
-Feltételezheti, hogy az img mérete és az (x, y) pozíció olyanok, hogy a szorzatösszeg mindig számítható. 
-Azaz img mérete legalább akkora mint a kernel mérete és (x, y) nem lesz olyan pozíció, hogy a kivágandó szelet "lelógna" az img tömbről. 
-Továbbá a kernel mérete (k_w és k_w) mindkét dimenzió mentén páratlan, azaz egyértelműen meghatározható img azon szelete, melynek (x, y) a középpontja.
-
-Feladat
-Készítsen double **shift(double **mtx, int w, int h) függvényt, ahol mtx egy kétdimenziós tömb, w az mtx első dimenziójának hossza, 
-és h az mtx második dimenziójának hossza. A függvény visszatérési értéke legyen mtx tömbbel megegyező méretű tömb. 
-A kimeneti tömb az mtx értékeit tartalmazza, azzal a különbséggel, 
-hogy a tömb szélein (első sor, utolsó sor, első oszlop, utolsó oszlop) található elemeket az óramutató járásával megegyező irányba eggyel arrébb mozgatja. 
-Feltételezheti, hogy w és h értéke egyaránt legalább 2.
-
-Feladat
-Valósítson meg SiLU (Sigmoid Linear Unit) függvényt a következők szerint. 
-Legyen double *silu(double *data, int data_size), ahol data egy data_size méretű tömb. 
-A tömb minden eleme esetén alkalmazza a SiLU függvényt és visszatérési értékként egy data_size méretű tömböt adjon, 
-amely a SiLU függvény által adott értékeket tartalmazza a data tömb szerinti sorrendben.
-
-silu
-
-ahol silua logisztikus szigmoid függvény a következők szerint:
-
-silu
-
-Létezik egy E nevű szimbolikus állandó, amelynek értékét használja fel az Euler-féle szám alkalmazásához.
-
-Feladat
-Hozzon létre int* stat(string s) függvényt, ahol s egy angol nyelvű szöveget tartalmazó string. 
-A függvény készítsen statisztikát arról, hogy az angol ábécé egyes betűi hányszor fordulnak elő a bemeneti s szövegben. 
-Az ábécé kis és nagybetűi között ne tegyen különbséget és az ábécén kívüli karaktereket vegye figyelmen kívül. 
-A visszatérési érték egy olyan tömb legyen, melynek az első eleme megadja, hogy az 'a' betűből hány darab található a szövegben, majd a második eleme megadja, 
-hogy 'b' betűből hány darab volt, és így tovább, egészen a 'z' betűig bezárólag.
-
-Feladat
 
 Írjon egy programot, amely 2 db felhasználói függvényt használ.
 
