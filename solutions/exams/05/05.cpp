@@ -3,7 +3,20 @@
 using namespace std;
 
 // Prototype - implement this function
-void stackedBarChart(int** data, int rows, int cols);
+void stackedBarChart(int** data, int rows, int cols)
+{
+    const char symbols[] = {'X', '>', '+', '=', '-'};
+    int maxCols = (cols > 5) ? 5 : cols;
+
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < maxCols; ++j) {
+            for (int k = 0; k < data[i][j]; ++k) {
+                cout << symbols[i];
+            }
+        }
+        cout << endl;
+    }
+}
 
 // Segédfüggvény: mátrix létrehozása egy 1D vektorból
 int** createMtx(int* vec, int rows, int cols) {

@@ -3,7 +3,17 @@
 using namespace std;
 
 // Prototype - implement this function
-int szamtani(int a0, int d, bool uj);
+int szamtani(int a0, int d, bool uj)
+{
+    static int n = 0;
+    if (uj) {
+        n = 0;
+        return a0;
+    } else {
+        n++;
+        return a0 + n * d;
+    }
+}
 
 int main() {
     cout << szamtani(0, 1, true);
