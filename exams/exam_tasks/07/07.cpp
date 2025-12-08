@@ -8,7 +8,6 @@ using namespace std;
 void rightAlign(const string& fileName);
 
 int main() {
-    cout << "Test\tResult\n";
     cout << "rightAlign(\"file1.txt\");\n";
     rightAlign("file1.txt");
 

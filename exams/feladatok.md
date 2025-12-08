@@ -101,36 +101,6 @@ bool capsLocked(std::string s);
 
 ---
 
-## 5. Feladat – stackedBarChart
-
-**Feladat:**  
-Definiálja azt a `void stackedBarChart(int** data, int rows, int cols)` függvényt, ami halmozott sávdiagramot rajzol a `rows` sorból és `cols` oszlopból álló `data` mátrix elemeit felhasználva! A sávdiagram annyi sorból álljon, amennyi `rows` értéke! A sorokat rendre az `X`, `>`, `+`, `=` és `-` jelekkel kell megrajzolni. Mindegyikből annyit kell egymás mellé írni, amennyi a mátrix aktuális sorában a soron következő cella értéke. Ha a mátrixnak 5-nél több oszlopa lenne, csak az első 5-öt kell megrajzolni.
-
-Példa:
-```cpp
-int vec[6] = {
-  1, 5,
-  3, 3,
-  5, 3
-};
-int** data = createMtx(vec, 3, 2);
-stackedBarChart(data, 3, 2);
-deleteMtx(data, 3);
-```
-
-```text
-X>>>>>
-XXX>>>
-XXXXX>>>
-```
-
-### Megoldási sablon
-```cpp
-void stackedBarChart(int** data, int rows, int cols);
-```
-
----
-
 ## 6. Feladat – gp
 
 **Feladat:**  
@@ -1038,6 +1008,47 @@ A függvény készítsen statisztikát arról, hogy az angol ábécé egyes bet�
 Az ábécé **kis- és nagybetűi között ne tegyen különbséget**, és az ábécén kívüli karaktereket vegye figyelmen kívül.  
 A visszatérési érték egy olyan tömb legyen, melynek az első eleme megadja, hogy az `'a'` betűből hány darab található a szövegben, a második eleme megadja, hogy `'b'` betűből hány darab volt, és így tovább, egészen a `'z'` betűig bezárólag.
 
+**Példa:**
+```cpp
+string text = "Hello World!";
+int* freq = stat(text);
+
+for (int i = 0; i < 26; i++) {
+    cout << char('a' + i) << ": " << freq[i] << endl;
+}
+
+delete[] freq;   // felszabadítás!
+```
+
+```text
+a: 0
+b: 0
+c: 0
+d: 1
+e: 1
+f: 0
+g: 0
+h: 1
+i: 0
+j: 0
+k: 0
+l: 3
+m: 0
+n: 0
+o: 2
+p: 0
+q: 0
+r: 1
+s: 0
+t: 0
+u: 0
+v: 0
+w: 1
+x: 0
+y: 0
+z: 0
+```
+
 ### Megoldási sablon
 
 ```cpp
@@ -1080,6 +1091,19 @@ void writesOut(double diff)
 pedig írja ki, hogy az `uploading` nevű függvény visszatérési értékének (amit az 1. paraméterben vesz át) **egész része hány számjegyű**.  
 A kiírás a példában látott tagolással és szövegezéssel történjen.
 
+**Például:**
+```text
+-1 -2 -3 -4 -5 -6
+```
+
+Kimenet:
+```text
+(-1)^3 - (-2)^3 - (-3)^3 - (-4)^3 - (-5)^3 - (-6)^3
+= (-1) - (-8) - (-27) - (-64) - (-125) - (-216)
+= -1 + 8 + 27 + 64 + 125 + 216
+= 439
+```
+
 ### Megoldási sablonok
 
 ```cpp
@@ -1115,6 +1139,17 @@ pedig a feltöltött tömb (1. paraméter) kisbetűit cserélje le a nagybetűs 
 Ezek után a fentiek szerint módosított tömb tartalmát írja is ki.  
 Továbbá a következő sorban jelenítse meg, hogy az **eredeti** tömbben hány db nagybetű volt, a példában látott tagolással és szövegezéssel.  
 A `change` nevű függvény 2. paramétere a `charLoad` függvény visszatérési értéke.
+
+**Példa:**
+```text
+AbCdEfGh
+```
+
+Kimenet:
+```text
+ABCDEFGH
+Original uppercase count: 4
+```
 
 ### Megoldási sablonok
 
@@ -1164,6 +1199,22 @@ Ha az adott márkának létezik `green` színű cipője, akkor a `bool color_gre
 Ezek **összegzése legyen a visszatérési érték**!
 
 A 2. paraméterben a függvény pedig adja vissza annak a márkának a nevét, amelyik az adatállomány **utolsó sorában** található.
+
+**Példa:**
+```text
+5
+Adidas blue yellow gray
+Nike red green white
+Puma black white gray
+Asics green yellow blue
+Reebok red blue green
+```
+
+Kimenet:
+```text
+Green shoes brands: 3
+Last brand in file: Reebok
+```
 
 ### Megoldási sablon
 
@@ -1222,6 +1273,31 @@ Továbbá ezen állomány első sorában csak egy pozitív egész szám találha
 Az adat-file szerző-sorait tárolja el egy dinamikus tömbbe (visszatérési érték)!
 
 Ezek után alakítsa át ezen tömb tartalmát úgy, hogy a szerzők a **teljes nevükre nézve ABC sorrendbe** legyenek rendezve.
+
+**Példa:**
+```text
+8
+Adams, Douglas Noel
+Asimov, Isaac
+Heinlein, Robert Anson
+Clarke, Arthur Charles
+Bradbury, Ray Douglas
+King, Stephen Edwin
+Tolkien, John Ronald Reuel
+Zahn, Timothy
+```
+
+Kimenet:
+```text
+Arthur Charles Clarke
+Douglas Noel Adams
+Isaac Asimov
+John Ronald Reuel Tolkien
+Ray Douglas Bradbury
+Robert Anson Heinlein
+Stephen Edwin King
+Timothy Zahn
+```
 
 ### Megoldási sablon
 
@@ -1369,49 +1445,27 @@ void outwrite(double root)
 pedig írja ki, hogy az `infuse` nevű függvény visszatérési értékének (amit az 1. paraméterben vesz át) **egész része páros vagy páratlan**.  
 A kiírás a példában látott tagolással és szövegezéssel történjen.
 
+**Példa:**
+```text
+8
+27
+64
+125
+216
+```
+
+Kimenet:
+```
+Szorzatuk: 2 × 3 × 4 × 5 × 6 = 720
+Infuse: 720
+Outwrite: The integer part is even.
+```
+
 ### Megoldási sablonok
 
 ```cpp
 double infuse(double in_bk[]);
 void outwrite(double root);
-```
-
----
-
-## 33. Feladat – loadText, upperNumber
-
-**Feladat**  
-
-Írjon egy programot, amely 2 db felhasználói függvényt használ.
-
-Az egyik az
-
-```cpp
-int loadText(char t_bk[])
-```
-
-amely feltölt egy karakter tömböt (1. paraméter) ékezet nélküli betűkkel a `'#'` (hashtag) karakterig.  
-Bekérési információk és hibaüzenetek kiírása nem kell!  
-A tömb 128 karakter fogadására legyen képes, a hosszát szimbolikus állandóval állítsa be.  
-A függvény visszatérési értéke a feltöltött tömb hossza legyen.
-
-A másik függvény a
-
-```cpp
-void upperNumber(char un_bl[], int lm)
-```
-
-pedig a feltöltött tömb (1. paraméter) nagybetűit cserélje le számokra, amelyek nullától növekednek egyesével.  
-(Azaz, az 1. nagybetűt cserélje `0`-ra, a 2. nagybetűt `1`-re és így tovább.)  
-Ezek után a fentiek szerint módosított tömb tartalmát írja is ki, a `'#'` nélkül!  
-Továbbá a következő sorban jelenítse meg, hogy az **eredeti** tömbben hány db nagybetű volt, a példában látott tagolással és szövegezéssel.  
-Az `upperNumber` nevű függvény 2. paramétere a `loadText` függvény visszatérési értéke.
-
-### Megoldási sablonok
-
-```cpp
-int loadText(char t_bk[]);
-void upperNumber(char un_bl[], int lm);
 ```
 
 ---
