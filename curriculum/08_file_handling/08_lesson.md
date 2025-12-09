@@ -1,278 +1,268 @@
-# 08 – File Handling (C++)
+# 08 -- File Handling (C++) -- Részletes jegyzet példákkal
 
-## 🎯 Célok
+## 1. Alapok -- `<fstream>`
 
-- Megérteni, hogyan lehet fájlokat kezelni C++-ban.
-- Ismerni a fájl megnyitásának, olvasásának, írásának és zárásának módját.
-- Gyakorolni a különböző fájlmódokat (append, binary, stb.).
-- Megtanulni a hibakezelést fájlműveleteknél.
+A C++ fájlkezeléshez az alábbi fejlécre van szükség:
 
----
-
-## 1. Alapok – `<fstream>`
-
-A C++ fájlkezelés a `<fstream>` könyvtárban van:
-
-- `ifstream` → fájl olvasása (input file stream)
-- `ofstream` → fájl írása (output file stream)
-- `fstream` → olvasás + írás
-
-```cpp
-#include <iostream>
+``` cpp
 #include <fstream>
+#include <iostream>
 using namespace std;
 ```
 
-👉 **01 - Feladat közösen:** Írj programot, ami megnyit egy fájlt írásra, és kiír egy sort bele!  
-👉 **02 - Feladat önállóan:** Írj programot, ami megnyit egy fájlt olvasásra, és kiírja az első szót!
+Három fő típust használunk:
 
----
+-   `ifstream` -- fájl olvasásához\
+-   `ofstream` -- fájl írásához\
+-   `fstream` -- olvasáshoz és íráshoz is
+
+### Példa: fájl megnyitása és ellenőrzése
+
+``` cpp
+ifstream fin("input.txt");
+if (!fin) { // vagy !fin.is_open()
+    cout << "Failed to open file!\n";
+    return 1;
+}
+```
+
+------------------------------------------------------------------------
 
 ## 2. Írás fájlba
 
-```cpp
-// Nyitás és hibakezelés
-ofstream fout("example.txt");   // megnyitás írásra
-if (!fout) {
-    cout << "Error opening file!";
+``` cpp
+ofstream fout("example.txt");
+if (!fout) { // vagy !fout.is_open())
+    cout << "Cannot open file!\n";
     return 1;
 }
-```
 
-```cpp
-// Írás
 fout << "Hello File!" << endl;
-fout << 123 << endl;
+fout << 42 << endl;
 fout.close();
 ```
 
-- Ha a fájl nem létezik, létrejön.
-- Ha létezik, alapból felülírja.
+### Fontos:
 
-👉 **03 - Feladat közösen:** Írj programot, ami fájlba írja a neved és életkorod!  
-👉 **04 - Feladat önállóan:** Írj programot, ami fájlba írja az első 10 négyzetszámot!
+-   Ha a fájl létezik → **felülíródik**.
+-   Ha nem létezik → létrejön.
 
----
+------------------------------------------------------------------------
 
 ## 3. Olvasás fájlból
 
-```cpp
-// Nyitás és hibakezelés
-ifstream fin("example.txt");
-if (!fin) {
-    cout << "Error opening file!";
-    return 1;
-}
-```
+### Szavankénti olvasás
 
-```cpp
-// Szavankénti olvasás
+``` cpp
 string word;
-while (fin >> word) {  // szavanként olvas
+while (fin >> word) {
     cout << word << endl;
 }
-fin.close();
 ```
 
-```cpp
-// Soronkénti olvasás
+### Soronkénti olvasás
+
+``` cpp
 string line;
-while (getline(fin, line)) { // soronként olvas
+while (getline(fin, line)) {
     cout << line << endl;
 }
-fin.close();
 ```
 
-- `fin >> var` → szóalapú olvasás
-- `getline(fin, line)` → teljes sor beolvasása
+------------------------------------------------------------------------
 
-👉 **05 - Feladat közösen:** Írj programot, ami soronként kiírja egy fájl tartalmát!  
-👉 **06 - Feladat önállóan:** Írj programot, ami megszámolja, hány szó van egy fájlban!
+## 3.1 `>>` és `getline()` keverésének problémája
 
----
+A `>>` **bent hagyja a sortörést**, ezért a következő `getline()` üres
+sort olvas.
 
-## 4. Hozzáfűzés (append mód)
+### Rossz:
 
-```cpp
-ofstream fout("example.txt", ios::app); // input-output stream :: append
-fout << "New line appended!" << endl;
-fout.close();
+``` cpp
+int x;
+fin >> x;
+getline(fin, line); // üres sort kap
 ```
 
-- `ios::app` → mindig a fájl végére ír.
+### Megoldás:
 
-👉 **07 - Feladat közösen:** Írj programot, ami hozzáfűz egy sort egy meglévő fájlhoz!  
-👉 **08 - Feladat önállóan:** Írj programot, ami a felhasználótól bekért szövegeket addig írja a fájl végére, amíg az üres sort nem ad meg!
+``` cpp
+fin.ignore(); // egy whitespace-t dob el
+getline(fin, line); // már jó
+```
 
----
+Vagy minden beolvasás `getline()`-nel:
 
-## 5. Bináris fájlkezelés
+``` cpp
+string s;
+getline(fin, s);
+int x = stoi(s);
+```
 
-```cpp
+## 3.2 String konverzió
+
+A C++ a `<string>` könyvtárban több beépített függvényt biztosít,
+amelyekkel szövegből számot lehet konvertálni. Ezek különösen akkor
+hasznosak, amikor `getline()` segítségével olvasunk be adatot, és utána
+szükség van számokká alakításra.
+
+### Egész szám típusok
+
+```text
+`int`       ->  `stoi()`
+`long`      ->  `stol()`
+`long long` ->  `stoll()`
+```
+
+**Példa:**
+
+``` cpp
+string s = "123";
+int a = stoi(s);              // 123
+long b = stol("456");         // 456
+long long c = stoll("789");   // 789
+```
+
+------------------------------------------------------------------------
+
+### Lebegőpontos típusok
+
+```text
+`float`       ->  `stof()`
+`double`      ->  `stod()`
+`long double` ->  `stold()`
+```
+
+**Példa:**
+
+``` cpp
+double d = stod("3.1415");          // 3.1415
+float f = stof("2.71");             // 2.71f
+long double ld = stold("1.234");    // 1.234L
+```
+
+### Tipikus használat getline() után
+
+``` cpp
+string line;
+getline(fin, line);
+int value = stoi(line);   // sorból számot készít
+```
+
+------------------------------------------------------------------------
+
+## 4. Fájlmódok (flags)
+
+``` cpp
+ofstream fout("data.txt", ios::app | ios::out);
+```
+
+  Flag            Jelentés
+  --------------- ------------------------------------
+  `ios::in`       olvasás
+  `ios::out`      írás
+  `ios::app`      hozzáfűzés
+  `ios::trunc`    tartalom törlése
+  `ios::binary`   bináris mód
+  `ios::ate`      a fájl végére ugrik megnyitás után
+
+------------------------------------------------------------------------
+
+## 5. Hozzáfűzés
+
+``` cpp
+ofstream fout("log.txt", ios::app);
+fout << "Log entry" << endl;
+```
+
+------------------------------------------------------------------------
+
+## 6. Bináris fájlkezelés
+
+``` cpp
 struct Student {
     char name[20];
     int age;
 };
 
-int main() {
-    Student s1 = {"Alice", 21};
+Student s1 = {"Alice", 21};
 
-    // Írás bináris fájlba
-    ofstream fout("student.bin", ios::binary);
-    fout.write((char*)&s1, sizeof(s1)); // a s1 struktúra címét char pointerré alakítjuk, hogy a write byte-sorozatként kezelje, megadjuk, hogy hány byte-ot írjon ki (a struktúra teljes mérete)
-    fout.close();
+ofstream fout("student.bin", ios::binary);
+fout.write((char*)&s1, sizeof(s1));
+// fout.write(reinterpret_cast<const char*>(&s1), sizeof(s1));
+fout.close();
+```
 
-    // Olvasás bináris fájlból
-    Student s2;
-    ifstream fin("student.bin", ios::binary);
-    fin.read((char*)&s2, sizeof(s2));
-    fin.close();
+### Olvasás:
 
-    cout << s2.name << " " << s2.age;
+``` cpp
+Student s2;
+
+ifstream fin("student.bin", ios::binary);
+fin.read((char*)&s2, sizeof(s2));
+// fin.read(reinterpret_cast<char*>(&s2), sizeof(s2));
+
+cout << s2.name << " " << s2.age;
+```
+
+------------------------------------------------------------------------
+
+## 7. Stream állapotok
+
+``` cpp
+fin.good(); // nincs hiba
+fin.eof();  // elértük-e a fájl végét
+fin.fail(); // hiba olvasásnál
+fin.bad();  // súlyos IO hiba
+fin.clear(); // hibabitek törlése
+```
+
+### Példa hibakezelésre:
+
+``` cpp
+int x;
+fin >> x;
+
+if (fin.fail()) {
+    cout << "Invalid number!\n";
 }
 ```
 
-- Bináris fájlban nyers memóriát írunk és olvasunk.
+------------------------------------------------------------------------
 
-👉 **09 - Feladat közösen:** Írj programot, ami bináris fájlba ment egy diák nevét és életkorát, majd visszaolvassa!  
-👉 **10 - Feladat önállóan:** Írj programot, ami bináris fájlba ment több diákot (tömbben), majd visszaolvassa!
+## 8. Fájlpozíció -- seekg, seekp
 
----
-
-## 6. Hasznos módszerek
-
-```cpp
-fin.eof();      // true ha elérte a fájl végét
-fin.fail();     // true ha olvasási hiba történt
-fin.clear();    // hibajelző törlése
-fin.seekg(0);   // vissza a fájl elejére
+``` cpp
+fin.seekg(0); // elejére ugrás
+fin.seekg(0, ios::end); // végére ugrás
 ```
 
-```cpp
-#include <fstream>
-#include <iostream>
-using namespace std;
+### Példa újraolvasásra:
 
-int main() {
-    ifstream fin("example.txt");
-
-    char c;
-    while (fin.get(c)) {
-        cout << c;
-    }
-
-    if (fin.eof()) {
-        cout << "\nElértük a fájl végét.\n";
-    }
-}
+``` cpp
+fin.clear();
+fin.seekg(0);
+getline(fin, line);
 ```
 
-```cpp
-#include <fstream>
-#include <iostream>
-using namespace std;
+------------------------------------------------------------------------
 
-int main() {
-    ifstream fin("numbers.txt");
+## 9. FONTOS
 
-    int x;
-    fin >> x;   // Tegyük fel, hogy a fájlban egy betű van → olvasási hiba
+-   `getline()` üres sort olvas `>>` után → `ignore()` kell\
+-   fájlt nem ellenőriztünk megnyitás után\
+-   `seekg()` előtt mindig `clear()`\
+-   soha ne használj `while (!fin.eof())` beolvasásra
 
-    if (fin.fail()) {
-        cout << "Hibás olvasás történt!\n";
-    }
-}
-```
+------------------------------------------------------------------------
 
-```cpp
-#include <fstream>
-#include <iostream>
-using namespace std;
+## 10. Gyors összefoglaló
 
-int main() {
-    ifstream fin("example.txt");
+-   `>>` → szavanként olvas\
+-   `getline()` → sort olvas\
+-   `>>` után mindig `ignore()` ha `getline()` jön\
+-   bináris írás: `write()`, olvasás: `read()`\
+-   mindig ellenőrizd a streamet (`if (!fin)`)\
+-   `while (fin >> val)` a helyes beolvasási minta
 
-    string word;
-    while (fin >> word) { }  // Olvasás a végéig → EOF
-
-    if (fin.eof()) {
-        cout << "Vége a fájlnak.\n";
-    }
-
-    fin.clear();  // hibabitek törlése → újra használható a stream
-    cout << "clear() után az EOF állapot: " << fin.eof() << endl;
-}
-```
-
-```cpp
-#include <fstream>
-#include <iostream>
-using namespace std;
-
-int main() {
-    ifstream fin("example.txt");
-
-    string word;
-    fin >> word;   // első szó
-    cout << "Elso olvasas: " << word << endl;
-
-    fin.clear();   // kell az EOF/reset miatt
-    fin.seekg(0);  // vissza a fájl elejére
-
-    fin >> word;   // újra az első szó
-    cout << "Második olvasás: " << word << endl;
-}
-```
-
-👉 **11 - Feladat közösen:** Írj programot, ami beolvassa egy fájl első sorát, majd seekg segítségével újraolvassa!  
-👉 **12 - Feladat önállóan:** Írj programot, ami hibakezelést végez: ha nem létezik a fájl, jelezze a felhasználónak!
-
----
-
-## 7. Példák
-
-**Példa 1 – Sorok számlálása**
-
-```cpp
-ifstream fin("example.txt");
-string line;
-int count = 0;
-
-while (getline(fin, line))
-    count++;
-
-cout << "Lines: " << count;
-```
-
-👉 **13 - Feladat közösen:** Írj programot, ami megszámolja egy fájl sorait!  
-👉 **14 - Feladat önállóan:** Írj programot, ami megszámolja egy fájl karaktereit!
-
----
-
-**Példa 2 – Számok összege**
-
-```cpp
-ifstream fin("numbers.txt");
-int x, sum = 0;
-
-while (fin >> x)
-    sum += x;
-
-cout << "Sum = " << sum;
-```
-
-👉 **15 - Feladat közösen:** Írj programot, ami kiírja egy fájlban lévő számok összegét!  
-👉 **16 - Feladat önállóan:** Írj programot, ami kiszámolja egy fájlban lévő számok átlagát!
-
----
-
-## 8. Gyakorló feladatok
-
-- Írj programot, ami beolvas egy fájlt, és kiírja a sorok számát.
-- Készíts programot, ami a felhasználótól bekért számokat kiírja egy fájlba.
-- Írj programot, ami egy fájlból beolvasott számok átlagát számolja ki.
-- Írj programot, ami szavanként beolvassa egy szövegfájl tartalmát, és megszámolja, hány darab van.
-- Készíts programot, ami bináris fájlban eltárolja és visszaolvassa egy diák adatait.
-
----
-
+------------------------------------------------------------------------
