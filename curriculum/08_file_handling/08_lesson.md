@@ -122,6 +122,43 @@ int a = stoi(s);              // 123
 long b = stol("456");         // 456
 long long c = stoll("789");   // 789
 ```
+## 3.3 Stringstream használata
+
+A stringstream olyan, mint a *cin*, csak nem a felhasználótól, hanem
+stringből olvas.
+
+``` cpp
+stringstream ss("12 3.14 test");
+int a; double b; string s;
+ss >> a >> b >> s;
+```
+
+### CSV példa stringstreammel
+
+Bemenet:
+
+    John,25,180
+
+``` cpp
+getline(fin, line);
+
+for (char& c : line)
+    if (c == ',') c = ' ';
+
+/*
+for (size_t i = 0; i < line.size(); i++) {
+    if (line[i] == ',') {
+        line[i] = ' ';
+    }
+}
+*/
+
+stringstream ss(line);
+
+string name;
+int age, height;
+ss >> name >> age >> height;
+```
 
 ------------------------------------------------------------------------
 
