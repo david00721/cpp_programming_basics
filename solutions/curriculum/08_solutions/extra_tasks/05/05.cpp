@@ -23,12 +23,12 @@ void duration(string fileName)
         string second = line.substr(commaPos + 1);
 
         // első időpont
-        int h1 = (first[0] - '0') * 10 + (first[1] - '0');
-        int m1 = (first[3] - '0') * 10 + (first[4] - '0');
+        int h1 = stoi(first.substr(0, 2));
+        int m1 = stoi(first.substr(3, 2));
 
         // második időpont
-        int h2 = (second[0] - '0') * 10 + (second[1] - '0');
-        int m2 = (second[3] - '0') * 10 + (second[4] - '0');
+        int h2 = stoi(second.substr(0, 2));
+        int m2 = stoi(second.substr(3, 2));
 
         int t1 = h1 * 60 + m1;
         int t2 = h2 * 60 + m2;

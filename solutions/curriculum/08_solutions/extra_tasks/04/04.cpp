@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -28,16 +29,25 @@ string* fullNameSort(string fbe, string fki)
 
     int n;
     be >> n;
-    be.ignore(); // az új sor karaktert eldobjuk
+    be.ignore();  // biztosan eldobjuk a sortörést
 
     string* tomb = new string[n];
 
     for (int i = 0; i < n; i++) {
-        getline(be, tomb[i]);
+        string line;
+        getline(be, line);
+
+        // vessző helyének keresése
+        size_t commaPos = line.find(',');
+        string lastName = line.substr(0, commaPos);
+
+        // maradék rész (keresztnév(ek))
+        string firstNames = line.substr(commaPos + 2);
+
+        tomb[i] = firstNames + " " + lastName;
     }
     be.close();
 
-    // saját rendezés
     sajatRendezes(tomb, n);
 
     ofstream ki(fki);
@@ -46,11 +56,10 @@ string* fullNameSort(string fbe, string fki)
         return tomb;
     }
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
         ki << tomb[i] << '\n';
-    }
-    ki.close();
 
+    ki.close();
     return tomb;
 }
 
@@ -66,7 +75,7 @@ int main()
     }
 
     // Bemeneti fájlból ki kell olvasni, hány sor van → újra beolvassuk az első sort
-    ifstream be(bemenet.c_str());
+    ifstream be(bemenet);
     int n;
     be >> n;
     be.close();

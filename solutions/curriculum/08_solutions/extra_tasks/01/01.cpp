@@ -9,33 +9,34 @@ void rightAlign(const string& fileName)
 {
     ifstream in(fileName);
     if (!in) {
-        cerr << "Hiba: Nem lehet megnyitni a fajlt: " << fileName << endl;
+        cout << "Hiba: Nem lehet megnyitni a fajlt: " << fileName << endl;
         return;
     }
 
-    string lines[100];
+    string line;
     int count = 0;
     size_t maxLength = 0;
 
-    // Beolvassuk a fájl sorait és meghatározzuk a leghosszabb sort
-    while (getline(in, lines[count])) {
-        size_t len = lines[count].length();
-        if (len > maxLength) {
-            maxLength = len;
-        }
+    // 1. menet: hány sor és melyik a leghosszabb
+    while (getline(in, line)) {
         count++;
+        if (line.length() > maxLength)
+            maxLength = line.length();
     }
-    in.close();
 
-    // Print
-    for (int i = 0; i < count; i++) {
-        size_t len = lines[i].length();
-        size_t spacesToAdd = maxLength - len;
-        for (size_t j = 0; j < spacesToAdd; j++) {
+    in.clear();       // EOF törlése
+    in.seekg(0);      // vissza a fájl elejére
+
+    // 2. menet: sorok beolvasása és kiírás jobbra igazítva
+    while (getline(in, line)) {
+        size_t spaces = maxLength - line.length();
+        for (size_t i = 0; i < spaces; i++)
             cout << ' ';
-        }
-        cout << lines[i] << endl;
+
+        cout << line << endl;
     }
+
+    in.close();
 }
 
 int main() {

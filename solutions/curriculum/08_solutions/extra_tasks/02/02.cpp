@@ -25,7 +25,7 @@ void center(const string& fileName)
 
     // Reset file stream to beginning
     file.clear();
-    file.seekg(0, ios::beg);
+    file.seekg(0);
 
     // Second pass: print each line centered
     while (getline(file, line)) {
