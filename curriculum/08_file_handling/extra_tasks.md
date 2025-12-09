@@ -181,11 +181,11 @@ Rowling, Joanne Kathleen
 
 Kimenet:
 ```text
-Adams, Douglas Noel
-Asimov, Isaac
-Rowling, Joanne Kathleen
-Tolkien, John Ronald Reuel
-Zahn, Timothy
+Douglas Noel Adams
+Isaac Asimov
+Joanne Kathleen Rowling
+John Ronald Reuel Tolkien
+Timothy Zahn
 ```
 
 ## 5. Feladat – duration (időkülönbség percekben, CSV-ből)
