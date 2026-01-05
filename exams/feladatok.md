@@ -1307,111 +1307,6 @@ std::string* fullNameSort(std::string fbe, std::string fki);
 
 ---
 
-## 31. Feladat – sinTetel (szinusztétel háromszögekre, fájlból)
-
-**Feladat**  
-
-Írjon egy
-
-```cpp
-double** sinTetel(std::string fbe)
-```
-
-függvényt, amelynek a visszatérési értéke egy **5 × 3-as dinamikus mátrix**, amely 5 db általános háromszög 2 db szögét és 1 db oldalát tartalmazza, a lenti meghatározások alapján.
-
-A háromszögek 3. oldalának és a további 2 szögének a kiszámításához szükséges adatokat egy adat-file tartalmazza, amelynek a létezését ellenőrizni kell! A hibaüzenet formátumát a példa is mutatja. Ennek az állománynak az azonosítója lesz a `sinTetel` nevű függvény paramétere.
-
-Az adat-file egy-egy sora egy általános háromszög három adatát tartalmazza, ezek:
-
-```text
-az_1._oldal_(b)  a_2._oldal_(a)  a_2._oldallal_szembeni_szög_fokban_(alfa)
-```
-
-Az adatokat szóköz választja el egymástól! Pl.:
-
-```text
-40 80 30
-...
-40 70 45
-```
-
-Az adat-file soronkénti elemeit szintén egy **5 × 3-as dinamikus mátrixba** tárolja el, és ezen adatokból számítsa ki a 3. oldalt (`c`) és a maradék kettő szöget (`beta`, `gamma`) az alábbi képletek segítségével:
-
-```text
-beta  = asin(b / a * sin(alfa * M_PI / 180)) / M_PI * 180
-gamma = 180 - alfa - beta
-c     = sin(gamma * M_PI / 180) / sin(alfa * M_PI / 180) * a
-```
-
-A szögeket (`beta`, `gamma`) és a 3. oldalt **ebben a sorrendben** kell tárolni a visszatérési értékként kezelt `double` mátrixban:  
-sor: `(beta, gamma, c)`.
-
-A dinamikus mátrixok méreteit szimbolikus állandókkal állítsa be.  
-A szögek és a 3. oldal tizedespontosságának a meghatározását bízza a fordítóra.
-
-Ha az adat-file nem létezik, akkor a monitoron a
-
-```text
-Sikertelen file-nyitás!
-```
-
-karaktersorozat jelenjen meg!
-
-**For example:**
-
-```cpp
-double** szkb = sinTetel("Bfk_alfa.txt");
-if(szkb) {
-    for(int i = 0; i < 5; i++) {
-        std::cout << szkb[i][0] << " " << szkb[i][1] << " " << szkb[i][2] << std::endl;
-    }
-    for(int i = 0; i < 5; i++) {
-        delete [] szkb[i];
-    }
-    delete [] szkb;
-    szkb = 0;
-}
-```
-
-Lehetséges kimenet (példaként):
-
-```text
-14.4775 135.522 56.0503
-41.6156 53.3844 32.2288
-60 60 40
-23.8323 111.168 52.7517
-53.1301 36.8699 24
-```
-
-Hibás fájlnév esetén:
-
-```cpp
-double** szkb = sinTetel("NoBfk_alfa.txt");
-if(szkb) {
-    for(int i = 0; i < 5; i++) {
-        std::cout << szkb[i][0] << " " << szkb[i][1] << " " << szkb[i][2] << std::endl;
-    }
-    for(int i = 0; i < 5; i++) {
-        delete [] szkb[i];
-    }
-    delete [] szkb;
-    szkb = 0;
-}
-```
-
-Kimenet:
-```text
-Sikertelen file-nyitás!
-```
-
-### Megoldási sablon
-
-```cpp
-double** sinTetel(std::string fbe);
-```
-
----
-
 ## 32. Feladat – infuse, outwrite (gyökk szorzata + páros/páratlan egészrész)
 
 **Feladat**  
@@ -1515,64 +1410,6 @@ Ezek összegzésének a **komplementere** (ellentettje) legyen a visszatérési 
 
 ```cpp
 int sizeSearch(std::string fbe, double my_size, std::string* brand);
-```
-
----
-
-## 35. Feladat – lastLetterSort (rendezés a teljes név utolsó karaktere szerint, fordítva)
-
-**Feladat**  
-
-Írjon egy
-
-```cpp
-std::string* lastLetterSort(std::string fbe, std::string fki)
-```
-
-függvényt, amely kiírja az alábbi rendezésen átesett szerzők neveit egy kimeneti-file-ba (2. paraméter).  
-Továbbá a visszatérési értéke az a dinamikus tömb legyen, amely tartalmazza a rendezéseket.
-
-A szerzők vezetéknevét és keresztneveit (több is lehet) egy adat-file (1. paraméter) tartalmazza úgy, hogy a nevek a katalogizálás szabályait követik.  
-Azaz a vezetéknév után van egy vessző, egy szóköz, majd következnek a keresztnevek szintén 1-1 szóközzel elválasztva.
-
-Tehát így:
-
-```text
-vezetéknév,  1._keresztnév  2._keresztnév  …  n._keresztnév
-```
-
-Pl.:
-
-```text
-Adams, Douglas Noel
-...
-Zahn, Timothy
-```
-
-Az adat-file elérhetőségét ellenőrizni kell, ha nem nyitható meg, akkor a képernyőn a
-
-```text
-Sikertelen file-nyitás!
-```
-
-karaktersorozat legyen olvasható!  
-Ha pedig a kimeneti-file-t nem lehet létrehozni, akkor a
-
-```text
-Háttértár hiba!
-```
-
-karaktersorozat íródjon ki a monitorra!
-
-Továbbá ezen állomány első sorában csak egy pozitív egész szám található, amely az írók számát adja meg, amíg a további sorok egy-egy szerzőt azonosítanak a fent leírtak alapján.  
-Az adat-file szerző-sorait tárolja el egy dinamikus tömbbe (visszatérési érték)!
-
-Ezek után alakítsa át ezen tömb tartalmát úgy, hogy a szerzők a **teljes nevük utolsó karakterére nézve fordított ABC sorrendbe** legyenek rendezve **úgy, hogy a szerzők teljes nevei is visszafelé legyenek letárolva**.
-
-### Megoldási sablon
-
-```cpp
-std::string* lastLetterSort(std::string fbe, std::string fki);
 ```
 
 ---
@@ -1748,26 +1585,6 @@ double surface(double r, double h);
 
 ---
 
-## 42. Feladat – parity (bitek paritása)
-
-**Feladat**  
-
-Definiálja azt az
-
-```cpp
-int parity(int data)
-```
-
-függvényt, melynek visszatérési értéke `0`, ha a `data`-ban szereplő `1`-es értékű bitek száma **páros**, és `1`, ha **páratlan**!
-
-### Megoldási sablon
-
-```cpp
-int parity(int data);
-```
-
----
-
 ## 43. Feladat – mtx2vec (JPEG-szerű átlós bejárás vektorrá)
 
 **Feladat**  
@@ -1791,28 +1608,6 @@ int* mtx2vec(int** mtx, int n);
 ```
 
 ---
-
-## 44. Feladat – palindrome (sztring palindróm ellenőrzése)
-
-**Feladat**  
-
-Hozzon létre
-
-```cpp
-bool palindrome(std::string str)
-```
-
-függvényt, ahol `str` egy bemeneti, csak az angol ábécé kisbetűit tartalmazó szöveg, amelyről el kell dönteni, hogy palindróm vagy sem.  
-Döntse el egy szövegről, hogy palindróm vagy sem! Akkor nevezzünk egy szöveget palindrómnak, ha visszafelé olvasva, karakterről karakterre ugyanazt a szöveget kapjuk.
-
-### Megoldási sablon
-
-```cpp
-bool palindrome(std::string str);
-```
-
----
-
 
 ## 45. Feladat – printChord (gitárakkord tabulatúrás megjelenítése)
 
@@ -1867,6 +1662,7 @@ g  |---|-3-|
 d  |---|-2-|
 a O|---|---|
 e X|---|---|
+     1
 ```
 
 ### Megoldási sablon
