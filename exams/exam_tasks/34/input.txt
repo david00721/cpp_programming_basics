@@ -1,7 +1,0 @@
-6
-Sidi 40.5 45.5
-Shimano 35.75 40.25
-Giro 41 46
-Lake 39 44
-Northwave 42 47
-Fizik 40 43
