@@ -12,7 +12,7 @@ struct Product {
 void total(const Product* p, int n)
 {
     for (int i = 0; i < n; ++i) {
-        const string& currentName = p[i].name;
+        const string currentName = p[i].name;
         int sum = 0;
 
         bool alreadyProcessed = false;
