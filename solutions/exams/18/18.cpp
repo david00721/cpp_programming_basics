@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -10,21 +11,24 @@ struct athletes {
     int bestRace;
 };
 
-// Prototype - implement this function
+string raceResult(const string& filename, int* bR) {
+    ifstream fin(filename);
+    if (!fin.is_open()) {
+        cerr << "Hiba: a fajl nem nyithato meg!" << endl;
+        return "";
+    }
 
-string raceResult(int *bR) {
     int n;
-    cin >> n;
+    fin >> n;
 
     athletes* arr = new athletes[n];
 
     for (int i = 0; i < n; ++i) {
-        cin >> arr[i].licence
+        fin >> arr[i].licence
             >> arr[i].scores[0]
             >> arr[i].scores[1]
             >> arr[i].scores[2];
 
-        // legjobb részpont és annak versenye (1–3)
         arr[i].bestScore = arr[i].scores[0];
         arr[i].bestRace = 1;
 
@@ -36,7 +40,6 @@ string raceResult(int *bR) {
         }
     }
 
-    // globális legjobb keresése
     int bestIndex = 0;
     int globalBest = arr[0].bestScore;
 
@@ -51,13 +54,18 @@ string raceResult(int *bR) {
     string bestLicence = arr[bestIndex].licence;
 
     delete[] arr;
+    fin.close();
 
     return bestLicence;
 }
 
 int main() {
     int b_r = 0;
-    string b_s = raceResult(&b_r);
-    cout << b_s << "\n" << b_r << endl;
+    string best = raceResult("input.txt", &b_r);
+
+    if (!best.empty()) {
+        cout << best << "\n" << b_r << endl;
+    }
+
     return 0;
 }
