@@ -128,6 +128,8 @@ A stringstream olyan, mint a *cin*, csak nem a felhasználótól, hanem
 stringből olvas.
 
 ``` cpp
+#include <sstream>
+
 stringstream ss("12 3.14 test");
 int a; double b; string s;
 ss >> a >> b >> s;
