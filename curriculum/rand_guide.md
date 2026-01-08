@@ -63,3 +63,23 @@ double r = 5.0 + (double)rand() / RAND_MAX * (10.0 - 5.0);
 - A `srand(time(NULL))`-t **soha ne hívd többször**, csak a program elején.
 
 ---
+
+---
+
+## String karaktereinek megkeverése (`std::random_shuffle`)
+
+```cpp
+#include <algorithm>
+#include <string>
+#include <cstdlib>
+#include <ctime>
+
+int main() {
+    srand(time(NULL)); // inicializálás
+
+    std::string s = "HelloWorld";
+    std::random_shuffle(s.begin(), s.end());
+
+    // Példa kimenet: "rolelWdHol"
+}
+```
